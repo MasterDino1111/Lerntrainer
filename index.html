@@ -355,7 +355,6 @@ table.mk input.ml-cell{width:4.8em}
   <button type="button" data-view="rzg">RZG</button>
   <button type="button" data-view="en">Englisch</button>
   <button type="button" data-view="nt">NT</button>
-  <button type="button" data-view="foto">Foto → Aufgaben</button>
 </nav>
 
 <div class="view" id="view-home">
@@ -400,11 +399,6 @@ table.mk input.ml-cell{width:4.8em}
       <span class="eyebrow">Fach</span><h2>NT</h2>
       <p class="small muted">Natur und Technik</p>
       <div class="sublinks"><button type="button" data-view="nt"><b>Der Wald</b><span>SOL-Test · 13 Lernziele · Stockwerke, Abbau, Nahrungskreislauf, Versauerung</span></button></div>
-    </div>
-    <div class="subject s-foto">
-      <span class="eyebrow">Neu</span><h2>Foto → Aufgaben</h2>
-      <p class="small muted">Lernziele fotografieren, Claude macht Übungen daraus</p>
-      <div class="sublinks"><button type="button" data-view="foto"><b>Lernziele fotografieren</b><span>Für jedes Fach · Merksätze, Aufgaben, gespeicherte Resultate</span></button></div>
     </div>
   </div>
 </div>
@@ -2899,7 +2893,7 @@ document.querySelectorAll('a[href="#menu"]').forEach(a=>a.addEventListener('clic
   const h=(location.hash||'').slice(1);
   const mathIds=['mathe','zahlen','ueberblick','umwandeln','von','flaechen','operationen','variablen','training'];
   if(h==='rzg'||h.indexOf('r-')===0) showView('rzg',h);
-  else if(h==='foto') showView('foto');
+  
   else if(h==='nt'||h.indexOf('n-')===0) showView('nt',h);
   else if(h==='englisch'||h==='en'||h.indexOf('e-')===0) showView('en',h);
   else if(h.indexOf('x-')===0){ showTopic('e',false); showView('mathe',h); }
