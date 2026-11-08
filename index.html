@@ -314,6 +314,7 @@ svg .q-cell{fill:var(--blue-soft); stroke:var(--line); stroke-width:1}
 td.qhid{color:transparent; background:var(--grid); cursor:pointer}
 .xper{text-decoration:overline; color:var(--red)}
 td.xyes{color:var(--green); font-weight:700} td.xno{color:var(--red)}
+.gap{border-bottom:2px solid var(--red); padding:0 .3em}
 button.okbtn{background:var(--green); border-color:var(--green)}
 button,label,.tile,.fcard,.kt,input,select,a{touch-action:manipulation; -webkit-tap-highlight-color:transparent}
 @media (pointer:coarse){ button{min-height:44px} button.small{min-height:40px} .opts label,.chips label{min-height:40px; padding:6px 14px} input.ans{min-height:42px; font-size:1.05rem} .spk{min-width:40px; min-height:40px} }
@@ -392,6 +393,7 @@ table.mk input.ml-cell{width:4.8em}
       <span class="eyebrow">Fach</span><h2>Englisch</h2>
       <p class="small muted">New World 3 · Vocabulary</p>
       <div class="sublinks">
+        <button type="button" data-view="en" data-goto="e-past"><b>SOL Test Grammar</b><span>Past Simple · Comparison of Adjectives · Question Tags · Probetest</span></button>
         <button type="button" data-view="en"><b>Passion for sport</b><span>33 Wörter · Karteikarten, Schreiben, Lückentext, Quiz</span></button>
       </div>
     </div>
@@ -1990,6 +1992,10 @@ table.mk input.ml-cell{width:4.8em}
 <div class="subject-head"><span class="eyebrow">Englisch · New World 3, Unit 5</span><h2 class="subject-title">Passion for sport</h2></div>
 <nav class="toc" aria-label="Kapitel Englisch">
   <a href="#menu" class="menu-chip">← Menü</a>
+  <a href="#e-past" class="star">Past Simple</a>
+  <a href="#e-comp" class="star">Comparison</a>
+  <a href="#e-tags" class="star">Question Tags</a>
+  <a href="#e-gram" class="star">Grammatik-Training</a>
   <a href="#e-liste">Wortliste</a>
   <a href="#e-karten">Karteikarten</a>
   <a href="#e-schreiben" class="star">Schreiben</a>
@@ -1997,6 +2003,72 @@ table.mk input.ml-cell{width:4.8em}
   <a href="#e-grammatik">Tipps</a>
   <a href="#e-quiz">Quiz</a>
 </nav>
+
+<section class="page" id="e-past">
+  <header><span class="lz">SOL Test · Lernziel 1</span><h2>Past Simple</h2></header>
+  <div class="merk"><strong>Wann?</strong><ul>
+    <li>Für Handlungen, die <b>in der Vergangenheit abgeschlossen</b> sind. Signalwörter: <b>yesterday, last week, ago, in 2020, when I was …</b></li>
+  </ul></div>
+  <div class="merk"><strong>Bildung</strong><ul>
+    <li><b>Regelmässige Verben: + ed.</b> play → play<b>ed</b>, watch → watch<b>ed</b></li>
+    <li>Endet auf <b>-e</b>: nur <b>-d</b>. live → live<b>d</b> · Konsonant + <b>-y</b>: y → <b>ied</b>. study → stud<b>ied</b> (aber play → played)</li>
+    <li>Kurzer Vokal + ein Konsonant: Konsonant <b>verdoppeln</b>. stop → sto<b>pp</b>ed, plan → pla<b>nn</b>ed</li>
+    <li><b>Unregelmässige Verben</b> musst du auswendig lernen (Liste unten). go → went, see → saw</li>
+    <li><b>Verneinung:</b> <b>didn't + Grundform</b>. I <b>didn't go</b> (nicht: didn't went!)</li>
+    <li><b>Frage:</b> <b>Did + Person + Grundform</b>? <b>Did</b> you <b>see</b> the match? – Yes, I did. / No, I didn't.</li>
+    <li><b>to be:</b> I/he/she/it <b>was</b>, you/we/they <b>were</b>. Verneinung: wasn't, weren't (ohne did!)</li>
+  </ul></div>
+  <details open><summary>Wichtige unregelmässige Verben</summary><div class="tbl-wrap" style="padding-top:8px"><table id="irrTab"></table></div></details>
+</section>
+
+<section class="page" id="e-comp">
+  <header><span class="lz">SOL Test · Lernziel 2</span><h2>Comparison of Adjectives</h2></header>
+  <div class="merk"><strong>Regeln</strong><ul>
+    <li><b>Kurze Adjektive (1 Silbe): -er / the -est.</b> tall → taller → the tallest</li>
+    <li>Endet auf <b>-e</b>: nice → nic<b>er</b> → the nic<b>est</b> · Konsonant + <b>-y</b>: happy → happ<b>ier</b> → the happ<b>iest</b></li>
+    <li>Kurzer Vokal + ein Konsonant: verdoppeln. big → bi<b>gg</b>er → the bi<b>gg</b>est, hot → hotter</li>
+    <li><b>Lange Adjektive (2+ Silben, ohne -y): more / the most.</b> interesting → <b>more</b> interesting → <b>the most</b> interesting</li>
+    <li><b>Unregelmässig:</b> good → better → the best · bad → worse → the worst · far → further → the furthest · many/much → more → the most · little → less → the least</li>
+    <li><b>Vergleich:</b> Tom is tall<b>er than</b> Ben. · Tom is <b>as</b> tall <b>as</b> Ben (gleich gross). · Tom is <b>not as</b> tall <b>as</b> Ben.</li>
+  </ul></div>
+  <div class="oops"><span class="tag">Typische Fehler</span><p><b>more taller</b> ✗ → taller ✓ (nie beides!) · <b>gooder</b> ✗ → better ✓ · <b>then</b> ✗ → <b>than</b> ✓ (Vergleich) · the most big ✗ → the biggest ✓</p></div>
+</section>
+
+<section class="page" id="e-tags">
+  <header><span class="lz">SOL Test · SEK</span><h2>Question Tags</h2></header>
+  <p>Question Tags sind kleine Fragen am Satzende, wie «…, oder?» / «…, nicht wahr?».</p>
+  <div class="merk"><strong>Regeln</strong><ul>
+    <li><b>Positiver Satz → negativer Tag.</b> You are tired, <b>aren't you</b>?</li>
+    <li><b>Negativer Satz → positiver Tag.</b> She isn't here, <b>is she</b>?</li>
+    <li><b>Hilfsverb wiederholen</b> (is, are, was, can, will, have, should …). He can swim, <b>can't he</b>?</li>
+    <li><b>Kein Hilfsverb?</b> Dann <b>do / does / did</b>. You like pizza, <b>don't you</b>? · He plays tennis, <b>doesn't he</b>? · They went home, <b>didn't they</b>?</li>
+    <li>Im Tag immer ein <b>Pronomen</b>: Tom is nice, isn't <b>he</b>? · Your sister lives here, doesn't <b>she</b>?</li>
+    <li><b>Sonderfälle:</b> I am late, <b>aren't I</b>? · Let's go, <b>shall we</b>? · Open the door, <b>will you</b>? · Nobody came, <b>did they</b>?</li>
+  </ul></div>
+</section>
+
+<section class="page" id="e-gram">
+  <header><span class="lz">Alle drei Lernziele</span><h2>Grammatik-Training</h2></header>
+  <p>Schreib die fehlende Form. Gross- und Kleinschreibung ist egal, Kurzformen (didn't) und Langformen (did not) gehen beide.</p>
+  <div class="trainer">
+    <div class="chips" id="grTypes">
+      <label><input type="checkbox" value="past" checked> Past Simple</label>
+      <label><input type="checkbox" value="comp" checked> Comparison</label>
+      <label><input type="checkbox" value="tag" checked> Question Tags</label>
+    </div>
+    <div class="task" id="grTask" aria-live="polite"></div>
+    <div class="btns"><input class="ans" id="grIn" aria-label="Deine Antwort" style="width:14em" autocomplete="off" autocapitalize="off" spellcheck="false"><button id="grCheck">Prüfen</button><button class="ghost" id="grHint">Regel</button><button class="ghost" id="grNext">Nächste</button></div>
+    <div class="result" id="grRes" aria-live="polite"></div>
+    <div class="score"><span>Richtig <b id="grOk">0</b></span><span>Versucht <b id="grAll">0</b></span><span>Serie <b id="grStreak">0</b></span></div>
+  </div>
+  <div class="stack" style="margin-top:14px">
+    <h3>Probetest (15 Aufgaben, mit Note)</h3>
+    <div class="btns"><button type="button" id="gtStart">Neuen Test starten</button></div>
+    <div class="rows" id="gtRows"></div>
+    <div class="btns" id="gtBtns" hidden><button type="button" id="gtSubmit">Abgeben</button></div>
+    <div class="facts" id="gtResult" hidden></div>
+  </div>
+</section>
 
 <section class="page" id="e-liste">
   <header><span class="lz">Vocabulary (pages 50–51) · 33 Wörter</span><h2>Wortliste</h2></header>
@@ -2886,7 +2958,7 @@ function showView(v,target){
 }
 document.querySelectorAll('[data-view]').forEach(b=>b.addEventListener('click',()=>{
   if(b.dataset.topic) showTopic(b.dataset.topic,false);
-  showView(b.dataset.view);
+  showView(b.dataset.view,b.dataset.goto);
 }));
 document.querySelectorAll('a[href="#menu"]').forEach(a=>a.addEventListener('click',e=>{e.preventDefault();showView('home');}));
 (function(){
@@ -3320,29 +3392,44 @@ enQuizNew();
   window.__prof=()=>prof;
   const listeners=[]; window.__onProf=f=>listeners.push(f);
   const $=id=>document.getElementById(id);
-  const COUNTERS={tOk:'Mathe Brüche',zOk:'Mathe Zahlen',gOk:'Mathe Geld & Prozente',qOk:'Mathe Wurzeln',xOk:'Mathe Teilbarkeit',wrOk:'Englisch Wörter',mapOk:'RZG Karte'};
-  let prog={}, dbc=null;
+  const AREAS={'topic-b':'Mathe Brüche','topic-z':'Mathe Zahlen','topic-g':'Mathe Geld & Prozente','topic-q':'Mathe Wurzeln','topic-e':'Mathe Teilbarkeit','view-en':'Englisch','view-rzg':'RZG','view-nt':'NT Wald'};
+  const TRAINER={tOk:'topic-b',zOk:'topic-z',gOk:'topic-g',qOk:'topic-q',xOk:'topic-e',wrOk:'view-en',grOk:'view-en',mapOk:'view-rzg'};
+  const TRAINER_IN=['tIn','zIn','gIn','qIn','xIn','wrIn','grIn'];
+  let prog={}, dbc=null, mem={};
   const lkey=()=>'lt-progress-'+prof;
-  function lload(){ try{ return JSON.parse(localStorage.getItem(lkey())||'{}'); }catch(e){ return {}; } }
-  async function load(){ prog=lload(); if(dbc){ try{ const d=await dbc.doc('progress-'+prof).get(); const v=d.data(); if(v&&v.counts){ prog=v.counts; } }catch(e){} } render(); }
+  function migrate(p){ const o={}; Object.keys(p||{}).forEach(k=>{ const a=TRAINER[k]||k; o[a]=(o[a]||0)+(+p[k]||0); }); return o; }
+  function lload(){ try{ return migrate(JSON.parse(localStorage.getItem(lkey())||'{}')); }catch(e){ return mem[prof]||{}; } }
+  async function load(){ prog=lload(); if(dbc){ try{ const d=await dbc.doc('progress-'+prof).get(); const v=d.data(); if(v&&v.counts){ const m=migrate(v.counts); Object.keys(m).forEach(k=>{ prog[k]=Math.max(prog[k]||0,m[k]); }); } }catch(e){} } render(); }
   let tm=null;
-  function save(){ try{ localStorage.setItem(lkey(),JSON.stringify(prog)); }catch(e){}
-    clearTimeout(tm); tm=setTimeout(async()=>{ if(dbc){ try{ await dbc.doc('progress-'+prof).set({counts:prog,updated:Date.now()}); $('profSave').textContent='✓ gespeichert'; setTimeout(()=>$('profSave').textContent='',1500); }catch(e){} } },1200); }
+  function save(){ mem[prof]=prog; try{ localStorage.setItem(lkey(),JSON.stringify(prog)); }catch(e){}
+    clearTimeout(tm); tm=setTimeout(async()=>{ if(dbc){ try{ await dbc.doc('progress-'+prof).set({counts:prog,updated:Date.now()}); }catch(e){} } },1200); }
+  function add(area,n){ if(!AREAS[area]||!n) return; prog[area]=(prog[area]||0)+n; save(); render(); const s=$('profSave'); if(s){ s.textContent='+'+n+' für '+NAMES[prof]; clearTimeout(s._t); s._t=setTimeout(()=>s.textContent='',1500); } }
+  window.__addProgress=add;
   function render(){
     document.querySelectorAll('[data-prof]').forEach(b=>b.classList.toggle('on',b.dataset.prof===prof));
     $('progTitle').textContent='Fortschritt von '+NAMES[prof];
-    const tot=Object.values(prog).reduce((a,b)=>a+b,0);
-    $('progFacts').innerHTML=`<div class="fact"><span class="big">${tot}</span><span>richtige Antworten im Training, insgesamt</span></div>`+Object.keys(COUNTERS).map(k=>`<div class="fact"><span class="big">${prog[k]||0}</span><span>${COUNTERS[k]}</span></div>`).join('');
+    const tot=Object.keys(AREAS).reduce((a,k)=>a+(prog[k]||0),0);
+    $('progFacts').innerHTML=`<div class="fact"><span class="big">${tot}</span><span>richtige Antworten, insgesamt</span></div>`+Object.keys(AREAS).map(k=>`<div class="fact"><span class="big">${prog[k]||0}</span><span>${AREAS[k]}</span></div>`).join('');
     $('progBox').hidden=false;
-    const h=document.querySelector('header.hero h1'); if(h) h.textContent=NAMES[prof]+'s Lern-Trainer'.replace('Célines','Célines');
+    const h=document.querySelector('header.hero h1'); if(h) h.textContent=NAMES[prof]+'s Lern-Trainer';
   }
-  // richtige Antworten mitzählen
-  Object.keys(COUNTERS).forEach(id=>{ const el=$(id); if(!el) return; let last=+el.textContent||0;
-    new MutationObserver(()=>{ const v=+el.textContent||0; if(v>last){ prog[id]=(prog[id]||0)+(v-last); save(); render(); } last=v; }).observe(el,{childList:true,characterData:true,subtree:true}); });
+  const areaOf=el=>{ for(const k of Object.keys(AREAS)){ if(el.closest('#'+k)) return k; } return null; };
+  // 1) Endlos-Trainer: Zähler beobachten
+  Object.keys(TRAINER).forEach(id=>{ const el=$(id); if(!el) return; let last=+el.textContent||0;
+    new MutationObserver(()=>{ const v=+el.textContent||0; if(v>last) add(TRAINER[id],v-last); last=v; }).observe(el,{childList:true,characterData:true,subtree:true}); });
+  // 2) Alle anderen Übungen: jedes Feld oder jede Frage, die grün (richtig) wird, zählt einmal
+  new MutationObserver(muts=>{ let per={};
+    muts.forEach(m=>{ const el=m.target; if(!(el instanceof Element)) return; if(!el.classList.contains('ok')) return;
+      if(!(el.matches('input.ans')||el.matches('.stmt'))) return; if(TRAINER_IN.indexOf(el.id)>-1) return; if(el.dataset.counted) return;
+      if(el.matches('input.ans')&&el.closest('.stmt')) return;
+      el.dataset.counted='1'; const a=areaOf(el); if(a) per[a]=(per[a]||0)+1; });
+    Object.keys(per).forEach(a=>add(a,per[a])); }).observe(document.body,{attributes:true,attributeFilter:['class'],subtree:true});
+  // Felder, die wieder geleert oder neu gerendert werden, dürfen erneut zählen
+  document.addEventListener('input',e=>{ const t=e.target; if(t.matches&&t.matches('input.ans')&&!t.classList.contains('ok')) delete t.dataset.counted; });
   document.querySelectorAll('[data-prof]').forEach(b=>b.addEventListener('click',()=>{ if(b.dataset.prof===prof) return; prof=b.dataset.prof; try{ localStorage.setItem('lt-profile',prof); }catch(e){} load(); listeners.forEach(f=>f(prof)); }));
-  (async()=>{ try{ const W=window.claude&&window.claude.use?window.claude:null; if(!W) return; const db=await W.use('db'), u=await W.use('user'); if(db&&u){ const id=await u.id(); if(id){ dbc=db.collection('data/users/'+id); $('progWhere').textContent='Wird im Claude-Konto gespeichert, also auf allen Geräten, auf denen dieses Konto angemeldet ist.'; load(); return; } } }catch(e){} })();
-  $('progWhere').textContent='Wird auf diesem Gerät gespeichert.';
-  render();
+  (async()=>{ try{ const W=window.claude&&window.claude.use?window.claude:null; if(!W) return; const db=await W.use('db'), u=await W.use('user'); if(db&&u){ const id=await u.id(); if(id){ dbc=db.collection('data/users/'+id); $('progWhere').textContent='Wird im Claude-Konto gespeichert, also auf allen Geräten mit diesem Konto.'; load(); return; } } }catch(e){} })();
+  $('progWhere').textContent='Wird in diesem Browser gespeichert.';
+  prog=lload(); render();
 })();
 
 /* ---------- Foto → Aufgaben ---------- */
@@ -3646,6 +3733,46 @@ Genau ${n} Aufgaben, gemischt etwa halb "mc" und halb "text". Bei "text" muss di
   $('xIn').addEventListener('keydown',e=>{if(e.key==='Enter'){e.preventDefault();$('xCheck').click();}});
   $('xSteps').addEventListener('click',()=>{ $('xStepBox').innerHTML=t.s.map(x=>`<div class="calc">${x}</div>`).join(''); $('xStepBox').hidden=false; if(!done){st.all++;st.streak=0;done=true;upd();} });
   $('xNext').addEventListener('click',next); document.querySelectorAll('#xTypes input').forEach(i=>i.addEventListener('change',next)); next();
+})();
+
+/* ---------- Englisch Grammatik: Past Simple, Comparison, Question Tags ---------- */
+(function(){
+  const $=id=>document.getElementById(id);
+  const IRR=[['be','was / were','sein'],['become','became','werden'],['begin','began','beginnen'],['break','broke','brechen'],['bring','brought','bringen'],['buy','bought','kaufen'],['catch','caught','fangen'],['choose','chose','wählen'],['come','came','kommen'],['do','did','tun'],['drink','drank','trinken'],['drive','drove','fahren'],['eat','ate','essen'],['fall','fell','fallen'],['feel','felt','fühlen'],['find','found','finden'],['fly','flew','fliegen'],['forget','forgot','vergessen'],['get','got','bekommen'],['give','gave','geben'],['go','went','gehen'],['have','had','haben'],['hear','heard','hören'],['hit','hit','schlagen'],['hurt','hurt','verletzen'],['know','knew','wissen'],['leave','left','verlassen'],['lose','lost','verlieren'],['make','made','machen'],['meet','met','treffen'],['pay','paid','bezahlen'],['put','put','legen'],['read','read','lesen'],['ride','rode','fahren, reiten'],['run','ran','rennen'],['say','said','sagen'],['see','saw','sehen'],['sell','sold','verkaufen'],['send','sent','schicken'],['sing','sang','singen'],['sit','sat','sitzen'],['sleep','slept','schlafen'],['speak','spoke','sprechen'],['spend','spent','ausgeben, verbringen'],['stand','stood','stehen'],['swim','swam','schwimmen'],['take','took','nehmen'],['teach','taught','unterrichten'],['tell','told','erzählen'],['think','thought','denken'],['throw','threw','werfen'],['understand','understood','verstehen'],['wake','woke','aufwachen'],['wear','wore','tragen'],['win','won','gewinnen'],['write','wrote','schreiben']];
+  $('irrTab').innerHTML='<tr><th>Grundform</th><th>Past Simple</th><th>Deutsch</th></tr>'+IRR.map(r=>`<tr><td>${r[0]}</td><td><b>${r[1]}</b></td><td>${r[2]}</td></tr>`).join('');
+  const PAST=[
+   ['Yesterday I ___ (go) to the cinema.','went','go ist unregelmässig: go → went'],['We ___ (play) football last Saturday.','played','Regelmässig: + ed'],['She ___ (study) for the test all weekend.','studied','Konsonant + y → ied'],['The bus ___ (stop) in front of the school.','stopped','Kurzer Vokal + Konsonant: verdoppeln'],['They ___ (live) in Bern in 2019.','lived','Endet auf -e: nur -d'],['I ___ (see) a fox in the forest last night.','saw','see → saw'],['He ___ (win) the race two years ago.','won','win → won'],['My parents ___ (buy) a new car last month.','bought','buy → bought'],['We ___ (have) pizza for dinner yesterday.','had','have → had'],['She ___ (write) a long email to her friend.','wrote','write → wrote'],['The players ___ (be) very tired after the match.','were','they/players → were'],['It ___ (be) cold yesterday.','was','it → was'],['I ___ (not / go) to school yesterday because I was ill.',["didn't go","did not go"],'Verneinung: didn\'t + Grundform'],['He ___ (not / like) the film.',["didn't like","did not like"],'didn\'t + Grundform (nicht: didn\'t liked)'],['We ___ (not / win) the game last week.',["didn't win","did not win"],'didn\'t + Grundform'],['They ___ (not / be) at home yesterday.',["weren't","were not"],'to be: weren\'t, ohne did'],['___ you ___ (see) the match yesterday? (beide Lücken)',['did you see','did see'],'Frage: Did + Person + Grundform'],['___ she ___ (call) you last night? (beide Lücken)',['did she call','did call'],'Did + Person + Grundform'],['Where ___ you ___ (go) on holiday? (beide Lücken)',['did you go','did go'],'Fragewort + did + Person + Grundform'],['I ___ (hurt) my knee during PE class.','hurt','hurt → hurt (gleich)'],['She ___ (ride) her bike to school.','rode','ride → rode'],['He ___ (catch) the ball with one hand.','caught','catch → caught'],['We ___ (swim) in the lake last summer.','swam','swim → swam'],['They ___ (plan) a party for Friday.','planned','Kurzer Vokal + Konsonant: verdoppeln'],['The children ___ (cry) when the film ended.','cried','Konsonant + y → ied'],['I ___ (think) the test was easy.','thought','think → thought'],['My brother ___ (lose) his phone on the bus.','lost','lose → lost'],['We ___ (meet) our friends at the station.','met','meet → met']
+  ];
+  const COMP=[
+   ['Tom is ___ (tall) than Ben.','taller','Kurz: + er'],['This is the ___ (big) pizza I have ever seen.','biggest','Verdoppeln: big → biggest'],['Maths is ___ (difficult) than English for me.','more difficult','Lang: more + Adjektiv'],['This is the ___ (interesting) book in the library.',['most interesting'],'Lang: the most + Adjektiv'],['My test was ___ (bad) than yours.','worse','Unregelmässig: bad → worse'],['She is the ___ (good) player in our team.','best','good → better → best'],['Today is ___ (hot) than yesterday.','hotter','Verdoppeln: hot → hotter'],['He is the ___ (happy) person I know.','happiest','y → iest'],['Swimming is ___ (easy) than climbing.','easier','y → ier'],['The Eiger is ___ (dangerous) than the Rigi.','more dangerous','Lang: more'],['This is the ___ (exciting) match of the season.','most exciting','Lang: the most'],['Your bike is ___ (fast) than mine.','faster','Kurz: + er'],['Lea is ___ (young) than her brother.','younger','Kurz: + er'],['It was the ___ (bad) day of my life.','worst','bad → worse → worst'],['Zurich is ___ (large) than Bern.','larger','Endet auf -e: + r'],['This is the ___ (nice) café in town.','nicest','Endet auf -e: + st'],['Basketball is ___ (popular) than golf in our class.','more popular','Lang: more'],['My new phone is much ___ (good) than my old one.','better','good → better'],['Tom is as ___ (tall) as Ben. They are the same.','tall','as … as: Grundform!'],['Mountain biking is ___ (tough) than cycling on the road.','tougher','Kurz: + er'],['Who is the ___ (athletic) girl in your class?','most athletic','Lang: the most'],['A marathon is ___ (long) than a sprint.','longer','Kurz: + er']
+  ];
+  const TAG=[
+   ['You are tired, ___?',["aren't you"],'Positiv mit are → aren\'t you'],['She is your sister, ___?',["isn't she"],'is → isn\'t she'],['He isn\'t at home, ___?',['is he'],'Negativ → positiver Tag'],['They can swim, ___?',["can't they"],'can → can\'t'],['You like pizza, ___?',["don't you"],'Kein Hilfsverb, Präsens → don\'t'],['He plays tennis, ___?',["doesn't he"],'he/she/it + Präsens → doesn\'t'],['They went home early, ___?',["didn't they"],'Past Simple → didn\'t'],['You didn\'t call me, ___?',['did you'],'Negativ → positiv'],['It was a great match, ___?',["wasn't it"],'was → wasn\'t'],['We won\'t be late, ___?',['will we'],'won\'t → will'],['Tom has a dog, ___?',["doesn't he"],'has (Vollverb) → doesn\'t he'],['You have finished your homework, ___?',["haven't you"],'have (Hilfsverb) → haven\'t'],['I am right, ___?',["aren't i"],'Sonderfall: I am → aren\'t I'],['Let\'s play football, ___?',['shall we'],'Sonderfall: Let\'s → shall we'],['Close the window, ___?',['will you','would you'],'Befehl → will you'],['She can\'t ski, ___?',['can she'],'can\'t → can'],['Your parents live in Basel, ___?',["don't they"],'parents = they, Präsens → don\'t'],['Lisa should study more, ___?',["shouldn't she"],'should → shouldn\'t'],['The players were tired, ___?',["weren't they"],'were → weren\'t'],['He doesn\'t like football, ___?',['does he'],'doesn\'t → does'],['You saw the film, ___?',["didn't you"],'Past Simple → didn\'t'],['Nobody came to the party, ___?',['did they'],'nobody ist negativ → positiver Tag, Pronomen they']
+  ];
+  const norm=s=>String(s).toLowerCase().replace(/[’`´]/g,"'").replace(/[?.!,]/g,'').replace(/\s+/g,' ').trim();
+  const exp=s=>norm(s).replace(/n't/g,' not').replace(/\bcan not\b/,'cannot').replace(/\bwo not\b/,'will not').replace(/\bshan not\b/,'shall not').replace(/\bai not\b/,'am not').replace(/\s+/g,' ');
+  const ok=(v,a)=>{ const arr=Array.isArray(a)?a:[a]; const n=norm(v), e=exp(v); return arr.some(x=>norm(x)===n||exp(x)===e); };
+  const SET={past:PAST,comp:COMP,tag:TAG}, NAME={past:'Past Simple',comp:'Comparison',tag:'Question Tag'};
+  const pick=a=>a[ri(0,a.length-1)];
+  let t=null, done=false; const st={ok:0,all:0,streak:0};
+  function next(){ const ty=[...document.querySelectorAll('#grTypes input:checked')].map(i=>i.value); const k=pick(ty.length?ty:Object.keys(SET)); const it=pick(SET[k]);
+    t={k,q:it[0],a:it[1],r:it[2]}; $('grTask').innerHTML=`<div class="tq"><span class="small muted">${NAME[k]}</span><br>${t.q.replace('___','<span class="gap">___</span>')}</div>`; $('grIn').value=''; $('grIn').className='ans'; $('grRes').textContent=''; done=false; }
+  const first=a=>Array.isArray(a)?a[0]:a;
+  function upd(){ $('grOk').textContent=st.ok; $('grAll').textContent=st.all; $('grStreak').textContent=st.streak; }
+  $('grCheck').addEventListener('click',()=>{ const v=$('grIn').value, r=$('grRes'); if(!v.trim()){ r.className='result warn'; r.textContent='Schreib zuerst eine Antwort.'; return; }
+    const g=ok(v,t.a); $('grIn').className='ans '+(g?'ok':'bad'); if(!done){ st.all++; if(g){st.ok++;st.streak++;} else st.streak=0; done=true; upd(); }
+    r.className='result '+(g?'ok':'bad'); r.innerHTML=g?`Richtig! <span class="muted">(${t.r})</span>`:`Richtig ist: <b>${first(t.a)}</b>. Regel: ${t.r}`; });
+  $('grIn').addEventListener('keydown',e=>{if(e.key==='Enter'){e.preventDefault();$('grCheck').click();}});
+  $('grHint').addEventListener('click',()=>{ $('grRes').className='result'; $('grRes').textContent='Regel: '+t.r; });
+  $('grNext').addEventListener('click',next); document.querySelectorAll('#grTypes input').forEach(i=>i.addEventListener('change',next)); next();
+  // Probetest
+  let test=[];
+  $('gtStart').addEventListener('click',()=>{ test=[...shuffle(PAST).slice(0,6).map(x=>[...x,'Past Simple']),...shuffle(COMP).slice(0,5).map(x=>[...x,'Comparison']),...shuffle(TAG).slice(0,4).map(x=>[...x,'Question Tag'])];
+    $('gtRows').innerHTML=test.map((x,i)=>`<div class="row"><span class="q"><b>${i+1}.</b>&nbsp;${x[0]}</span><input class="ans" id="gt${i}" style="width:11em" autocomplete="off" autocapitalize="off" spellcheck="false" aria-label="Antwort ${i+1}"><span class="fb"></span><span class="sol small" hidden></span></div>`).join('');
+    $('gtBtns').hidden=false; $('gtResult').hidden=true; $('gtSubmit').disabled=false; });
+  $('gtSubmit').addEventListener('click',()=>{ let n=0; test.forEach((x,i)=>{ const inp=$('gt'+i), row=inp.closest('.row'), g=ok(inp.value,x[1]); if(g) n++;
+      inp.className='ans '+(g?'ok':'bad'); const fb=row.querySelector('.fb'); fb.className='fb '+(g?'ok':'bad'); fb.textContent=g?'✓':'✗'; if(!g){ const s=row.querySelector('.sol'); s.hidden=false; s.innerHTML=`Richtig: <b>${first(x[1])}</b> (${x[2]})`; } });
+    const note=Math.round((n/test.length*5+1)*4)/4; $('gtResult').hidden=false; $('gtResult').innerHTML=`<div class="fact"><span class="big">${n}/${test.length}</span><span>Punkte</span></div><div class="fact"><span class="big">${String(note).replace('.',',')}</span><span>Note (6 = beste)</span></div>`; $('gtSubmit').disabled=true; $('gtResult').scrollIntoView({behavior:'smooth',block:'center'}); });
 })();
 
 /* ---------- Sokratischer Lösungsweg ---------- */
