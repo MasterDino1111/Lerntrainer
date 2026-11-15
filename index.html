@@ -315,6 +315,9 @@ td.qhid{color:transparent; background:var(--grid); cursor:pointer}
 .xper{text-decoration:overline; color:var(--red)}
 td.xyes{color:var(--green); font-weight:700} td.xno{color:var(--red)}
 .gap{border-bottom:2px solid var(--red); padding:0 .3em}
+.frtab td,.frtab th{text-align:left}
+.frkeys{display:flex; gap:6px; flex-wrap:wrap}
+.subject.s-fr{border-top-color:var(--blue)}
 button.okbtn{background:var(--green); border-color:var(--green)}
 button,label,.tile,.fcard,.kt,input,select,a{touch-action:manipulation; -webkit-tap-highlight-color:transparent}
 @media (pointer:coarse){ button{min-height:44px} button.small{min-height:40px} .opts label,.chips label{min-height:40px; padding:6px 14px} input.ans{min-height:42px; font-size:1.05rem} .spk{min-width:40px; min-height:40px} }
@@ -356,6 +359,7 @@ table.mk input.ml-cell{width:4.8em}
   <button type="button" data-view="rzg">RZG</button>
   <button type="button" data-view="en">Englisch</button>
   <button type="button" data-view="nt">NT</button>
+  <button type="button" data-view="fr">Französisch</button>
 </nav>
 
 <div class="view" id="view-home">
@@ -396,6 +400,11 @@ table.mk input.ml-cell{width:4.8em}
         <button type="button" data-view="en" data-goto="e-past"><b>SOL Test Grammar</b><span>Past Simple · Comparison of Adjectives · Question Tags · Probetest</span></button>
         <button type="button" data-view="en"><b>Passion for sport</b><span>33 Wörter · Karteikarten, Schreiben, Lückentext, Quiz</span></button>
       </div>
+    </div>
+    <div class="subject s-fr">
+      <span class="eyebrow">Fach</span><h2>Französisch</h2>
+      <p class="small muted">SOL-Test</p>
+      <div class="sublinks"><button type="button" data-view="fr"><b>vouloir, pouvoir, savoir, devoir</b><span>+ SEK: verbes pronominaux · Tabelle, Training, Probetest</span></button></div>
     </div>
     <div class="subject s-nt">
       <span class="eyebrow">Fach</span><h2>NT</h2>
@@ -2318,6 +2327,103 @@ table.mk input.ml-cell{width:4.8em}
 </section>
 </div>
 
+<div class="view" id="view-fr" hidden>
+<div class="subject-head"><span class="eyebrow">Französisch · SOL-Test</span><h2 class="subject-title">Verbes modaux et pronominaux</h2></div>
+<nav class="toc" aria-label="Kapitel Französisch">
+  <a href="#menu" class="menu-chip">← Menü</a>
+  <a href="#f-modaux">vouloir, pouvoir, savoir, devoir</a>
+  <a href="#f-pron">SEK: verbes pronominaux</a>
+  <a href="#f-tab">Konjugations-Tabelle</a>
+  <a href="#f-train" class="star">Training</a>
+  <a href="#f-test" class="star">Probetest</a>
+</nav>
+
+<section class="page" id="f-modaux">
+  <header><span class="lz">SOL-Test · Lernziel</span><h2>vouloir, pouvoir, savoir, devoir</h2></header>
+  <div class="tbl-wrap"><table class="frtab">
+    <tr><th></th><th>vouloir<br><span class="small muted">wollen</span></th><th>pouvoir<br><span class="small muted">können, dürfen</span></th><th>savoir<br><span class="small muted">wissen, können</span></th><th>devoir<br><span class="small muted">müssen</span></th></tr>
+    <tr><th>je</th><td>veu<b>x</b></td><td>peu<b>x</b></td><td>sai<b>s</b></td><td>doi<b>s</b></td></tr>
+    <tr><th>tu</th><td>veu<b>x</b></td><td>peu<b>x</b></td><td>sai<b>s</b></td><td>doi<b>s</b></td></tr>
+    <tr><th>il / elle / on</th><td>veu<b>t</b></td><td>peu<b>t</b></td><td>sai<b>t</b></td><td>doi<b>t</b></td></tr>
+    <tr><th>nous</th><td>vou<b>lons</b></td><td>pou<b>vons</b></td><td>sa<b>vons</b></td><td>de<b>vons</b></td></tr>
+    <tr><th>vous</th><td>vou<b>lez</b></td><td>pou<b>vez</b></td><td>sa<b>vez</b></td><td>de<b>vez</b></td></tr>
+    <tr><th>ils / elles</th><td>veu<b>lent</b></td><td>peu<b>vent</b></td><td>sa<b>vent</b></td><td>doi<b>vent</b></td></tr>
+  </table></div>
+  <div class="merk"><strong>Merksätze</strong><ul>
+    <li><b>Muster:</b> je und tu sind gleich. vouloir und pouvoir enden bei je/tu auf <b>-x</b>, savoir und devoir auf <b>-s</b>. il/elle/on endet immer auf <b>-t</b>.</li>
+    <li><b>Stammwechsel:</b> nous und vous haben einen anderen Stamm (vou-, pou-, sa-, de-). Bei ils/elles kommt bei vouloir, pouvoir und devoir der Stamm von je zurück (veulent, peuvent, doivent).</li>
+    <li><b>Danach kommt der Infinitiv:</b> Je <b>veux manger</b>. Tu <b>peux venir</b>? Nous <b>devons travailler</b>. Elle <b>sait nager</b>.</li>
+    <li><b>Verneinung:</b> ne … pas um das konjugierte Verb: Je <b>ne peux pas</b> venir. Il <b>ne veut pas</b> jouer.</li>
+  </ul></div>
+  <div class="merk"><strong>pouvoir oder savoir? (beide heissen «können»)</strong><ul>
+    <li><b>savoir</b> = etwas gelernt haben, eine Fähigkeit: Je <b>sais</b> nager. (Ich habe schwimmen gelernt.)</li>
+    <li><b>pouvoir</b> = die Möglichkeit oder Erlaubnis haben: Je ne <b>peux</b> pas nager aujourd'hui, je suis malade.</li>
+    <li><b>savoir</b> heisst auch «wissen»: Je ne <b>sais</b> pas. · Tu <b>sais</b> où il habite?</li>
+    <li>Höfliche Frage: <b>Je voudrais</b> … (ich möchte) · <b>Est-ce que je peux</b> … ? (Darf ich …?)</li>
+  </ul></div>
+  <div class="stack"><h3>Übung: pouvoir oder savoir?</h3><div class="stmts" id="mcFr1"></div><div class="btns"><button data-mc="mcFr1">Prüfen</button><span class="result" id="mcFr1Res" aria-live="polite"></span></div></div>
+</section>
+
+<section class="page" id="f-pron">
+  <header><span class="lz">SOL-Test · SEK</span><h2>Les verbes pronominaux</h2></header>
+  <p>Verbes pronominaux haben ein <b>Reflexivpronomen</b> (me, te, se …), wie im Deutschen «sich waschen». Im Wörterbuch stehen sie mit <b>se</b>: se laver, se lever, s'appeler.</p>
+  <div class="tbl-wrap"><table class="frtab">
+    <tr><th></th><th>se laver<br><span class="small muted">sich waschen</span></th><th>se lever<br><span class="small muted">aufstehen</span></th><th>s'appeler<br><span class="small muted">heissen</span></th><th>s'habiller<br><span class="small muted">sich anziehen</span></th></tr>
+    <tr><th>je</th><td><b>me</b> lave</td><td><b>me</b> lève</td><td><b>m'</b>appelle</td><td><b>m'</b>habille</td></tr>
+    <tr><th>tu</th><td><b>te</b> laves</td><td><b>te</b> lèves</td><td><b>t'</b>appelles</td><td><b>t'</b>habilles</td></tr>
+    <tr><th>il / elle / on</th><td><b>se</b> lave</td><td><b>se</b> lève</td><td><b>s'</b>appelle</td><td><b>s'</b>habille</td></tr>
+    <tr><th>nous</th><td><b>nous</b> lavons</td><td><b>nous</b> levons</td><td><b>nous</b> appelons</td><td><b>nous</b> habillons</td></tr>
+    <tr><th>vous</th><td><b>vous</b> lavez</td><td><b>vous</b> levez</td><td><b>vous</b> appelez</td><td><b>vous</b> habillez</td></tr>
+    <tr><th>ils / elles</th><td><b>se</b> lavent</td><td><b>se</b> lèvent</td><td><b>s'</b>appellent</td><td><b>s'</b>habillent</td></tr>
+  </table></div>
+  <div class="merk"><strong>Merksätze</strong><ul>
+    <li><b>Pronomen:</b> je <b>me</b> · tu <b>te</b> · il/elle/on <b>se</b> · nous <b>nous</b> · vous <b>vous</b> · ils/elles <b>se</b></li>
+    <li><b>Vor Vokal oder stummem h:</b> me → <b>m'</b>, te → <b>t'</b>, se → <b>s'</b>. Je <b>m'</b>appelle Céline. Il <b>s'</b>habille.</li>
+    <li><b>Verneinung:</b> ne … pas umschliesst Pronomen <b>und</b> Verb: Je <b>ne me</b> lève <b>pas</b>. Ils <b>ne s'</b>amusent <b>pas</b>.</li>
+    <li><b>Mit vouloir, pouvoir, devoir:</b> das Pronomen passt zur Person und steht vor dem Infinitiv: Je dois <b>me</b> lever. Tu veux <b>te</b> reposer? Nous pouvons <b>nous</b> asseoir.</li>
+    <li><b>Akzent bei se lever:</b> je me l<b>è</b>ve, tu te l<b>è</b>ves, il se l<b>è</b>ve, ils se l<b>è</b>vent, aber nous nous l<b>e</b>vons, vous vous l<b>e</b>vez.</li>
+    <li><b>s'appeler:</b> doppeltes <b>ll</b> bei je, tu, il, ils (appelle), aber nous appelons, vous appelez mit einem l.</li>
+  </ul></div>
+  <div class="merk"><strong>Wichtige verbes pronominaux</strong><ul>
+    <li>se réveiller (aufwachen) · se lever (aufstehen) · se laver (sich waschen) · se brosser les dents (Zähne putzen) · s'habiller (sich anziehen) · se coucher (ins Bett gehen) · s'appeler (heissen) · se dépêcher (sich beeilen) · s'amuser (Spass haben) · se reposer (sich ausruhen) · s'intéresser à (sich interessieren für) · se promener (spazieren gehen)</li>
+  </ul></div>
+</section>
+
+<section class="page" id="f-tab">
+  <header><span class="lz">Üben</span><h2>Konjugations-Tabelle</h2></header>
+  <p>Wähle ein Verb und fülle alle sechs Formen aus. Akzente zählen (è, é).</p>
+  <div class="btns"><label class="small">Verb <select id="ftVerb"></select></label></div>
+  <div class="rows" id="ftRows"></div>
+  <div class="btns"><button id="ftCheck">Prüfen</button><button class="ghost" id="ftSolve">Lösungen zeigen</button><span class="result" id="ftRes" aria-live="polite"></span></div>
+</section>
+
+<section class="page" id="f-train">
+  <header><span class="lz">Endlos</span><h2>Training</h2></header>
+  <div class="trainer">
+    <div class="chips" id="frTypes">
+      <label><input type="checkbox" value="mod" checked> vouloir, pouvoir, savoir, devoir</label>
+      <label><input type="checkbox" value="pro" checked> verbes pronominaux</label>
+      <label><input type="checkbox" value="sat" checked> Sätze & Verneinung</label>
+    </div>
+    <div class="task" id="frTask" aria-live="polite"></div>
+    <div class="frkeys" id="frKeys"></div>
+    <div class="btns"><input class="ans" id="frIn" aria-label="Deine Antwort" style="width:14em" autocomplete="off" autocapitalize="off" spellcheck="false"><button id="frCheck">Prüfen</button><button class="ghost" id="frHint">Regel</button><button class="ghost" id="frNext">Nächste</button></div>
+    <div class="result" id="frRes" aria-live="polite"></div>
+    <div class="score"><span>Richtig <b id="frOk">0</b></span><span>Versucht <b id="frAll">0</b></span><span>Serie <b id="frStreak">0</b></span></div>
+  </div>
+</section>
+
+<section class="page" id="f-test">
+  <header><span class="lz">Wie im SOL-Test</span><h2>Probetest</h2></header>
+  <p>15 Aufgaben mit Note. Jedes Mal neue Aufgaben.</p>
+  <div class="btns"><button type="button" id="ftStart">Neuen Test starten</button></div>
+  <div class="frkeys" id="ftKeys" hidden></div>
+  <div class="rows" id="ftTestRows"></div>
+  <div class="btns" id="ftBtns" hidden><button type="button" id="ftSubmit">Abgeben</button></div>
+  <div class="facts" id="ftResult" hidden></div>
+</section>
+</div>
+
 <p class="small muted" style="text-align:center">Viel Erfolg, Dean!</p>
 </div>
 
@@ -2949,7 +3055,7 @@ zNext();
 /* =====================================================================
    HAUPTMENÜ und RZG
    ===================================================================== */
-const views={home:document.getElementById('view-home'),mathe:document.getElementById('view-mathe'),rzg:document.getElementById('view-rzg'),en:document.getElementById('view-en'),foto:document.getElementById('view-foto'),nt:document.getElementById('view-nt')};
+const views={home:document.getElementById('view-home'),mathe:document.getElementById('view-mathe'),rzg:document.getElementById('view-rzg'),en:document.getElementById('view-en'),foto:document.getElementById('view-foto'),nt:document.getElementById('view-nt'),fr:document.getElementById('view-fr')};
 function showView(v,target){
   Object.keys(views).forEach(k=>views[k].hidden=k!==v);
   document.querySelectorAll('.mainmenu button').forEach(b=>b.classList.toggle('on',b.dataset.view===v));
@@ -2967,6 +3073,7 @@ document.querySelectorAll('a[href="#menu"]').forEach(a=>a.addEventListener('clic
   if(h==='rzg'||h.indexOf('r-')===0) showView('rzg',h);
   
   else if(h==='nt'||h.indexOf('n-')===0) showView('nt',h);
+  else if(h==='fr'||h.indexOf('f-')===0) showView('fr',h);
   else if(h==='englisch'||h==='en'||h.indexOf('e-')===0) showView('en',h);
   else if(h.indexOf('x-')===0){ showTopic('e',false); showView('mathe',h); }
   else if(h.indexOf('q-')===0){ showTopic('q',false); showView('mathe',h); }
@@ -3392,9 +3499,9 @@ enQuizNew();
   window.__prof=()=>prof;
   const listeners=[]; window.__onProf=f=>listeners.push(f);
   const $=id=>document.getElementById(id);
-  const AREAS={'topic-b':'Mathe Brüche','topic-z':'Mathe Zahlen','topic-g':'Mathe Geld & Prozente','topic-q':'Mathe Wurzeln','topic-e':'Mathe Teilbarkeit','view-en':'Englisch','view-rzg':'RZG','view-nt':'NT Wald'};
-  const TRAINER={tOk:'topic-b',zOk:'topic-z',gOk:'topic-g',qOk:'topic-q',xOk:'topic-e',wrOk:'view-en',grOk:'view-en',mapOk:'view-rzg'};
-  const TRAINER_IN=['tIn','zIn','gIn','qIn','xIn','wrIn','grIn'];
+  const AREAS={'topic-b':'Mathe Brüche','topic-z':'Mathe Zahlen','topic-g':'Mathe Geld & Prozente','topic-q':'Mathe Wurzeln','topic-e':'Mathe Teilbarkeit','view-en':'Englisch','view-rzg':'RZG','view-nt':'NT Wald','view-fr':'Französisch'};
+  const TRAINER={tOk:'topic-b',zOk:'topic-z',gOk:'topic-g',qOk:'topic-q',xOk:'topic-e',wrOk:'view-en',grOk:'view-en',mapOk:'view-rzg',frOk:'view-fr'};
+  const TRAINER_IN=['tIn','zIn','gIn','qIn','xIn','wrIn','grIn','frIn'];
   let prog={}, dbc=null, mem={};
   const lkey=()=>'lt-progress-'+prof;
   function migrate(p){ const o={}; Object.keys(p||{}).forEach(k=>{ const a=TRAINER[k]||k; o[a]=(o[a]||0)+(+p[k]||0); }); return o; }
@@ -3773,6 +3880,80 @@ Genau ${n} Aufgaben, gemischt etwa halb "mc" und halb "text". Bei "text" muss di
   $('gtSubmit').addEventListener('click',()=>{ let n=0; test.forEach((x,i)=>{ const inp=$('gt'+i), row=inp.closest('.row'), g=ok(inp.value,x[1]); if(g) n++;
       inp.className='ans '+(g?'ok':'bad'); const fb=row.querySelector('.fb'); fb.className='fb '+(g?'ok':'bad'); fb.textContent=g?'✓':'✗'; if(!g){ const s=row.querySelector('.sol'); s.hidden=false; s.innerHTML=`Richtig: <b>${first(x[1])}</b> (${x[2]})`; } });
     const note=Math.round((n/test.length*5+1)*4)/4; $('gtResult').hidden=false; $('gtResult').innerHTML=`<div class="fact"><span class="big">${n}/${test.length}</span><span>Punkte</span></div><div class="fact"><span class="big">${String(note).replace('.',',')}</span><span>Note (6 = beste)</span></div>`; $('gtSubmit').disabled=true; $('gtResult').scrollIntoView({behavior:'smooth',block:'center'}); });
+})();
+
+/* ---------- Französisch: verbes modaux et pronominaux ---------- */
+(function(){
+  const $=id=>document.getElementById(id);
+  const P=['je','tu','il/elle/on','nous','vous','ils/elles'];
+  const V={
+    'vouloir':{de:'wollen',f:['veux','veux','veut','voulons','voulez','veulent']},
+    'pouvoir':{de:'können, dürfen',f:['peux','peux','peut','pouvons','pouvez','peuvent']},
+    'savoir':{de:'wissen, können',f:['sais','sais','sait','savons','savez','savent']},
+    'devoir':{de:'müssen',f:['dois','dois','doit','devons','devez','doivent']},
+    'se laver':{de:'sich waschen',f:['me lave','te laves','se lave','nous lavons','vous lavez','se lavent'],pro:1},
+    'se lever':{de:'aufstehen',f:['me lève','te lèves','se lève','nous levons','vous levez','se lèvent'],pro:1},
+    "s'appeler":{de:'heissen',f:["m'appelle","t'appelles","s'appelle",'nous appelons','vous appelez',"s'appellent"],pro:1},
+    "s'habiller":{de:'sich anziehen',f:["m'habille","t'habilles","s'habille",'nous habillons','vous habillez',"s'habillent"],pro:1},
+    'se réveiller':{de:'aufwachen',f:['me réveille','te réveilles','se réveille','nous réveillons','vous réveillez','se réveillent'],pro:1},
+    'se coucher':{de:'ins Bett gehen',f:['me couche','te couches','se couche','nous couchons','vous couchez','se couchent'],pro:1},
+    "s'amuser":{de:'Spass haben',f:["m'amuse","t'amuses","s'amuse",'nous amusons','vous amusez',"s'amusent"],pro:1},
+    'se dépêcher':{de:'sich beeilen',f:['me dépêche','te dépêches','se dépêche','nous dépêchons','vous dépêchez','se dépêchent'],pro:1}
+  };
+  const strip=s=>s.normalize('NFD').replace(/[̀-ͯ]/g,'');
+  const norm=s=>String(s).toLowerCase().replace(/[’`´]/g,"'").replace(/\s*'\s*/g,"'").replace(/[.!?,]/g,'').replace(/\s+/g,' ').trim();
+  function judge(v,a){ const arr=Array.isArray(a)?a:[a]; const n=norm(v); if(arr.some(x=>norm(x)===n)) return 'ok'; if(arr.some(x=>strip(norm(x))===strip(n))) return 'warn'; return 'bad'; }
+  const pick=a=>a[ri(0,a.length-1)];
+  // Akzent-Tasten (iPad)
+  function keys(boxId,getInput){ const b=$(boxId); b.innerHTML=['é','è','ê','à','ç',"'"].map(k=>`<button type="button" class="small ghost" data-k="${k}">${k}</button>`).join('');
+    b.addEventListener('pointerdown',e=>{ if(e.target.closest('button')) e.preventDefault(); });
+    b.addEventListener('click',e=>{ const k=e.target.closest('button'); if(!k) return; const i=getInput(); if(!i) return; const s=i.selectionStart??i.value.length; i.value=i.value.slice(0,s)+k.dataset.k+i.value.slice(i.selectionEnd??s); i.setSelectionRange(s+1,s+1); i.focus({preventScroll:true}); }); }
+  // pouvoir oder savoir
+  renderMC('mcFr1',[
+   {q:'Je ___ nager. (Ich habe es gelernt.)',o:['sais','peux'],a:0,w:'Gelernte Fähigkeit → savoir'},
+   {q:'Tu ___ venir à ma fête samedi?',o:['sais','peux'],a:1,w:'Möglichkeit → pouvoir'},
+   {q:'Est-ce que je ___ aller aux toilettes?',o:['sais','peux'],a:1,w:'Erlaubnis → pouvoir'},
+   {q:'Elle ___ jouer de la guitare.',o:['sait','peut'],a:0,w:'Gelernte Fähigkeit → savoir'},
+   {q:'Je ne ___ pas où il habite.',o:['sais','peux'],a:0,w:'«wissen» → savoir'},
+   {q:'Nous ne ___ pas sortir, il pleut trop.',o:['savons','pouvons'],a:1,w:'Möglichkeit → pouvoir'}
+  ]);
+  // Tabelle
+  const sel=$('ftVerb'); sel.innerHTML=Object.keys(V).map(k=>`<option>${k}</option>`).join('');
+  function tab(){ const v=V[sel.value]; $('ftRows').innerHTML=P.map((p,i)=>`<div class="row"><span class="q" style="flex:0 0 7em"><b>${p}</b></span><input class="ans frin" id="ft${i}" style="width:13em" autocomplete="off" autocapitalize="off" spellcheck="false" aria-label="${p}"><span class="fb"></span></div>`).join('')+`<p class="small muted">${sel.value} = ${v.de}${v.pro?' · Schreib das Pronomen mit, z. B. «me lave»':''}</p>`; $('ftRes').textContent=''; }
+  sel.addEventListener('change',tab); tab();
+  $('ftCheck').addEventListener('click',()=>{ const v=V[sel.value]; let n=0; P.forEach((p,i)=>{ const inp=$('ft'+i), j=judge(inp.value,v.f[i]); const fb=inp.nextElementSibling; inp.classList.remove('ok','warn','bad'); if(!inp.value.trim()){fb.textContent='';return;} inp.classList.add(j); fb.className='fb '+j; fb.textContent=j==='ok'?'✓':j==='warn'?'Akzent!':v.f[i]; if(j==='ok') n++; }); $('ftRes').className='result '+(n===6?'ok':'warn'); $('ftRes').textContent=`${n} von 6 richtig.`; });
+  $('ftSolve').addEventListener('click',()=>{ const v=V[sel.value]; P.forEach((p,i)=>{ $('ft'+i).value=v.f[i]; }); });
+  // Sätze
+  const SENT=[
+   ['Je ___ (vouloir) manger une pizza.','veux','vouloir: je veux'],['Nous ___ (devoir) faire nos devoirs.','devons','devoir: nous devons'],['Ils ___ (pouvoir) venir demain.','peuvent','pouvoir: ils peuvent'],['Tu ___ (savoir) parler anglais?','sais','savoir: tu sais'],['Elle ___ (vouloir) aller au cinéma.','veut','vouloir: elle veut'],['Vous ___ (pouvoir) m\'aider?','pouvez','pouvoir: vous pouvez'],['Mes parents ___ (vouloir) partir en vacances.','veulent','vouloir: ils veulent'],['On ___ (devoir) partir maintenant.','doit','devoir: on doit'],['Je ne ___ (savoir) pas la réponse.','sais','savoir: je sais (ne … pas drumherum)'],['Les élèves ___ (devoir) écouter le prof.','doivent','devoir: ils doivent'],['Nous ___ (savoir) nager.','savons','savoir: nous savons'],['Tu ___ (devoir) ranger ta chambre.','dois','devoir: tu dois'],
+   ['Je ___ (se lever) à sept heures.','me lève','je me lève (mit è)'],['Comment tu ___ (s\'appeler)?',"t'appelles",'tu t\'appelles (Apostroph, ll)'],['Nous ___ (se coucher) à dix heures.','nous couchons','nous nous couchons'],['Elle ___ (s\'habiller) vite.',"s'habille",'elle s\'habille (Apostroph vor h)'],['Ils ___ (s\'amuser) bien à la fête.',"s'amusent",'ils s\'amusent'],['Vous ___ (se dépêcher)!','vous dépêchez','vous vous dépêchez'],['Tu ___ (se laver) les mains.','te laves','tu te laves'],['Je ___ (s\'appeler) Dean.',"m'appelle",'je m\'appelle'],['Le matin, il ___ (se réveiller) tôt.','se réveille','il se réveille'],
+   ['Je ne ___ pas tôt le dimanche. (se lever)',['me lève'],'ne + Pronomen + Verb + pas: je ne me lève pas'],['Verneine: «Je peux venir.» → Je ___ venir.',['ne peux pas'],'ne … pas um das konjugierte Verb'],['Verneine: «Il veut jouer.» → Il ___ jouer.',['ne veut pas'],'ne … pas um veut'],['Verneine: «Tu te lèves.» → Tu ___.',['ne te lèves pas'],'ne … pas umschliesst Pronomen und Verb'],['Je dois ___ (se lever) tôt demain.',['me lever'],'Nach devoir: Pronomen passend zur Person + Infinitiv'],['Tu veux ___ (se reposer)?',['te reposer'],'Pronomen passt zu tu: te reposer'],['Nous devons ___ (se dépêcher).',['nous dépêcher'],'Pronomen passt zu nous'],['Elles ne ___ (s\'amuser) pas.',["s'amusent"],'elles ne s\'amusent pas']
+  ];
+  const gen={
+    mod(){ const vb=pick(['vouloir','pouvoir','savoir','devoir']), i=ri(0,5); return {q:`<b>${vb}</b> (${V[vb].de}) · <b>${P[i]}</b> → ?`,a:V[vb].f[i],r:`${vb}: ${P.map((p,k)=>p+' '+V[vb].f[k]).join(', ')}`}; },
+    pro(){ const ks=Object.keys(V).filter(k=>V[k].pro), vb=pick(ks), i=ri(0,5); return {q:`<b>${vb}</b> (${V[vb].de}) · <b>${P[i]}</b> → ? <span class="small muted">(mit Pronomen)</span>`,a:V[vb].f[i],r:`${vb}: ${P.map((p,k)=>p+' '+V[vb].f[k]).join(', ')}`}; },
+    sat(){ const s=pick(SENT); return {q:s[0].replace('___','<span class="gap">___</span>'),a:s[1],r:s[2]}; }
+  };
+  let t=null, done=false; const st={ok:0,all:0,streak:0};
+  function next(){ const ty=[...document.querySelectorAll('#frTypes input:checked')].map(i=>i.value); t=gen[pick(ty.length?ty:Object.keys(gen))](); $('frTask').innerHTML=`<div class="tq">${t.q}</div>`; $('frIn').value=''; $('frIn').className='ans'; $('frRes').textContent=''; done=false; }
+  const first=a=>Array.isArray(a)?a[0]:a;
+  function upd(){ $('frOk').textContent=st.ok; $('frAll').textContent=st.all; $('frStreak').textContent=st.streak; }
+  $('frCheck').addEventListener('click',()=>{ const v=$('frIn').value, r=$('frRes'); if(!v.trim()){ r.className='result warn'; r.textContent='Schreib zuerst eine Antwort.'; return; }
+    const j=judge(v,t.a); $('frIn').className='ans '+j; if(!done){ st.all++; if(j==='ok'){st.ok++;st.streak++;} else st.streak=0; done=true; upd(); }
+    r.className='result '+j; r.innerHTML=j==='ok'?'Richtig!':j==='warn'?`Fast! Achte auf die Akzente: <b>${first(t.a)}</b>`:`Richtig ist: <b>${first(t.a)}</b>. ${t.r}`; });
+  $('frIn').addEventListener('keydown',e=>{if(e.key==='Enter'){e.preventDefault();$('frCheck').click();}});
+  $('frHint').addEventListener('click',()=>{ $('frRes').className='result'; $('frRes').textContent='Regel: '+t.r; });
+  $('frNext').addEventListener('click',next); document.querySelectorAll('#frTypes input').forEach(i=>i.addEventListener('change',next)); next();
+  let lastFocus=null; document.addEventListener('focusin',e=>{ if(e.target.closest&&e.target.closest('#view-fr')&&e.target.matches('input.ans')) lastFocus=e.target; });
+  keys('frKeys',()=>$('frIn')); keys('ftKeys',()=>lastFocus);
+  // Probetest
+  let test=[];
+  $('ftStart').addEventListener('click',()=>{ test=[gen.mod(),gen.mod(),gen.mod(),gen.mod(),gen.mod(),gen.pro(),gen.pro(),gen.pro(),...shuffle(SENT).slice(0,7).map(s=>({q:s[0],a:s[1],r:s[2]}))];
+    $('ftTestRows').innerHTML=test.map((x,i)=>`<div class="row"><span class="q"><b>${i+1}.</b>&nbsp;${x.q}</span><input class="ans" id="fq${i}" style="width:12em" autocomplete="off" autocapitalize="off" spellcheck="false" aria-label="Antwort ${i+1}"><span class="fb"></span><span class="sol small" hidden></span></div>`).join('');
+    $('ftBtns').hidden=false; $('ftKeys').hidden=false; $('ftResult').hidden=true; $('ftSubmit').disabled=false; });
+  $('ftSubmit').addEventListener('click',()=>{ let n=0; test.forEach((x,i)=>{ const inp=$('fq'+i), row=inp.closest('.row'), j=judge(inp.value,x.a); const pts=j==='ok'?1:j==='warn'?0.5:0; n+=pts;
+      inp.className='ans '+j; const fb=row.querySelector('.fb'); fb.className='fb '+j; fb.textContent=j==='ok'?'✓':j==='warn'?'½':'✗'; if(j!=='ok'){ const s=row.querySelector('.sol'); s.hidden=false; s.innerHTML=`Richtig: <b>${first(x.a)}</b>${j==='warn'?' (Akzent!)':''}`; } });
+    const note=Math.round((n/test.length*5+1)*4)/4; $('ftResult').hidden=false; $('ftResult').innerHTML=`<div class="fact"><span class="big">${String(n).replace('.',',')}/${test.length}</span><span>Punkte (Akzentfehler = ½)</span></div><div class="fact"><span class="big">${String(note).replace('.',',')}</span><span>Note (6 = beste)</span></div>`; $('ftSubmit').disabled=true; $('ftResult').scrollIntoView({behavior:'smooth',block:'center'}); });
 })();
 
 /* ---------- Sokratischer Lösungsweg ---------- */
