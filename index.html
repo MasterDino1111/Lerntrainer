@@ -318,6 +318,17 @@ td.xyes{color:var(--green); font-weight:700} td.xno{color:var(--red)}
 .frtab td,.frtab th{text-align:left}
 .frkeys{display:flex; gap:6px; flex-wrap:wrap}
 .subject.s-fr{border-top-color:var(--blue)}
+#kcSvg{width:100%;max-width:440px;height:auto;background:var(--card);border:1px solid var(--line);border-radius:6px}
+svg .k-l{stroke:var(--muted);stroke-width:1.2;fill:none;stroke-dasharray:5 4}
+svg .k-c{stroke:var(--blue);stroke-width:1.2;fill:none;opacity:.7}
+svg .k-main{stroke:var(--ink);stroke-width:2.4}
+svg .k-res{stroke:var(--red);stroke-width:2.6;fill:none}
+svg .k-p{fill:var(--ink)}
+svg .k-tri{fill:var(--blue-soft);stroke:var(--ink);stroke-width:2.2}
+svg .k-u{fill:none;stroke:var(--red);stroke-width:1.8} svg .k-i{fill:none;stroke:var(--green);stroke-width:1.8}
+svg .k-s{stroke:var(--warn);stroke-width:1.4;stroke-dasharray:4 3} svg .k-h{stroke:var(--blue);stroke-width:1.4;stroke-dasharray:2 3}
+.kcsteps{margin:0;padding-left:1.3em;display:flex;flex-direction:column;gap:4px}
+.kcsteps li.todo{color:var(--muted);opacity:.6} .kcsteps li.cur{font-weight:700}
 button.okbtn{background:var(--green); border-color:var(--green)}
 button,label,.tile,.fcard,.kt,input,select,a{touch-action:manipulation; -webkit-tap-highlight-color:transparent}
 @media (pointer:coarse){ button{min-height:44px} button.small{min-height:40px} .opts label,.chips label{min-height:40px; padding:6px 14px} input.ans{min-height:42px; font-size:1.05rem} .spk{min-width:40px; min-height:40px} }
@@ -384,6 +395,7 @@ table.mk input.ml-cell{width:4.8em}
         <button type="button" data-view="mathe" data-topic="g"><b>Geld und Prozente</b><span>Prüfung SOL · Prozent, Rabatt, MWST, Zins, Wechselkurs</span></button>
         <button type="button" data-view="mathe" data-topic="q"><b>Quadratzahlen und Wurzeln</b><span>Level 2 · mit Probetest und Note</span></button>
         <button type="button" data-view="mathe" data-topic="e"><b>Mit Dezimalzahlen rechnen</b><span>Mathplan E · Level 3 · Stellen, Teilbarkeitsregeln, Ziffernsummen</span></button>
+        <button type="button" data-view="mathe" data-topic="k"><b>Skizzen und Konstruktionen</b><span>Test Math 8c · Grundkonstruktionen, Dreiecke, besondere Linien, Vierecke</span></button>
       </div>
     </div>
     <div class="subject s-rzg">
@@ -423,6 +435,7 @@ table.mk input.ml-cell{width:4.8em}
   <button type="button" role="tab" data-topic="g" aria-selected="false"><span class="tnum">Thema 3</span>Geld und Prozente</button>
   <button type="button" role="tab" data-topic="q" aria-selected="false"><span class="tnum">Thema 4</span>Quadratzahlen und Wurzeln</button>
   <button type="button" role="tab" data-topic="e" aria-selected="false"><span class="tnum">Thema 5</span>Dezimalzahlen und Teilbarkeit</button>
+  <button type="button" role="tab" data-topic="k" aria-selected="false"><span class="tnum">Thema 6</span>Skizzen und Konstruktionen</button>
 </div>
 
 <div class="topic" id="topic-b">
@@ -1642,6 +1655,116 @@ table.mk input.ml-cell{width:4.8em}
 </section>
 </div>
 
+<div class="topic" id="topic-k" hidden>
+<nav class="toc" aria-label="Kapitel Skizzen und Konstruktionen">
+  <a href="#menu" class="menu-chip">← Menü</a>
+  <a href="#k-grund">1 Skizze & Bericht</a>
+  <a href="#k-cons">2 Grundkonstruktionen</a>
+  <a href="#k-drei">3 Dreiecke</a>
+  <a href="#k-linien">4 Besondere Linien</a>
+  <a href="#k-vier">5 Vierecke</a>
+  <a href="#k-quiz" class="star">Quiz & Probetest</a>
+</nav>
+
+<section class="page" id="k-grund">
+  <header><span class="lz">Kapitel 1</span><h2>Skizze, Konstruktion, Konstruktionsbericht</h2></header>
+  <div class="cards3">
+    <div class="card"><h3>Planskizze</h3><p class="small">Von Hand, <b>nicht</b> massstabsgetreu. Du zeichnest die Figur ungefähr und markierst <b>farbig</b>, was gegeben ist (Längen, Winkel). So siehst du, womit du anfangen kannst.</p></div>
+    <div class="card"><h3>Konstruktion</h3><p class="small">Genau, mit <b>Zirkel, Lineal und Geodreieck</b>, mit spitzem Bleistift. Hilfslinien dünn stehen lassen, Ergebnis kräftig nachziehen.</p></div>
+    <div class="card"><h3>Konstruktionsbericht</h3><p class="small">Die Schritte der Reihe nach in Kurzform: «1. Strecke c = AB zeichnen. 2. Kreis um A mit r = b. …»</p></div>
+  </div>
+  <div class="merk"><strong>Bezeichnungen im Dreieck</strong><ul>
+    <li>Ecken mit Grossbuchstaben <b>A, B, C</b>, im Gegenuhrzeigersinn.</li>
+    <li>Die Seite gegenüber einer Ecke hat den kleinen Buchstaben: <b>a</b> liegt gegenüber von A (also zwischen B und C), <b>b</b> gegenüber von B, <b>c</b> gegenüber von C (zwischen A und B).</li>
+    <li>Winkel: <b>α</b> (alpha) bei A, <b>β</b> (beta) bei B, <b>γ</b> (gamma) bei C. <b>α + β + γ = 180°</b></li>
+    <li>Im Viereck ist die Winkelsumme <b>360°</b>.</li>
+  </ul></div>
+  <div class="merk"><strong>Wichtige Begriffe</strong><ul>
+    <li><b>Kreis k(M; r):</b> alle Punkte mit Abstand r vom Mittelpunkt M. Er ist die Ortslinie «gleicher Abstand von einem Punkt».</li>
+    <li><b>Mittelsenkrechte</b> von AB: alle Punkte, die von A und B gleich weit weg sind.</li>
+    <li><b>Winkelhalbierende:</b> alle Punkte, die von beiden Schenkeln gleich weit weg sind.</li>
+    <li><b>Parallele</b> zu g im Abstand d: alle Punkte mit Abstand d von g.</li>
+    <li><b>Lot / Senkrechte:</b> Gerade, die eine andere im rechten Winkel (90°) schneidet. Der <b>Abstand</b> eines Punktes zu einer Geraden wird immer senkrecht gemessen.</li>
+  </ul></div>
+</section>
+
+<section class="page" id="k-cons">
+  <header><span class="lz">Kapitel 2</span><h2>Grundkonstruktionen mit dem Zirkel</h2></header>
+  <p>Wähle eine Konstruktion und klick dich mit «Weiter» Schritt für Schritt durch. So machst du es auch auf dem Blatt.</p>
+  <div class="btns" id="kcSel"></div>
+  <div class="figwrap">
+    <svg id="kcSvg" viewBox="0 -10 400 350" role="img" aria-label="Konstruktion Schritt für Schritt"></svg>
+    <div class="side"><div class="merk"><strong id="kcTitle"></strong><ol id="kcSteps" class="kcsteps"></ol></div>
+      <div class="btns"><button type="button" class="ghost" id="kcBack">Zurück</button><button type="button" id="kcNext">Weiter</button><button type="button" class="ghost" id="kcAll">Alles zeigen</button></div></div>
+  </div>
+</section>
+
+<section class="page" id="k-drei">
+  <header><span class="lz">Kapitel 3</span><h2>Dreiecke konstruieren</h2></header>
+  <div class="tbl-wrap"><table class="cmp">
+    <tr><th>Gegeben</th><th>Name</th><th>So geht's</th></tr>
+    <tr><th>3 Seiten</th><td><b>SSS</b></td><td>Seite c zeichnen, Kreis um A mit r = b, Kreis um B mit r = a. Schnittpunkt = C.</td></tr>
+    <tr><th>2 Seiten und der Winkel dazwischen</th><td><b>SWS</b></td><td>Seite c zeichnen, Winkel α bei A antragen, auf dem Schenkel b abtragen = C.</td></tr>
+    <tr><th>1 Seite und die 2 Winkel daran</th><td><b>WSW</b></td><td>Seite c zeichnen, α bei A und β bei B antragen. Schnittpunkt der Schenkel = C.</td></tr>
+    <tr><th>2 Seiten und der Winkel gegenüber der grösseren</th><td><b>SsW</b></td><td>Seite zeichnen, Winkel antragen, Kreis mit der grösseren Seite schneidet den Schenkel.</td></tr>
+  </table></div>
+  <div class="merk"><strong>Ist das Dreieck überhaupt konstruierbar?</strong><ul>
+    <li><b>Dreiecksungleichung:</b> Zwei Seiten zusammen müssen <b>länger</b> sein als die dritte. 3 cm, 4 cm, 8 cm geht nicht (3 + 4 = 7 &lt; 8).</li>
+    <li><b>Winkelsumme:</b> Zwei Winkel zusammen müssen <b>weniger als 180°</b> sein.</li>
+    <li><b>Nur drei Winkel</b> (WWW) reicht nicht: Es gibt unendlich viele Dreiecke in verschiedenen Grössen.</li>
+  </ul></div>
+  <div class="lab">
+    <span class="eyebrow">Dreiecks-Labor (SSS)</span>
+    <div class="vars"><label for="kda">a (cm)<input type="number" id="kda" value="6" step="0.5" min="0.5"></label><label for="kdb">b (cm)<input type="number" id="kdb" value="5" step="0.5" min="0.5"></label><label for="kdc">c (cm)<input type="number" id="kdc" value="7" step="0.5" min="0.5"></label></div>
+    <div class="chips" id="kdOpts">
+      <label><input type="checkbox" value="u"> Umkreis</label><label><input type="checkbox" value="i"> Inkreis</label><label><input type="checkbox" value="s"> Schwerpunkt</label><label><input type="checkbox" value="h"> Höhen</label>
+    </div>
+    <svg id="kdSvg" viewBox="-60 -90 520 440" style="width:100%;max-width:440px;height:auto" role="img" aria-label="Dreieck"></svg>
+    <div id="kdTxt" class="small"></div>
+  </div>
+  <div class="stack"><h3>Übung: Konstruktionsbericht SWS in die richtige Reihenfolge</h3><p class="small muted">Gegeben: c = 6 cm, α = 50°, b = 4 cm</p><div class="order" id="ordKons"></div></div>
+</section>
+
+<section class="page" id="k-linien">
+  <header><span class="lz">Kapitel 4</span><h2>Besondere Linien und Punkte im Dreieck</h2></header>
+  <div class="tbl-wrap"><table class="cmp">
+    <tr><th>Linien</th><th>Schnittpunkt</th><th>Wozu?</th></tr>
+    <tr><th>Mittelsenkrechten</th><td><b>Umkreismittelpunkt U</b></td><td>U ist von allen drei <b>Ecken</b> gleich weit weg. Kreis durch alle Ecken.</td></tr>
+    <tr><th>Winkelhalbierenden</th><td><b>Inkreismittelpunkt I</b></td><td>I ist von allen drei <b>Seiten</b> gleich weit weg. Kreis berührt alle Seiten. Radius senkrecht zu einer Seite messen.</td></tr>
+    <tr><th>Seitenhalbierenden</th><td><b>Schwerpunkt S</b></td><td>Verbinden Ecke mit Mitte der Gegenseite. Auf S könnte man das Dreieck balancieren.</td></tr>
+    <tr><th>Höhen</th><td><b>Höhenschnittpunkt H</b></td><td>Senkrechte von einer Ecke auf die Gegenseite. Brauchst du für die Fläche: A = g · h : 2.</td></tr>
+  </table></div>
+  <div class="merk"><strong>Merkhilfen</strong><ul>
+    <li><b>Umkreis ↔ Mittelsenkrechte</b> («U» und «M» – beide über die Ecken). <b>Inkreis ↔ Winkelhalbierende</b> («I» wie innen, Winkel innen).</li>
+    <li>Beim <b>stumpfwinkligen</b> Dreieck liegt U ausserhalb des Dreiecks, beim <b>rechtwinkligen</b> genau auf der Mitte der längsten Seite (Thaleskreis).</li>
+    <li>Es reicht immer, <b>zwei</b> der drei Linien zu konstruieren. Die dritte geht durch denselben Punkt (Kontrolle).</li>
+    <li>Probier es im Dreiecks-Labor oben aus.</li>
+  </ul></div>
+</section>
+
+<section class="page" id="k-vier">
+  <header><span class="lz">Kapitel 5</span><h2>Vierecke</h2></header>
+  <div class="tbl-wrap"><table class="cmp">
+    <tr><th>Viereck</th><th>Eigenschaften</th><th>Diagonalen</th></tr>
+    <tr><th>Quadrat</th><td>4 gleich lange Seiten, 4 rechte Winkel</td><td>gleich lang, senkrecht, halbieren sich</td></tr>
+    <tr><th>Rechteck</th><td>Gegenseiten gleich lang und parallel, 4 rechte Winkel</td><td>gleich lang, halbieren sich</td></tr>
+    <tr><th>Raute (Rhombus)</th><td>4 gleich lange Seiten, Gegenseiten parallel</td><td>senkrecht, halbieren sich</td></tr>
+    <tr><th>Parallelogramm</th><td>Gegenseiten gleich lang und parallel, Gegenwinkel gleich</td><td>halbieren sich</td></tr>
+    <tr><th>Trapez</th><td>mindestens ein Paar paralleler Seiten</td><td>–</td></tr>
+    <tr><th>Drachenviereck</th><td>2 Paare gleich langer Nachbarseiten</td><td>senkrecht, eine wird halbiert</td></tr>
+  </table></div>
+  <div class="merk"><strong>Merksatz</strong><ul><li>Ein Quadrat ist auch ein Rechteck, eine Raute, ein Parallelogramm und ein Trapez. Jede Raute ist ein Parallelogramm. Je mehr Eigenschaften, desto spezieller.</li><li>Winkelsumme im Viereck: <b>360°</b>.</li></ul></div>
+</section>
+
+<section class="page" id="k-quiz">
+  <header><span class="lz">Alle Kapitel</span><h2>Quiz und Probetest</h2></header>
+  <p>8 zufällige Fragen. Mit «Neue Fragen» kommen andere. Am Schluss bekommst du eine Note.</p>
+  <div class="stmts" id="mcKQ"></div>
+  <div class="btns"><button data-mc="mcKQ" id="kqCheck">Prüfen</button><button class="ghost" id="kqNew">Neue Fragen</button><span class="result" id="mcKQRes" aria-live="polite"></span></div>
+  <div class="facts" id="kqNote" hidden></div>
+</section>
+</div>
+
 </div><!-- /view-mathe -->
 
 <div class="view" id="view-rzg" hidden>
@@ -2794,6 +2917,7 @@ function showTopic(t,scroll){
   document.getElementById('topic-g').hidden = t!=='g';
   document.getElementById('topic-q').hidden = t!=='q';
   document.getElementById('topic-e').hidden = t!=='e';
+  document.getElementById('topic-k').hidden = t!=='k';
   topicBtns.forEach(b=>{b.classList.toggle('on',b.dataset.topic===t); b.setAttribute('aria-selected',b.dataset.topic===t);});
   if(scroll) document.querySelector('.topics').scrollIntoView({block:'start'});
 }
@@ -3075,6 +3199,7 @@ document.querySelectorAll('a[href="#menu"]').forEach(a=>a.addEventListener('clic
   else if(h==='nt'||h.indexOf('n-')===0) showView('nt',h);
   else if(h==='fr'||h.indexOf('f-')===0) showView('fr',h);
   else if(h==='englisch'||h==='en'||h.indexOf('e-')===0) showView('en',h);
+  else if(h.indexOf('k-')===0){ showTopic('k',false); showView('mathe',h); }
   else if(h.indexOf('x-')===0){ showTopic('e',false); showView('mathe',h); }
   else if(h.indexOf('q-')===0){ showTopic('q',false); showView('mathe',h); }
   else if(h.indexOf('g-')===0||h==='geld'){ showTopic('g',false); showView('mathe',h); }
@@ -3499,7 +3624,7 @@ enQuizNew();
   window.__prof=()=>prof;
   const listeners=[]; window.__onProf=f=>listeners.push(f);
   const $=id=>document.getElementById(id);
-  const AREAS={'topic-b':'Mathe Brüche','topic-z':'Mathe Zahlen','topic-g':'Mathe Geld & Prozente','topic-q':'Mathe Wurzeln','topic-e':'Mathe Teilbarkeit','view-en':'Englisch','view-rzg':'RZG','view-nt':'NT Wald','view-fr':'Französisch'};
+  const AREAS={'topic-b':'Mathe Brüche','topic-z':'Mathe Zahlen','topic-g':'Mathe Geld & Prozente','topic-q':'Mathe Wurzeln','topic-e':'Mathe Teilbarkeit','topic-k':'Mathe Konstruktionen','view-en':'Englisch','view-rzg':'RZG','view-nt':'NT Wald','view-fr':'Französisch'};
   const TRAINER={tOk:'topic-b',zOk:'topic-z',gOk:'topic-g',qOk:'topic-q',xOk:'topic-e',wrOk:'view-en',grOk:'view-en',mapOk:'view-rzg',frOk:'view-fr'};
   const TRAINER_IN=['tIn','zIn','gIn','qIn','xIn','wrIn','grIn','frIn'];
   let prog={}, dbc=null, mem={};
@@ -3954,6 +4079,94 @@ Genau ${n} Aufgaben, gemischt etwa halb "mc" und halb "text". Bei "text" muss di
   $('ftSubmit').addEventListener('click',()=>{ let n=0; test.forEach((x,i)=>{ const inp=$('fq'+i), row=inp.closest('.row'), j=judge(inp.value,x.a); const pts=j==='ok'?1:j==='warn'?0.5:0; n+=pts;
       inp.className='ans '+j; const fb=row.querySelector('.fb'); fb.className='fb '+j; fb.textContent=j==='ok'?'✓':j==='warn'?'½':'✗'; if(j!=='ok'){ const s=row.querySelector('.sol'); s.hidden=false; s.innerHTML=`Richtig: <b>${first(x.a)}</b>${j==='warn'?' (Akzent!)':''}`; } });
     const note=Math.round((n/test.length*5+1)*4)/4; $('ftResult').hidden=false; $('ftResult').innerHTML=`<div class="fact"><span class="big">${String(n).replace('.',',')}/${test.length}</span><span>Punkte (Akzentfehler = ½)</span></div><div class="fact"><span class="big">${String(note).replace('.',',')}</span><span>Note (6 = beste)</span></div>`; $('ftSubmit').disabled=true; $('ftResult').scrollIntoView({behavior:'smooth',block:'center'}); });
+})();
+
+/* ---------- Skizzen und Konstruktionen ---------- */
+(function(){
+  const $=id=>document.getElementById(id);
+  const P=(x,y)=>({x,y}), d=(a,b)=>Math.hypot(a.x-b.x,a.y-b.y);
+  function cc(c1,r1,c2,r2){ const D=d(c1,c2); const a=(r1*r1-r2*r2+D*D)/(2*D); const h=Math.sqrt(Math.max(0,r1*r1-a*a)); const x=c1.x+a*(c2.x-c1.x)/D, y=c1.y+a*(c2.y-c1.y)/D; return [P(x+h*(c2.y-c1.y)/D,y-h*(c2.x-c1.x)/D),P(x-h*(c2.y-c1.y)/D,y+h*(c2.x-c1.x)/D)]; }
+  const ext=(a,b,k)=>[P(a.x-(b.x-a.x)*k,a.y-(b.y-a.y)*k),P(b.x+(b.x-a.x)*k,b.y+(b.y-a.y)*k)];
+  const L=(a,b,c)=>`<line x1="${a.x}" y1="${a.y}" x2="${b.x}" y2="${b.y}" class="${c||'k-l'}"/>`;
+  const Ln=(a,b,c,k)=>{ const e=ext(a,b,k||0.6); return L(e[0],e[1],c); };
+  const C=(m,r,c)=>`<circle cx="${m.x}" cy="${m.y}" r="${r}" class="${c||'k-c'}"/>`;
+  const Pt=(p,t,dx,dy)=>`<circle cx="${p.x}" cy="${p.y}" r="3.5" class="k-p"/><text x="${p.x+(dx??6)}" y="${p.y+(dy??-6)}" font-size="14">${t}</text>`;
+  // Konstruktionen
+  const CONS={};
+  { const A=P(90,200),B=P(310,200),r=140,[S1,S2]=cc(A,r,B,r),M=P(200,200);
+    CONS['Mittelsenkrechte']=[['Strecke AB zeichnen.',L(A,B,'k-main')+Pt(A,'A',-14,18)+Pt(B,'B',4,18)],['Kreis um A mit einem Radius, der grösser ist als die halbe Strecke.',C(A,r)],['Kreis um B mit dem gleichen Radius.',C(B,r)],['Die Kreise schneiden sich in zwei Punkten. Verbinde sie: Das ist die Mittelsenkrechte.',Pt(S1,'')+Pt(S2,'')+Ln(S1,S2,'k-res',0.1)],['Sie halbiert AB im Punkt M und steht senkrecht darauf.',Pt(M,'M',6,16)]]; }
+  { const S=P(80,250),R1=P(360,250),ang=-55*Math.PI/180,R2=P(80+300*Math.cos(ang),250+300*Math.sin(ang)),r=120,Pp=P(80+r,250),Q=P(80+r*Math.cos(ang),250+r*Math.sin(ang)),T=cc(Pp,100,Q,100)[1];
+    CONS['Winkelhalbierende']=[['Winkel mit Scheitel S zeichnen.',L(S,R1,'k-main')+L(S,R2,'k-main')+Pt(S,'S',-16,6)],['Kreis um S. Er schneidet die Schenkel in P und Q.',C(S,r)+Pt(Pp,'P',4,18)+Pt(Q,'Q',-18,0)],['Kreis um P und Kreis um Q mit gleichem Radius.',C(Pp,100)+C(Q,100)],['Schnittpunkt T mit S verbinden: Das ist die Winkelhalbierende.',Pt(T,'T')+L(S,P(S.x+(T.x-S.x)*1.6,S.y+(T.y-S.y)*1.6),'k-res')]]; }
+  { const g1=P(30,230),g2=P(370,230),Pp=P(200,90),r=170,xs=Math.sqrt(r*r-140*140),A=P(200-xs,230),B=P(200+xs,230),[T]=cc(A,150,B,150);
+    CONS['Lot fällen']=[['Gerade g und Punkt P ausserhalb.',L(g1,g2,'k-main')+Pt(Pp,'P')+`<text x="40" y="222" font-size="14">g</text>`],['Kreis um P schneidet g in A und B.',C(Pp,r)+Pt(A,'A',-6,20)+Pt(B,'B',-6,20)],['Kreise um A und B mit gleichem Radius, Schnittpunkt unterhalb von g.',C(A,150)+C(B,150)+Pt(cc(A,150,B,150)[0],'')],['Verbinde P mit diesem Schnittpunkt: Das ist das Lot (Senkrechte) von P auf g.',L(Pp,cc(A,150,B,150)[0],'k-res')+Pt(P(200,230),'F',6,18)]]; }
+  { const A=P(80,250),B=P(320,250),b=180,a=150,[Cc]=cc(A,b,B,a);
+    CONS['Dreieck SSS']=[['Planskizze machen. Dann Seite c = AB zeichnen.',L(A,B,'k-main')+Pt(A,'A',-14,16)+Pt(B,'B',4,16)],['Kreis um A mit Radius b.',C(A,b)],['Kreis um B mit Radius a.',C(B,a)],['Ein Schnittpunkt ist C. Dreieck ABC nachziehen.',Pt(Cc,'C')+L(A,Cc,'k-res')+L(B,Cc,'k-res')]]; }
+  { const A=P(90,260),B=P(300,270),Cc=P(220,90),U=(()=>{ const m1=cc(A,200,B,200), m2=cc(B,200,Cc,200); const x1=m1[0],x2=m1[1],y1=m2[0],y2=m2[1]; const d1=P(x2.x-x1.x,x2.y-x1.y),d2=P(y2.x-y1.x,y2.y-y1.y); const t=((y1.x-x1.x)*d2.y-(y1.y-x1.y)*d2.x)/(d1.x*d2.y-d1.y*d2.x); return P(x1.x+t*d1.x,x1.y+t*d1.y); })();
+    const m1=cc(A,200,B,200), m2=cc(B,200,Cc,200);
+    CONS['Umkreis']=[['Dreieck ABC.',L(A,B,'k-main')+L(B,Cc,'k-main')+L(Cc,A,'k-main')+Pt(A,'A',-14,16)+Pt(B,'B',4,16)+Pt(Cc,'C',4,-6)],['Mittelsenkrechte von AB konstruieren.',L(m1[0],m1[1],'k-l')],['Mittelsenkrechte von BC konstruieren.',L(m2[0],m2[1],'k-l')],['Schnittpunkt = Umkreismittelpunkt U.',Pt(U,'U')],['Kreis um U durch A: Er geht durch alle drei Ecken.',C(U,d(U,A),'k-res')]]; }
+  let cur='Mittelsenkrechte', step=0;
+  $('kcSel').innerHTML=Object.keys(CONS).map(k=>`<button type="button" class="ghost small" data-k="${k}">${k}</button>`).join('');
+  $('kcSel').querySelectorAll('button').forEach(b=>b.addEventListener('click',()=>{cur=b.dataset.k;step=0;draw();}));
+  function draw(){ const s=CONS[cur]; $('kcSel').querySelectorAll('button').forEach(b=>b.classList.toggle('on',b.dataset.k===cur));
+    $('kcTitle').textContent=cur; $('kcSvg').innerHTML=s.slice(0,step+1).map(x=>x[1]).join('');
+    $('kcSteps').innerHTML=s.map((x,i)=>`<li class="${i===step?'cur':i<step?'done':'todo'}">${x[0]}</li>`).join('');
+    $('kcBack').disabled=step===0; $('kcNext').disabled=step===s.length-1; }
+  $('kcNext').addEventListener('click',()=>{ if(step<CONS[cur].length-1){step++;draw();} });
+  $('kcBack').addEventListener('click',()=>{ if(step>0){step--;draw();} });
+  $('kcAll').addEventListener('click',()=>{ step=CONS[cur].length-1; draw(); });
+  draw();
+  // Dreiecks-Labor
+  const deg=r=>r*180/Math.PI;
+  function tri(){ const a=+$('kda').value, b=+$('kdb').value, c=+$('kdc').value, sv=$('kdSvg'), tx=$('kdTxt');
+    if(!(a>0&&b>0&&c>0)){ sv.innerHTML=''; tx.textContent='Gib drei positive Längen ein.'; return; }
+    const s=[a,b,c].sort((x,y)=>x-y);
+    if(s[0]+s[1]<=s[2]){ sv.innerHTML=''; tx.innerHTML=`<b style="color:var(--red)">Nicht konstruierbar!</b> ${String(s[0]).replace('.',',')} + ${String(s[1]).replace('.',',')} = ${String(s[0]+s[1]).replace('.',',')} ist nicht grösser als ${String(s[2]).replace('.',',')}. Die zwei kurzen Seiten treffen sich nicht.`; return; }
+    const al=Math.acos((b*b+c*c-a*a)/(2*b*c)); let A=P(0,0),B=P(c,0),Cc=P(b*Math.cos(al),b*Math.sin(al));
+    const xs=[A.x,B.x,Cc.x], ys=[A.y,B.y,Cc.y]; const minx=Math.min(...xs),maxx=Math.max(...xs),maxy=Math.max(...ys); const k=Math.min(300/(maxx-minx),220/maxy);
+    const T=p=>P(50+(p.x-minx)*k, 280-p.y*k); A=T(A);B=T(B);Cc=T(Cc);
+    const on=v=>!!document.querySelector(`#kdOpts input[value="${v}"]:checked`);
+    let g='';
+    const D=2*(A.x*(B.y-Cc.y)+B.x*(Cc.y-A.y)+Cc.x*(A.y-B.y)); const U=P(((A.x**2+A.y**2)*(B.y-Cc.y)+(B.x**2+B.y**2)*(Cc.y-A.y)+(Cc.x**2+Cc.y**2)*(A.y-B.y))/D,((A.x**2+A.y**2)*(Cc.x-B.x)+(B.x**2+B.y**2)*(A.x-Cc.x)+(Cc.x**2+Cc.y**2)*(B.x-A.x))/D);
+    const la=d(B,Cc),lb=d(A,Cc),lc=d(A,B),per=la+lb+lc; const I=P((la*A.x+lb*B.x+lc*Cc.x)/per,(la*A.y+lb*B.y+lc*Cc.y)/per); const sp=per/2, area=Math.sqrt(sp*(sp-la)*(sp-lb)*(sp-lc)), ri=area/sp;
+    const S=P((A.x+B.x+Cc.x)/3,(A.y+B.y+Cc.y)/3);
+    const foot=(p,q,r)=>{ const t=((p.x-q.x)*(r.x-q.x)+(p.y-q.y)*(r.y-q.y))/((r.x-q.x)**2+(r.y-q.y)**2); return P(q.x+t*(r.x-q.x),q.y+t*(r.y-q.y)); };
+    if(on('u')) g+=C(U,d(U,A),'k-u')+Pt(U,'U');
+    if(on('i')) g+=C(I,ri,'k-i')+Pt(I,'I');
+    if(on('s')) g+=L(A,P((B.x+Cc.x)/2,(B.y+Cc.y)/2),'k-s')+L(B,P((A.x+Cc.x)/2,(A.y+Cc.y)/2),'k-s')+L(Cc,P((A.x+B.x)/2,(A.y+B.y)/2),'k-s')+Pt(S,'S');
+    if(on('h')) g+=L(Cc,foot(Cc,A,B),'k-h')+L(A,foot(A,B,Cc),'k-h')+L(B,foot(B,A,Cc),'k-h');
+    sv.innerHTML=`<polygon points="${A.x},${A.y} ${B.x},${B.y} ${Cc.x},${Cc.y}" class="k-tri"/>`+g+Pt(A,'A',-16,14)+Pt(B,'B',4,14)+Pt(Cc,'C',4,-6);
+    const be=Math.acos((a*a+c*c-b*b)/(2*a*c)), ga=Math.PI-al-be, r=x=>Math.round(deg(x)*10)/10;
+    const big=Math.max(r(al),r(be),r(ga)); const art=big>90.05?'stumpfwinklig':Math.abs(big-90)<0.06?'rechtwinklig':'spitzwinklig';
+    tx.innerHTML=`α ≈ ${String(r(al)).replace('.',',')}° · β ≈ ${String(r(be)).replace('.',',')}° · γ ≈ ${String(r(ga)).replace('.',',')}° · Summe 180° · Das Dreieck ist <b>${art}</b>.`; }
+  ['kda','kdb','kdc'].forEach(i=>$(i).addEventListener('input',tri)); document.querySelectorAll('#kdOpts input').forEach(i=>i.addEventListener('change',tri)); tri();
+  makeOrder('ordKons',['Planskizze zeichnen und Gegebenes markieren','Strecke c = AB = 6 cm zeichnen','Winkel α = 50° bei A antragen','Auf dem freien Schenkel b = 4 cm abtragen → Punkt C','B mit C verbinden','Dreieck nachziehen und beschriften']);
+  // Quiz
+  const QZ=[
+   {q:'Welche Linien braucht man für den Umkreis?',o:['Mittelsenkrechten','Winkelhalbierenden','Seitenhalbierenden','Höhen'],a:0},
+   {q:'Welche Linien braucht man für den Inkreis?',o:['Mittelsenkrechten','Winkelhalbierenden','Seitenhalbierenden','Höhen'],a:1},
+   {q:'Der Schwerpunkt ist der Schnittpunkt der …',o:['Höhen','Seitenhalbierenden','Mittelsenkrechten','Winkelhalbierenden'],a:1},
+   {q:'Kann man ein Dreieck mit 3 cm, 4 cm und 8 cm zeichnen?',o:['ja','nein'],a:1,w:'3 + 4 = 7 ist kleiner als 8.'},
+   {q:'Kann man ein Dreieck mit 5 cm, 6 cm und 10 cm zeichnen?',o:['ja','nein'],a:0,w:'5 + 6 = 11 ist grösser als 10.'},
+   {q:'Ein Dreieck hat α = 70° und β = 50°. Wie gross ist γ?',o:['50°','60°','70°','120°'],a:1,w:'180° − 70° − 50° = 60°'},
+   {q:'Ein Viereck hat Winkel 90°, 90° und 100°. Der vierte Winkel ist …',o:['60°','70°','80°','90°'],a:2,w:'360° − 280° = 80°'},
+   {q:'Welche Seite liegt gegenüber von Ecke A?',o:['a','b','c'],a:0},
+   {q:'Seite c liegt zwischen …',o:['A und B','B und C','A und C'],a:0},
+   {q:'Eine Planskizze ist …',o:['genau mit Zirkel gezeichnet','von Hand und ungefähr, mit markierten Angaben','ein Konstruktionsbericht'],a:1},
+   {q:'Gegeben: c, α und β. Welcher Fall ist das?',o:['SSS','SWS','WSW','SsW'],a:2},
+   {q:'Gegeben: a, b und der Winkel γ dazwischen. Welcher Fall ist das?',o:['SSS','SWS','WSW','WWW'],a:1},
+   {q:'Warum reichen drei Winkel nicht, um ein Dreieck eindeutig zu konstruieren?',o:['Weil es dann viele verschieden grosse Dreiecke gibt','Weil die Summe nie 180° ist','Weil man Winkel nicht konstruieren kann'],a:0},
+   {q:'Alle Punkte, die von A und B gleich weit entfernt sind, liegen auf …',o:['dem Kreis um A','der Mittelsenkrechten von AB','der Parallelen zu AB'],a:1},
+   {q:'Wo liegt der Umkreismittelpunkt bei einem rechtwinkligen Dreieck?',o:['innen','auf der Mitte der längsten Seite','ausserhalb'],a:1,w:'Thaleskreis'},
+   {q:'Wo liegt der Umkreismittelpunkt bei einem stumpfwinkligen Dreieck?',o:['innen','auf einer Seite','ausserhalb'],a:2},
+   {q:'Welches Viereck hat 4 gleich lange Seiten, aber nicht unbedingt rechte Winkel?',o:['Rechteck','Raute','Trapez','Drachen'],a:1},
+   {q:'Bei welchem Viereck stehen die Diagonalen senkrecht aufeinander?',o:['Rechteck','Parallelogramm','Raute','Trapez'],a:2},
+   {q:'Ist jedes Quadrat ein Rechteck?',o:['ja','nein'],a:0},
+   {q:'Ist jedes Rechteck ein Quadrat?',o:['ja','nein'],a:1},
+   {q:'Wie misst man den Abstand eines Punktes zu einer Geraden?',o:['schräg','senkrecht','entlang der Geraden'],a:1},
+   {q:'Womit konstruiert man eine Mittelsenkrechte?',o:['zwei Kreise mit gleichem Radius um A und B','einen Kreis um die Mitte','nur mit dem Lineal'],a:0}
+  ];
+  function nq(){ renderMC('mcKQ',shuffle(QZ).slice(0,8)); $('kqNote').hidden=true; } $('kqNew').addEventListener('click',nq); nq();
+  $('kqCheck').addEventListener('click',()=>setTimeout(()=>{ const ok=document.querySelectorAll('#mcKQ .stmt.ok').length, n=8; const note=Math.round((ok/n*5+1)*4)/4; $('kqNote').hidden=false; $('kqNote').innerHTML=`<div class="fact"><span class="big">${ok}/${n}</span><span>Punkte</span></div><div class="fact"><span class="big">${String(note).replace('.',',')}</span><span>Note (6 = beste)</span></div>`; },0));
 })();
 
 /* ---------- Sokratischer Lösungsweg ---------- */
