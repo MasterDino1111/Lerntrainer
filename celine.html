@@ -329,6 +329,17 @@ svg .k-u{fill:none;stroke:var(--red);stroke-width:1.8} svg .k-i{fill:none;stroke
 svg .k-s{stroke:var(--warn);stroke-width:1.4;stroke-dasharray:4 3} svg .k-h{stroke:var(--blue);stroke-width:1.4;stroke-dasharray:2 3}
 .kcsteps{margin:0;padding-left:1.3em;display:flex;flex-direction:column;gap:4px}
 .kcsteps li.todo{color:var(--muted);opacity:.6} .kcsteps li.cur{font-weight:700}
+.kz{display:flex;flex-wrap:wrap;gap:6px}.kz button.on{background:var(--green);border-color:var(--green);color:var(--card)}
+svg .sd-soil{fill:var(--t3)} svg .sd-line{stroke:var(--ink);stroke-width:1.5;fill:none} svg .sd-seed{fill:var(--shade);stroke:var(--ink);stroke-width:1.6} svg .sd-seed.wet{fill:var(--t3)}
+svg .sd-root{stroke:var(--warn);stroke-width:3;fill:none} svg .sd-root.thin{stroke-width:1.6} svg .sd-stem{stroke:var(--green);stroke-width:3.5;fill:none} svg .sd-leaf{fill:var(--green);opacity:.75} svg .sd-leaf2{fill:var(--green)} svg .sd-flower{fill:var(--warn)}
+.exp{display:flex;gap:12px;flex-wrap:wrap}.exp-pot{display:flex;flex-direction:column;gap:4px;border:1px solid var(--line);border-radius:6px;padding:8px 12px}
+svg .exp-potg{fill:var(--t3);stroke:var(--ink)} svg .exp-g{stroke:var(--green);stroke-width:2} svg .exp-y{stroke:var(--warn);stroke-width:1.4} svg .exp-gl{fill:var(--green)} svg .exp-yl{fill:var(--warn)}
+#mkSvg{width:100%;max-width:300px;height:auto} #mkSvg .mk-part{cursor:pointer;fill:var(--t1);stroke:var(--ink);stroke-width:1.6} #mkSvg .mk-part:hover,#mkSvg .mk-part.sel{fill:var(--blue)} #mkSvg .mk-part.good{fill:var(--green)} #mkSvg .mk-part.wrong{fill:var(--red)} #mkSvg .mk-part:focus-visible{outline:none;stroke:var(--blue);stroke-width:3} #mkSvg .mk-lbl{pointer-events:none;font-weight:700}
+#zSvg{width:100%;max-width:380px;height:auto} #zSvg .z-o{cursor:pointer} #zSvg .z-wall{fill:var(--t2);stroke:var(--green);stroke-width:5} #zSvg .z-plasma{fill:var(--t5)} #zSvg .z-mem{fill:none;stroke:var(--ink);stroke-width:2} #zSvg .z-vac{fill:var(--blue-soft);stroke:var(--blue);stroke-width:1.5} #zSvg .z-nuc{fill:var(--t4);stroke:var(--ink);stroke-width:1.5} #zSvg .z-nucl{fill:var(--ink);opacity:.5} #zSvg .z-chl{fill:var(--green);stroke:var(--ink)} #zSvg .z-mit{fill:var(--warn);stroke:var(--ink)}
+#zSvg .z-o.sel *{stroke:var(--blue)!important;stroke-width:4!important} #zSvg .z-o.good *{stroke:var(--green)!important;stroke-width:5!important} #zSvg .z-o.wrong *{stroke:var(--red)!important;stroke-width:5!important}
+svg .cy-ph{fill:var(--green-soft);stroke:var(--green);stroke-width:2} svg .cy-za{fill:var(--warn-soft);stroke:var(--warn);stroke-width:2} svg .cy-ar{fill:none;stroke:var(--green)} svg .cy-ar2{fill:none;stroke:var(--warn)} svg .cy-arh{fill:var(--ink)}
+canvas{border-radius:6px}
+.subject.s-lz{border-top-color:var(--green)}
 button.okbtn{background:var(--green); border-color:var(--green)}
 button,label,.tile,.fcard,.kt,input,select,a{touch-action:manipulation; -webkit-tap-highlight-color:transparent}
 @media (pointer:coarse){ button{min-height:44px} button.small{min-height:40px} .opts label,.chips label{min-height:40px; padding:6px 14px} input.ans{min-height:42px; font-size:1.05rem} .spk{min-width:40px; min-height:40px} }
@@ -421,7 +432,8 @@ table.mk input.ml-cell{width:4.8em}
     <div class="subject s-nt">
       <span class="eyebrow">Fach</span><h2>NT</h2>
       <p class="small muted">Natur und Technik</p>
-      <div class="sublinks"><button type="button" data-view="nt"><b>Der Wald</b><span>SOL-Test · 13 Lernziele · Stockwerke, Abbau, Nahrungskreislauf, Versauerung</span></button></div>
+      <div class="sublinks"><button type="button" data-view="nt"><b>Der Wald</b><span>SOL-Test · 13 Lernziele · Stockwerke, Abbau, Nahrungskreislauf, Versauerung</span></button>
+        <button type="button" data-view="lz"><b>Lebewesen und Zellen</b><span>Test · 16 Lernziele · Zellen und Mikroskop zum Antippen, Animationen, Experiment</span></button></div>
     </div>
   </div>
 </div>
@@ -2535,6 +2547,161 @@ table.mk input.ml-cell{width:4.8em}
 </section>
 </div>
 
+<div class="view" id="view-lz" hidden>
+<div class="subject-head"><span class="eyebrow">NT · Natur und Technik · Test</span><h2 class="subject-title">Lebewesen und Zellen</h2></div>
+<nav class="toc" aria-label="Kapitel Lebewesen und Zellen">
+  <a href="#menu" class="menu-chip">← Menü</a>
+  <a href="#l-kenn">1–5 Kennzeichen & Reiche</a>
+  <a href="#l-komm">6 Kommunikation</a>
+  <a href="#l-samen">7–8 Samen & Experiment</a>
+  <a href="#l-mikro">9–10 Mikroskop</a>
+  <a href="#l-zelle">11–13 Zellen</a>
+  <a href="#l-foto">14 & 16 Fotosynthese & Zellatmung</a>
+  <a href="#l-diff">15 Diffusion & Osmose</a>
+  <a href="#l-quiz" class="star">Quiz & Probetest</a>
+</nav>
+
+<section class="page" id="l-kenn">
+  <header><span class="lz">Lernziele 1–5 · Seite 1–6</span><h2>Kennzeichen des Lebendigen und die fünf Reiche</h2></header>
+  <p>Tippe auf ein Kennzeichen. Du siehst, wie es bei Tier, Pflanze, Pilz und Einzeller aussieht.</p>
+  <div class="kz" id="kzBtns"></div>
+  <div class="merk" id="kzInfo"></div>
+  <div class="oops"><span class="tag">So begründest du</span><p>Ein Lebewesen muss <b>alle fünf</b> Kennzeichen zeigen. Ein Auto bewegt sich und «verbraucht» Benzin, aber es wächst nicht und pflanzt sich nicht fort, also ist es nicht lebendig. Antwortschema für LZ 4, 5 und 11: «Ein … ist ein Lebewesen, weil es sich bewegt (…), Stoffwechsel betreibt (…), auf Reize reagiert (…), wächst (…) und sich fortpflanzt (…).»</p></div>
+  <h3>Die fünf Reiche</h3>
+  <div class="tbl-wrap"><table class="cmp">
+    <tr><th></th><th>Bakterien</th><th>Protisten</th><th>Pilze</th><th>Pflanzen</th><th>Tiere</th></tr>
+    <tr><th>Zellkern</th><td><b>nein</b></td><td>ja</td><td>ja</td><td>ja</td><td>ja</td></tr>
+    <tr><th>Ein- / Mehrzeller</th><td>Einzeller</td><td>meist Einzeller</td><td>ein- und mehrzellig</td><td>Mehrzeller</td><td>Mehrzeller</td></tr>
+    <tr><th>Zellwand</th><td>ja</td><td>teils</td><td>ja (Chitin)</td><td>ja (Zellulose)</td><td><b>nein</b></td></tr>
+    <tr><th>Ernährung</th><td>verschieden</td><td>verschieden</td><td>von toten oder lebenden Lebewesen</td><td><b>Fotosynthese</b></td><td>fressen andere Lebewesen</td></tr>
+    <tr><th>Beispiele</th><td>Milchsäurebakterien, Salmonellen</td><td>Pantoffeltierchen, Amöbe, Augentierchen</td><td>Fliegenpilz, Hefe, Schimmel</td><td>Moos, Farn, Buche, Löwenzahn</td><td>Regenwurm, Biene, Forelle, Mensch</td></tr>
+  </table></div>
+  <div class="stack"><h3>Spiel: In welches Reich gehört …?</h3><div class="stmts" id="mcReich"></div><div class="btns"><button data-mc="mcReich">Prüfen</button><button class="ghost" id="reichNew">Neue Lebewesen</button><span class="result" id="mcReichRes" aria-live="polite"></span></div></div>
+</section>
+
+<section class="page" id="l-komm">
+  <header><span class="lz">Lernziel 6 · Seite 7</span><h2>Wie Pflanzen kommunizieren</h2></header>
+  <div class="cards3">
+    <div class="card"><h3>Über die Luft (Duftstoffe)</h3><p class="small">Wird eine <b>Akazie</b> von Giraffen gefressen, gibt sie einen Duftstoff ab. Nachbar-Akazien «riechen» ihn und bilden Bitterstoffe in den Blättern. <b>Mais</b>, der von Raupen angefressen wird, lockt mit Duft Schlupfwespen an, die die Raupen angreifen.</p></div>
+    <div class="card"><h3>Über den Boden (Wurzeln und Pilze)</h3><p class="small">Bäume sind über ihre <b>Wurzeln</b> und ein <b>Pilzgeflecht</b> (Mykorrhiza) verbunden. So können sie Nährstoffe und Warnsignale weitergeben, z. B. an junge Bäume im Schatten.</p></div>
+    <div class="card"><h3>Mit Farben und Düften</h3><p class="small"><b>Blüten</b> locken mit Farbe, Form, Duft und Nektar Insekten an, die sie bestäuben. Früchte zeigen mit Farbe, dass sie reif sind.</p></div>
+  </div>
+  <div class="merk"><strong>Vergleich</strong><ul>
+    <li><b>Gleich:</b> Die Pflanze sendet ein Signal, ein anderes Lebewesen empfängt es und reagiert.</li>
+    <li><b>Verschieden:</b> der Weg (Luft, Boden, Sehen) und wer empfängt (andere Pflanzen, Insekten, Tiere).</li>
+    <li>Duftsignale wirken schnell und weit, Signale über Wurzeln langsam und nur bei Nachbarn.</li>
+  </ul></div>
+</section>
+
+<section class="page" id="l-samen">
+  <header><span class="lz">Lernziele 7 und 8 · Seite 8–11</span><h2>Vom Samen zur Pflanze</h2></header>
+  <div class="lab">
+    <span class="eyebrow">Keimung Schritt für Schritt</span>
+    <label class="small" for="seedS"><b id="seedT"></b><input type="range" id="seedS" min="0" max="5" value="0" style="width:100%;accent-color:var(--green)"></label>
+    <svg id="seedSvg" viewBox="0 0 360 260" style="width:100%;max-width:420px;height:auto" role="img" aria-label="Keimung eines Samens"></svg>
+    <p id="seedD" class="small"></p>
+  </div>
+  <div class="merk"><strong>Fachbegriffe</strong><ul>
+    <li><b>Samenschale:</b> schützt den Samen. <b>Keimling:</b> die winzige Pflanze im Samen. <b>Keimblätter / Nährgewebe:</b> Vorrat an Nährstoffen (Stärke) für den Start.</li>
+    <li><b>Quellung:</b> Der Samen nimmt Wasser auf und wird grösser. <b>Keimung:</b> Der Keimling beginnt zu wachsen.</li>
+    <li>Zuerst kommt die <b>Keimwurzel</b> (nach unten), dann der <b>Keimstängel</b> (Spross, nach oben) mit den Keimblättern. Danach wachsen die ersten <b>Laubblätter</b>, und die Pflanze macht Fotosynthese.</li>
+    <li><b>Zum Keimen braucht es:</b> Wasser, Wärme und Sauerstoff. Licht braucht der Keimling erst später für die Fotosynthese.</li>
+  </ul></div>
+  <div class="lab">
+    <span class="eyebrow">Experiment-Simulator: Kresse wachsen lassen (7 Tage)</span>
+    <p class="small">Plane wie ein Forscher: Ändere bei einem Topf nur <b>eine</b> Bedingung, der andere ist die <b>Kontrolle</b>.</p>
+    <div class="exp" id="expBox"></div>
+    <div class="btns"><button type="button" id="expRun">7 Tage warten</button></div>
+    <svg id="expSvg" viewBox="0 0 400 200" style="width:100%;max-width:460px;height:auto" role="img" aria-label="Ergebnis Kresse-Experiment"></svg>
+    <p id="expTxt" class="small"></p>
+  </div>
+  <div class="merk"><strong>Ein Experiment dokumentieren (LZ 8)</strong><ul>
+    <li><b>1. Fragestellung:</b> Braucht Kresse Licht zum Wachsen?</li>
+    <li><b>2. Vermutung:</b> Ich vermute, dass … weil …</li>
+    <li><b>3. Material und Durchführung:</b> was du brauchst, was du machst. Nur <b>eine</b> Bedingung ändern, alles andere gleich lassen (fairer Versuch, Kontrollgruppe).</li>
+    <li><b>4. Beobachtung:</b> jeden Tag messen und in eine <b>Tabelle</b> eintragen, evtl. Zeichnung oder Foto.</li>
+    <li><b>5. Auswertung:</b> Diagramm, Vergleich mit der Vermutung: stimmte sie? <b>6. Ergebnis</b> in einem Satz.</li>
+  </ul></div>
+  <div class="stack"><h3>Übung: Bring die Entwicklung in die richtige Reihenfolge</h3><div class="order" id="ordSamen"></div></div>
+</section>
+
+<section class="page" id="l-mikro">
+  <header><span class="lz">Lernziele 9 und 10 · Seite 13–16</span><h2>Das Mikroskop</h2></header>
+  <div class="btns"><div class="seg" role="group" aria-label="Modus"><button type="button" id="mkLearn" class="on">Lernen</button><button type="button" id="mkQuiz">Quiz: Finde das Teil</button></div></div>
+  <div class="figwrap">
+    <svg id="mkSvg" viewBox="0 0 300 380" role="img" aria-label="Mikroskop mit Teilen zum Antippen"></svg>
+    <div class="side"><div class="merk" id="mkInfo"><strong>Tippe auf ein Teil des Mikroskops.</strong></div><div class="score" id="mkScore" hidden><span>Richtig <b id="mkOk">0</b></span><span>Versucht <b id="mkAll">0</b></span></div></div>
+  </div>
+  <div class="merk"><strong>Vergrösserung</strong><ul><li><b>Gesamtvergrösserung = Okular × Objektiv.</b> 10× Okular und 40× Objektiv → <b>400-fach</b>.</li></ul></div>
+  <div class="stack"><h3>Übung: Bedienung in der richtigen Reihenfolge</h3><div class="order" id="ordMikro"></div></div>
+  <div class="merk"><strong>Regeln für die mikroskopische Zeichnung (LZ 10)</strong><ul>
+    <li>Mit <b>spitzem Bleistift</b>, saubere, durchgezogene Linien. <b>Nicht ausmalen</b>, nicht schraffieren.</li>
+    <li><b>Gross</b> zeichnen (z. B. Kreis mit 8–10 cm), nur einen Ausschnitt mit wenigen Zellen, und nur das, was man <b>wirklich sieht</b>.</li>
+    <li><b>Beschriftung</b> mit dem Lineal: waagrechte Linien, die sich nicht kreuzen, Namen rechts daneben.</li>
+    <li><b>Angaben:</b> Titel (Objekt), Vergrösserung, Datum, Name.</li>
+  </ul></div>
+  <div class="stack"><h3>Übung: Richtig oder falsch gezeichnet?</h3><div class="stmts" id="mcZeich"></div><div class="btns"><button data-mc="mcZeich">Prüfen</button><span class="result" id="mcZeichRes" aria-live="polite"></span></div></div>
+</section>
+
+<section class="page" id="l-zelle">
+  <header><span class="lz">Lernziele 11–13 · Seite 17–20</span><h2>Pflanzenzelle und Tierzelle</h2></header>
+  <div class="btns"><div class="seg" role="group" aria-label="Zelle"><button type="button" id="zPfl" class="on">Pflanzenzelle</button><button type="button" id="zTier">Tierzelle</button></div><div class="seg" role="group" aria-label="Modus"><button type="button" id="zLearn" class="on">Lernen</button><button type="button" id="zQuiz">Quiz: Beschriften</button></div></div>
+  <div class="figwrap">
+    <svg id="zSvg" viewBox="0 0 360 280" role="img" aria-label="Zelle mit Organellen zum Antippen"></svg>
+    <div class="side"><div class="merk" id="zInfo"><strong>Tippe auf einen Teil der Zelle.</strong></div><div class="score" id="zScore" hidden><span>Richtig <b id="zcOk">0</b></span><span>Versucht <b id="zcAll">0</b></span></div></div>
+  </div>
+  <div class="tbl-wrap"><table class="cmp">
+    <tr><th>Bestandteil</th><th>Aufgabe</th><th>Pflanze</th><th>Tier</th></tr>
+    <tr><th>Zellkern</th><td>Steuerzentrale, enthält die Erbinformation</td><td>✓</td><td>✓</td></tr>
+    <tr><th>Zellmembran</th><td>dünne Hülle, regelt, was hinein und hinaus geht</td><td>✓</td><td>✓</td></tr>
+    <tr><th>Zellplasma</th><td>flüssige Grundsubstanz, hier laufen Vorgänge ab</td><td>✓</td><td>✓</td></tr>
+    <tr><th>Mitochondrien</th><td>«Kraftwerke»: Zellatmung, gewinnen Energie</td><td>✓</td><td>✓</td></tr>
+    <tr><th>Zellwand</th><td>feste Hülle aus Zellulose, gibt Form und Stabilität</td><td>✓</td><td>–</td></tr>
+    <tr><th>Chloroplasten</th><td>grün (Chlorophyll), hier läuft die Fotosynthese</td><td>✓</td><td>–</td></tr>
+    <tr><th>Vakuole</th><td>grosser Speicher für Zellsaft, hält die Zelle prall</td><td>✓ (gross)</td><td>– (höchstens klein)</td></tr>
+  </table></div>
+  <div class="merk"><strong>Einzeller sind Lebewesen (LZ 11)</strong><ul><li>Das <b>Pantoffeltierchen</b> besteht aus nur einer Zelle und zeigt alle Kennzeichen: Es <b>bewegt</b> sich mit Wimpern, <b>frisst</b> Bakterien (Nahrungsvakuolen) und scheidet aus (Stoffwechsel), <b>reagiert</b> auf Hindernisse und Gifte (Reizbarkeit), <b>wächst</b> und <b>teilt</b> sich (Fortpflanzung).</li></ul></div>
+</section>
+
+<section class="page" id="l-foto">
+  <header><span class="lz">Lernziele 14 und 16 · Seite 21, 22, 25</span><h2>Fotosynthese und Zellatmung</h2></header>
+  <div class="lab">
+    <span class="eyebrow">Der Kreislauf</span>
+    <svg id="cycSvg" viewBox="0 0 460 260" style="width:100%;height:auto" role="img" aria-label="Kreislauf von Fotosynthese und Zellatmung"></svg>
+    <div class="vars"><label for="phL" style="flex:1;min-width:180px">Licht: <b id="phLv">70 %</b><input type="range" id="phL" min="0" max="100" value="70" style="width:100%;accent-color:var(--warn)"></label><label for="phC" style="flex:1;min-width:180px">CO₂: <b id="phCv">50 %</b><input type="range" id="phC" min="0" max="100" value="50" style="width:100%;accent-color:var(--blue)"></label></div>
+    <p class="small" id="phTxt"></p>
+  </div>
+  <div class="cards3">
+    <div class="card"><h3>Fotosynthese</h3><p class="small"><b>Kohlenstoffdioxid + Wasser → Traubenzucker + Sauerstoff</b><br>mit <b>Licht</b>, in den <b>Chloroplasten</b> (Chlorophyll), nur bei Pflanzen und nur bei Licht. Lichtenergie wird im Zucker gespeichert.</p></div>
+    <div class="card"><h3>Zellatmung</h3><p class="small"><b>Traubenzucker + Sauerstoff → Kohlenstoffdioxid + Wasser + Energie</b><br>in den <b>Mitochondrien</b>, in <b>allen</b> Zellen (Pflanzen und Tiere), Tag und Nacht. Die Energie braucht die Zelle zum Leben.</p></div>
+    <div class="card"><h3>Traubenzucker und Stärke</h3><p class="small"><b>Traubenzucker</b> liefert Energie und ist Baustoff (z. B. für Zellulose). Was die Pflanze nicht sofort braucht, verwandelt sie in <b>Stärke</b> und speichert sie (Kartoffel, Getreidekörner, Samen).</p></div>
+  </div>
+  <div class="merk"><strong>Zusammenhang</strong><ul><li>Die Zellatmung ist die <b>Umkehrung</b> der Fotosynthese: Was die eine herstellt, braucht die andere. Pflanzen produzieren Sauerstoff, den Tiere und Menschen einatmen. Wir atmen CO₂ aus, das die Pflanzen brauchen.</li></ul></div>
+</section>
+
+<section class="page" id="l-diff">
+  <header><span class="lz">Lernziel 15 · Seite 23, 24</span><h2>Diffusion und Osmose</h2></header>
+  <div class="cards3" style="grid-template-columns:repeat(auto-fit,minmax(260px,1fr))">
+    <div class="lab"><span class="eyebrow">Diffusion</span><canvas id="cvDiff" width="300" height="180" style="width:100%;max-width:320px" aria-label="Animation Diffusion"></canvas><div class="btns"><button type="button" class="small" id="diffGo">Trennwand entfernen</button><button type="button" class="ghost small" id="diffReset">Neu</button></div><p class="small">Teilchen bewegen sich ständig. Sie verteilen sich von selbst von <b>hoher</b> zu <b>niedriger</b> Konzentration, bis überall gleich viele sind. Eine Membran ist <b>nicht nötig</b>.</p></div>
+    <div class="lab"><span class="eyebrow">Osmose</span><canvas id="cvOsmo" width="300" height="180" style="width:100%;max-width:320px" aria-label="Animation Osmose"></canvas><div class="btns"><button type="button" class="small" id="osmoGo">Start</button><button type="button" class="ghost small" id="osmoReset">Neu</button></div><p class="small">Eine <b>halbdurchlässige Membran</b> lässt nur die kleinen <b style="color:var(--blue)">Wasserteilchen</b> durch, die grossen <b style="color:var(--red)">Zuckerteilchen</b> nicht. Das Wasser wandert zur Seite mit <b>mehr Zucker oder Salz</b>. Dort steigt der Wasserspiegel.</p></div>
+  </div>
+  <div class="merk"><strong>Unterscheiden</strong><ul><li><b>Diffusion:</b> alle Teilchen verteilen sich, keine Membran nötig. Beispiele: Teebeutel im Wasser, Parfum im Zimmer, Sauerstoff aus der Lunge ins Blut.</li><li><b>Osmose:</b> Spezialfall, nur <b>Wasser</b> wandert durch eine <b>halbdurchlässige Membran</b> zur höheren Konzentration. Beispiele: Gurkensalat wird wässrig, Erdbeeren mit Zucker ziehen Saft, Rosinen quellen in Wasser, Kirschen platzen im Regen.</li></ul></div>
+  <div class="stack"><h3>Übung: Diffusion oder Osmose?</h3><div class="stmts" id="mcDO"></div><div class="btns"><button data-mc="mcDO">Prüfen</button><span class="result" id="mcDORes" aria-live="polite"></span></div></div>
+</section>
+
+<section class="page" id="l-quiz">
+  <header><span class="lz">Alle Lernziele</span><h2>Quiz und Probetest</h2></header>
+  <p>10 zufällige Fragen mit Note. Mit «Neue Fragen» kommen andere.</p>
+  <div class="stmts" id="mcLQ"></div>
+  <div class="btns"><button data-mc="mcLQ" id="lqCheck">Prüfen</button><button class="ghost" id="lqNew">Neue Fragen</button><span class="result" id="mcLQRes" aria-live="polite"></span></div>
+  <div class="facts" id="lqNote" hidden></div>
+  <h3>Schreib-Training</h3>
+  <p class="small">Antworte in ganzen Sätzen. «Prüfen» zeigt dir, welche Punkte du hast, und eine Musterlösung.</p>
+  <div class="btns"><button type="button" class="ghost small" id="lwNew">Andere Fragen</button><span class="small muted" id="lwScore"></span></div>
+  <div class="stmts" id="lwBox"></div>
+</section>
+</div>
+
 <p class="small muted" style="text-align:center">Viel Erfolg, Céline!</p>
 </div>
 
@@ -3167,7 +3334,7 @@ zNext();
 /* =====================================================================
    HAUPTMENÜ und RZG
    ===================================================================== */
-const views={home:document.getElementById('view-home'),mathe:document.getElementById('view-mathe'),rzg:document.getElementById('view-rzg'),en:document.getElementById('view-en'),foto:document.getElementById('view-foto'),nt:document.getElementById('view-nt'),fr:document.getElementById('view-fr')};
+const views={home:document.getElementById('view-home'),mathe:document.getElementById('view-mathe'),rzg:document.getElementById('view-rzg'),en:document.getElementById('view-en'),foto:document.getElementById('view-foto'),nt:document.getElementById('view-nt'),fr:document.getElementById('view-fr'),lz:document.getElementById('view-lz')};
 function showView(v,target){
   Object.keys(views).forEach(k=>views[k].hidden=k!==v);
   document.querySelectorAll('.mainmenu button').forEach(b=>b.classList.toggle('on',b.dataset.view===v));
@@ -3186,6 +3353,7 @@ document.querySelectorAll('a[href="#menu"]').forEach(a=>a.addEventListener('clic
   
   else if(h==='nt'||h.indexOf('n-')===0) showView('nt',h);
   else if(h==='fr'||h.indexOf('f-')===0) showView('fr',h);
+  else if(h==='lz'||h.indexOf('l-')===0) showView('lz',h);
   else if(h==='englisch'||h==='en'||h.indexOf('e-')===0) showView('en',h);
   else if(h.indexOf('k-')===0){ showTopic('k',false); showView('mathe',h); }
   else if(h.indexOf('x-')===0){ showTopic('e',false); showView('mathe',h); }
@@ -3613,8 +3781,8 @@ enQuizNew();
   window.__prof=()=>prof;
   const listeners=[]; window.__onProf=f=>listeners.push(f);
   const $=id=>document.getElementById(id);
-  const AREAS={'topic-b':'Mathe Brüche','topic-z':'Mathe Zahlen','topic-g':'Mathe Geld & Prozente','topic-q':'Mathe Wurzeln','topic-e':'Mathe Teilbarkeit','topic-k':'Mathe Konstruktionen','view-en':'Englisch','view-rzg':'RZG','view-nt':'NT Wald','view-fr':'Französisch'};
-  const TRAINER={tOk:'topic-b',zOk:'topic-z',gOk:'topic-g',qOk:'topic-q',xOk:'topic-e',wrOk:'view-en',grOk:'view-en',mapOk:'view-rzg',frOk:'view-fr'};
+  const AREAS={'topic-b':'Mathe Brüche','topic-z':'Mathe Zahlen','topic-g':'Mathe Geld & Prozente','topic-q':'Mathe Wurzeln','topic-e':'Mathe Teilbarkeit','topic-k':'Mathe Konstruktionen','view-en':'Englisch','view-rzg':'RZG','view-nt':'NT Wald','view-fr':'Französisch','view-lz':'NT Zellen'};
+  const TRAINER={tOk:'topic-b',zOk:'topic-z',gOk:'topic-g',qOk:'topic-q',xOk:'topic-e',wrOk:'view-en',grOk:'view-en',mapOk:'view-rzg',mkOk:'view-lz',zcOk:'view-lz',frOk:'view-fr'};
   const TRAINER_IN=['tIn','zIn','gIn','qIn','xIn','wrIn','grIn','frIn'];
   let prog={}, dbc=null, mem={};
   const lkey=()=>'lt-progress-'+prof;
@@ -4156,6 +4324,214 @@ Genau ${n} Aufgaben, gemischt etwa halb "mc" und halb "text". Bei "text" muss di
   ];
   function nq(){ renderMC('mcKQ',shuffle(QZ).slice(0,8)); $('kqNote').hidden=true; } $('kqNew').addEventListener('click',nq); nq();
   $('kqCheck').addEventListener('click',()=>setTimeout(()=>{ const ok=document.querySelectorAll('#mcKQ .stmt.ok').length, n=8; const note=Math.round((ok/n*5+1)*4)/4; $('kqNote').hidden=false; $('kqNote').innerHTML=`<div class="fact"><span class="big">${ok}/${n}</span><span>Punkte</span></div><div class="fact"><span class="big">${String(note).replace('.',',')}</span><span>Note (6 = beste)</span></div>`; },0));
+})();
+
+/* ---------- NT: Lebewesen und Zellen ---------- */
+(function(){
+  const $=id=>document.getElementById(id);
+  const esc=s=>String(s??'').replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+  // Kennzeichen
+  const KZ=[
+   ['Bewegung','Lebewesen bewegen sich selbst oder Teile von sich.','Ein Hund rennt, eine Schnecke kriecht.','Sonnenblumen drehen sich zur Sonne, Blüten öffnen und schliessen sich.','Das Pilzgeflecht wächst durch den Boden, Sporen werden verbreitet.','Das Pantoffeltierchen schwimmt mit Wimpern.'],
+   ['Stoffwechsel','Lebewesen nehmen Stoffe auf, verwandeln sie und geben andere ab (Ernährung, Atmung, Ausscheidung).','Frisst, atmet Sauerstoff ein und CO₂ aus.','Macht Fotosynthese, nimmt Wasser und Mineralstoffe auf, gibt Sauerstoff ab.','Nimmt Nährstoffe aus totem Holz oder Laub auf und zersetzt es.','Frisst Bakterien in Nahrungsvakuolen und scheidet Reste aus.'],
+   ['Reizbarkeit','Lebewesen nehmen Reize aus der Umwelt wahr und reagieren darauf.','Eine Katze hört ein Geräusch und dreht den Kopf.','Wurzeln wachsen nach unten (Schwerkraft), Triebe zum Licht. Die Mimose klappt bei Berührung die Blätter zu.','Wächst in Richtung Nahrung und Feuchtigkeit.','Schwimmt von Hindernissen und Giften weg.'],
+   ['Wachstum und Entwicklung','Lebewesen werden grösser und verändern sich im Laufe ihres Lebens.','Aus der Kaulquappe wird ein Frosch.','Aus einem Samen wird ein Baum.','Aus einer Spore wächst ein Pilzgeflecht, dann ein Fruchtkörper.','Die Zelle wird grösser, bevor sie sich teilt.'],
+   ['Fortpflanzung','Lebewesen bilden Nachkommen.','Eine Katze bekommt Junge, ein Huhn legt Eier.','Bildet Samen, manche auch Ableger.','Bildet Sporen.','Teilt sich in zwei Zellen.']
+  ];
+  $('kzBtns').innerHTML=KZ.map((k,i)=>`<button type="button" class="ghost" data-i="${i}">${i+1}. ${k[0]}</button>`).join('');
+  function kz(i){ const k=KZ[i]; $('kzBtns').querySelectorAll('button').forEach(b=>b.classList.toggle('on',+b.dataset.i===i));
+    $('kzInfo').innerHTML=`<strong>${k[0]}</strong><p>${k[1]}</p><ul><li><b>Tier:</b> ${k[2]}</li><li><b>Pflanze:</b> ${k[3]}</li><li><b>Pilz:</b> ${k[4]}</li><li><b>Einzeller:</b> ${k[5]}</li></ul>`; }
+  $('kzBtns').querySelectorAll('button').forEach(b=>b.addEventListener('click',()=>kz(+b.dataset.i))); kz(0);
+  const R=['Bakterien','Protisten','Pilze','Pflanzen','Tiere'];
+  const ORG=[['Milchsäurebakterium (im Joghurt)',0],['Salmonelle',0],['Cyanobakterium',0],['Pantoffeltierchen',1],['Amöbe',1],['Augentierchen (Euglena)',1],['Kieselalge',1],['Fliegenpilz',2],['Backhefe',2],['Schimmelpilz auf Brot',2],['Champignon',2],['Moos',3],['Farn',3],['Buche',3],['Löwenzahn',3],['Regenwurm',4],['Honigbiene',4],['Forelle',4],['Mensch',4],['Schwamm (im Meer)',4]];
+  function reich(){ renderMC('mcReich',shuffle(ORG).slice(0,8).map(o=>({q:`<b>${o[0]}</b>`,o:R,a:o[1]}))); } $('reichNew').addEventListener('click',reich); reich();
+  // Keimung
+  const ST=[['Trockener Samen','Der Samen ruht. Er enthält den Keimling und Nährstoffe, geschützt von der Samenschale.'],['Quellung','Der Samen nimmt Wasser auf, quillt und wird grösser. Die Samenschale platzt auf.'],['Keimwurzel','Die Keimwurzel wächst zuerst heraus, nach unten in die Erde.'],['Keimstängel und Keimblätter','Der Keimstängel wächst nach oben und hebt die Keimblätter aus der Erde. Sie werden grün.'],['Erste Laubblätter','Die ersten echten Laubblätter wachsen. Jetzt macht die Pflanze selbst Fotosynthese.'],['Junge Pflanze','Die Pflanze wächst weiter, bildet später Blüten, und nach der Bestäubung neue Samen.']];
+  function seed(){ const s=+$('seedS').value; $('seedT').textContent=`Schritt ${s+1} von 6: ${ST[s][0]}`; $('seedD').textContent=ST[s][1];
+    let g=`<rect x="0" y="150" width="360" height="110" class="sd-soil"/><line x1="0" y1="150" x2="360" y2="150" class="sd-line"/>`;
+    const sz=s===0?14:20; g+=`<ellipse cx="180" cy="165" rx="${sz+6}" ry="${sz}" class="sd-seed${s>=1?' wet':''}"/>`;
+    if(s>=1) g+=`<path d="M170 152 l6 6 l5 -7" class="sd-line"/>`;
+    if(s>=2) g+=`<path d="M180 180 C178 200 186 215 182 ${s>=3?245:225}" class="sd-root"/>`+(s>=4?`<path d="M181 210 l-14 12 M182 225 l12 10 M182 200 l10 8" class="sd-root thin"/>`:'');
+    if(s>=3){ const h=s===3?95:s===4?60:30; g+=`<path d="M180 150 C176 130 184 ${h+30} 180 ${h}" class="sd-stem"/><ellipse cx="166" cy="${h+4}" rx="14" ry="7" class="sd-leaf"/><ellipse cx="194" cy="${h+4}" rx="14" ry="7" class="sd-leaf"/>`; }
+    if(s>=4){ g+=`<path d="M180 ${s===4?60:30} l-6 -22 q6 -10 12 0 z" class="sd-leaf2"/><path d="M180 ${s===4?66:40} l22 -14 q4 10 -6 14 z" class="sd-leaf2"/>`; }
+    if(s>=5){ g+=`<path d="M180 30 C182 20 179 12 180 8" class="sd-stem"/><circle cx="180" cy="8" r="7" class="sd-flower"/><path d="M180 90 l-30 -14 q8 -12 20 2 z M180 110 l28 -10 q-2 14 -18 12 z" class="sd-leaf2"/>`; }
+    $('seedSvg').innerHTML=g; }
+  $('seedS').addEventListener('input',seed); seed();
+  makeOrder('ordSamen',['Samen ruht','Quellung (Wasser aufnehmen)','Keimwurzel wächst','Keimstängel mit Keimblättern','Erste Laubblätter, Fotosynthese','Blüte','Bestäubung und neue Samen']);
+  // Experiment
+  const COND=['Licht','Wasser','Wärme'];
+  $('expBox').innerHTML=['A','B'].map(t=>`<div class="exp-pot"><b>Topf ${t}</b>${COND.map(c=>`<label><input type="checkbox" id="exp${t}${c}" ${t==='A'||c!=='Licht'?'checked':''}> ${c}</label>`).join('')}</div>`).join('');
+  function grow(l,w,h){ if(!w) return {cm:0,col:'none',t:'keimt nicht (kein Wasser)'}; if(!h) return {cm:0.5,col:'g',t:'keimt kaum (zu kalt)'}; if(!l) return {cm:6,col:'y',t:'lang, dünn und gelblich (kein Licht, wächst zum Licht)'}; return {cm:4.5,col:'g',t:'kräftig und grün'}; }
+  $('expRun').addEventListener('click',()=>{ const r={}; ['A','B'].forEach(t=>{ r[t]={c:COND.map(c=>$('exp'+t+c).checked)}; r[t].g=grow(...r[t].c); });
+    let s=''; ['A','B'].forEach((t,i)=>{ const x=100+i*200, g=r[t].g, h=g.cm*22; s+=`<rect x="${x-40}" y="150" width="80" height="40" class="exp-potg"/><text x="${x}" y="176" text-anchor="middle" font-size="14">Topf ${t}</text>`;
+      for(let k=0;k<7&&h>0;k++){ const xx=x-30+k*10; s+=`<line x1="${xx}" y1="150" x2="${xx+(g.col==='y'?2:0)}" y2="${150-h}" class="${g.col==='y'?'exp-y':'exp-g'}"/>`+(g.cm>1?`<ellipse cx="${xx}" cy="${150-h}" rx="4" ry="2.5" class="${g.col==='y'?'exp-yl':'exp-gl'}"/>`:''); }
+      s+=`<text x="${x}" y="${Math.max(16,140-h)}" text-anchor="middle" font-size="13">${String(g.cm).replace('.',',')} cm</text>`; });
+    $('expSvg').innerHTML=s;
+    const diff=COND.filter((c,i)=>r.A.c[i]!==r.B.c[i]);
+    let txt=`Topf A: ${r.A.g.t}. Topf B: ${r.B.g.t}. `;
+    txt+=diff.length===0?'<b>Beide Töpfe sind gleich.</b> So kannst du nichts herausfinden. Ändere genau eine Bedingung.':diff.length===1?`<b>Fairer Versuch!</b> Nur «${diff[0]}» ist verschieden. Der Unterschied kommt also von ${diff[0]==='Licht'?'dem Licht':diff[0]==='Wasser'?'dem Wasser':'der Wärme'}.`:`<b>Kein fairer Versuch:</b> ${diff.join(' und ')} sind verschieden. Du weisst nicht, was den Unterschied verursacht hat.`;
+    $('expTxt').innerHTML=txt; });
+  // Mikroskop
+  const MK=[
+   ['Okular','Linse, durch die man hineinschaut. Vergrössert meist 10×.','<rect x="118" y="22" width="34" height="26" rx="4"/>'],
+   ['Tubus','Rohr zwischen Okular und Objektiven.','<rect x="124" y="48" width="22" height="62"/>'],
+   ['Revolver','Drehbare Scheibe, an der die Objektive sitzen. Damit wechselt man die Vergrösserung.','<rect x="108" y="110" width="54" height="16" rx="6"/>'],
+   ['Objektiv','Linse nahe am Objekt. Es gibt mehrere (z. B. 4×, 10×, 40×).','<rect x="112" y="126" width="12" height="30"/><rect x="129" y="126" width="12" height="38"/><rect x="146" y="126" width="12" height="24"/>'],
+   ['Objekttisch','Hier liegt der Objektträger mit dem Präparat.','<rect x="80" y="178" width="110" height="12"/>'],
+   ['Klemmen','Halten den Objektträger fest.','<rect x="88" y="170" width="22" height="7" rx="2"/><rect x="160" y="170" width="22" height="7" rx="2"/>'],
+   ['Blende','Regelt, wie viel Licht durch das Präparat geht.','<rect x="114" y="194" width="42" height="10" rx="3"/>'],
+   ['Lichtquelle','Lampe unten, die das Präparat von unten beleuchtet.','<circle cx="135" cy="232" r="13"/>'],
+   ['Grobtrieb','Grosses Rad: Objekttisch schnell hoch und runter, grob scharf stellen. Nur bei kleiner Vergrösserung.','<circle cx="214" cy="200" r="16"/>'],
+   ['Feintrieb','Kleines Rad: fein scharf stellen.','<circle cx="214" cy="236" r="9"/>'],
+   ['Stativ','Der gebogene Arm, an dem man das Mikroskop trägt.','<path d="M190 60 C240 70 245 140 220 180 L205 180 C225 140 220 90 180 80 Z"/>'],
+   ['Fuss','Schwerer Sockel, damit das Mikroskop sicher steht.','<rect x="70" y="262" width="170" height="26" rx="6"/>']
+  ];
+  const LBL={Okular:[60,36],Tubus:[60,80],Revolver:[40,118],Objektiv:[40,146],Objekttisch:[20,186],Klemmen:[20,168],Blende:[30,206],Lichtquelle:[30,236],Grobtrieb:[236,196],Feintrieb:[230,244],Stativ:[236,100],Fuss:[100,310]};
+  let mkMode='learn', mkT=-1, mkSt={ok:0,all:0};
+  function mkDraw(){ $('mkSvg').innerHTML=MK.map((m,i)=>`<g class="mk-part" data-i="${i}" tabindex="0" role="button" aria-label="${mkMode==='quiz'?'Teil':m[0]}">${m[2]}</g>`).join('')+(mkMode==='learn'?MK.map(m=>`<text x="${LBL[m[0]][0]}" y="${LBL[m[0]][1]}" font-size="12" class="mk-lbl">${m[0]}</text>`).join(''):'');
+    $('mkSvg').querySelectorAll('.mk-part').forEach(g=>{ const f=()=>mkClick(+g.dataset.i,g); g.addEventListener('click',f); g.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();f();}}); }); $('mkScore').hidden=mkMode!=='quiz'; }
+  function mkNext(){ let n; do{ n=ri(0,MK.length-1); }while(n===mkT); mkT=n; $('mkInfo').innerHTML=`<strong>Tippe auf: ${MK[n][0]}</strong>`; $('mkSvg').querySelectorAll('.mk-part').forEach(x=>x.classList.remove('sel','good','wrong')); }
+  function mkClick(i,g){ const m=MK[i]; $('mkSvg').querySelectorAll('.mk-part').forEach(x=>x.classList.remove('sel','good','wrong'));
+    if(mkMode==='learn'){ g.classList.add('sel'); $('mkInfo').innerHTML=`<strong>${m[0]}</strong><p>${m[1]}</p>`; return; }
+    mkSt.all++; if(i===mkT){ mkSt.ok++; g.classList.add('good'); $('mkInfo').innerHTML=`<strong>Richtig: ${m[0]}!</strong><p>${m[1]}</p>`; setTimeout(mkNext,1100); }
+    else { g.classList.add('wrong'); $('mkSvg').querySelector(`.mk-part[data-i="${mkT}"]`).classList.add('good'); $('mkInfo').innerHTML=`<strong>Das war: ${m[0]}.</strong><p>${MK[mkT][0]} ist grün markiert.</p><button type="button" class="small" id="mkN">Nächstes Teil</button>`; $('mkN').addEventListener('click',mkNext); }
+    $('mkOk').textContent=mkSt.ok; $('mkAll').textContent=mkSt.all; }
+  $('mkLearn').addEventListener('click',()=>{ mkMode='learn'; $('mkLearn').classList.add('on'); $('mkQuiz').classList.remove('on'); mkDraw(); $('mkInfo').innerHTML='<strong>Tippe auf ein Teil des Mikroskops.</strong>'; });
+  $('mkQuiz').addEventListener('click',()=>{ mkMode='quiz'; $('mkQuiz').classList.add('on'); $('mkLearn').classList.remove('on'); mkDraw(); mkNext(); });
+  mkDraw();
+  makeOrder('ordMikro',['Kleinstes Objektiv einstellen','Objektträger auf den Tisch legen und mit Klemmen festmachen','Lichtquelle einschalten','Von der Seite schauend mit dem Grobtrieb den Tisch nah ans Objektiv bringen','Durchs Okular schauen und mit dem Grobtrieb langsam wegdrehen, bis es scharf ist','Mit Feintrieb und Blende genau einstellen','Für mehr Vergrösserung Revolver drehen und nur noch mit dem Feintrieb scharf stellen']);
+  renderMC('mcZeich',[
+   {q:'Die Zellen werden mit Farbstift schön ausgemalt.',o:['richtig','falsch'],a:1,w:'Nicht ausmalen, nur Bleistiftlinien.'},
+   {q:'Die Beschriftungslinien sind waagrecht und kreuzen sich nicht.',o:['richtig','falsch'],a:0},
+   {q:'Man zeichnet möglichst viele Zellen, ganz klein.',o:['richtig','falsch'],a:1,w:'Wenige Zellen, dafür gross.'},
+   {q:'Titel, Vergrösserung und Datum stehen auf dem Blatt.',o:['richtig','falsch'],a:0},
+   {q:'Man zeichnet auch, was man im Buch gesehen hat, aber nicht im Mikroskop.',o:['richtig','falsch'],a:1,w:'Nur zeichnen, was man wirklich sieht.'}
+  ]);
+  // Zellen
+  const ORGN={
+   'Zellwand':['Feste Hülle aus Zellulose. Gibt der Pflanzenzelle Form und Stabilität.','p'],
+   'Zellmembran':['Dünne Hülle. Regelt, welche Stoffe hinein und hinaus gehen.','b'],
+   'Zellplasma':['Flüssige Grundsubstanz, in der die Organellen liegen und Vorgänge ablaufen.','b'],
+   'Zellkern':['Steuerzentrale der Zelle. Enthält die Erbinformation (DNA).','b'],
+   'Vakuole':['Grosser Raum mit Zellsaft. Speichert Wasser und Stoffe und hält die Zelle prall.','p'],
+   'Chloroplast':['Grün durch Chlorophyll. Hier läuft die Fotosynthese ab.','p'],
+   'Mitochondrium':['«Kraftwerk» der Zelle. Hier läuft die Zellatmung ab, es wird Energie gewonnen.','b']
+  };
+  let zType='p', zMode='learn', zT=null, zSt={ok:0,all:0};
+  function zDraw(){ let g='';
+    if(zType==='p'){ g+=`<g class="z-o" data-o="Zellwand"><rect x="20" y="20" width="320" height="240" rx="14" class="z-wall"/></g><g class="z-o" data-o="Zellplasma"><rect x="32" y="32" width="296" height="216" rx="8" class="z-plasma"/></g><g class="z-o" data-o="Zellmembran"><rect x="32" y="32" width="296" height="216" rx="8" class="z-mem"/></g><g class="z-o" data-o="Vakuole"><ellipse cx="200" cy="145" rx="95" ry="70" class="z-vac"/></g><g class="z-o" data-o="Zellkern"><circle cx="78" cy="90" r="30" class="z-nuc"/><circle cx="84" cy="86" r="9" class="z-nucl"/></g>`;
+      [[60,200],[110,232],[300,70],[305,190],[250,232],[160,52]].forEach(p=>g+=`<g class="z-o" data-o="Chloroplast"><ellipse cx="${p[0]}" cy="${p[1]}" rx="15" ry="8" class="z-chl"/></g>`);
+      [[60,150],[300,130],[200,234]].forEach(p=>g+=`<g class="z-o" data-o="Mitochondrium"><ellipse cx="${p[0]}" cy="${p[1]}" rx="12" ry="6" class="z-mit"/></g>`); }
+    else { g+=`<g class="z-o" data-o="Zellplasma"><path d="M60 60 C120 10 260 20 310 80 C350 140 320 230 240 250 C150 270 50 240 40 170 C32 120 40 80 60 60 Z" class="z-plasma"/></g><g class="z-o" data-o="Zellmembran"><path d="M60 60 C120 10 260 20 310 80 C350 140 320 230 240 250 C150 270 50 240 40 170 C32 120 40 80 60 60 Z" class="z-mem"/></g><g class="z-o" data-o="Zellkern"><circle cx="180" cy="140" r="40" class="z-nuc"/><circle cx="190" cy="132" r="12" class="z-nucl"/></g>`;
+      [[100,100],[260,110],[110,200],[250,200],[180,60]].forEach(p=>g+=`<g class="z-o" data-o="Mitochondrium"><ellipse cx="${p[0]}" cy="${p[1]}" rx="14" ry="7" class="z-mit"/></g>`); }
+    $('zSvg').innerHTML=g;
+    $('zSvg').querySelectorAll('.z-o').forEach(o=>o.addEventListener('click',e=>{ e.stopPropagation(); zClick(o.dataset.o); })); $('zScore').hidden=zMode!=='quiz'; }
+  const avail=()=>Object.keys(ORGN).filter(k=>zType==='p'||ORGN[k][1]==='b');
+  function zNext(){ const a=avail(); let n; do{ n=a[ri(0,a.length-1)]; }while(n===zT&&a.length>1); zT=n; $('zInfo').innerHTML=`<strong>Tippe auf: ${n}</strong>`; $('zSvg').querySelectorAll('.z-o').forEach(x=>x.classList.remove('sel','good','wrong')); }
+  function zClick(o){ $('zSvg').querySelectorAll('.z-o').forEach(x=>x.classList.remove('sel','good','wrong'));
+    const mark=(name,c)=>$('zSvg').querySelectorAll(`.z-o[data-o="${name}"]`).forEach(x=>x.classList.add(c));
+    if(zMode==='learn'){ mark(o,'sel'); $('zInfo').innerHTML=`<strong>${o}</strong><p>${ORGN[o][0]}</p><p class="small muted">${ORGN[o][1]==='p'?'Nur in der Pflanzenzelle.':'In Pflanzen- und Tierzellen.'}</p>`; return; }
+    zSt.all++; if(o===zT){ zSt.ok++; mark(o,'good'); $('zInfo').innerHTML=`<strong>Richtig: ${o}!</strong><p>${ORGN[o][0]}</p>`; setTimeout(zNext,1100); }
+    else { mark(o,'wrong'); mark(zT,'good'); $('zInfo').innerHTML=`<strong>Das war: ${o}.</strong><p>${zT} ist grün markiert.</p><button type="button" class="small" id="zN">Nächstes</button>`; $('zN').addEventListener('click',zNext); }
+    $('zcOk').textContent=zSt.ok; $('zcAll').textContent=zSt.all; }
+  const setT=t=>{ zType=t; $('zPfl').classList.toggle('on',t==='p'); $('zTier').classList.toggle('on',t==='t'); zDraw(); if(zMode==='quiz') zNext(); else $('zInfo').innerHTML='<strong>Tippe auf einen Teil der Zelle.</strong>'; };
+  $('zPfl').addEventListener('click',()=>setT('p')); $('zTier').addEventListener('click',()=>setT('t'));
+  $('zLearn').addEventListener('click',()=>{ zMode='learn'; $('zLearn').classList.add('on'); $('zQuiz').classList.remove('on'); zDraw(); $('zInfo').innerHTML='<strong>Tippe auf einen Teil der Zelle.</strong>'; });
+  $('zQuiz').addEventListener('click',()=>{ zMode='quiz'; $('zQuiz').classList.add('on'); $('zLearn').classList.remove('on'); zDraw(); zNext(); });
+  zDraw();
+  // Kreislauf
+  function cyc(){ const L=+$('phL').value, Cv=+$('phC').value; $('phLv').textContent=L+' %'; $('phCv').textContent=Cv+' %'; const rate=Math.min(L,Cv), w=2+rate/12;
+    $('cycSvg').innerHTML=`<defs><marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" class="cy-arh"/></marker></defs>
+      <rect x="20" y="70" width="150" height="110" rx="12" class="cy-ph"/><text x="95" y="112" text-anchor="middle" font-size="16">Fotosynthese</text><text x="95" y="134" text-anchor="middle" font-size="12">Chloroplast</text><text x="95" y="152" text-anchor="middle" font-size="12">nur mit Licht</text>
+      <rect x="290" y="70" width="150" height="110" rx="12" class="cy-za"/><text x="365" y="112" text-anchor="middle" font-size="16">Zellatmung</text><text x="365" y="134" text-anchor="middle" font-size="12">Mitochondrium</text><text x="365" y="152" text-anchor="middle" font-size="12">immer, alle Zellen</text>
+      <path d="M170 95 C220 60 240 60 290 95" class="cy-ar" stroke-width="${w}" marker-end="url(#ar)"/><text x="230" y="58" text-anchor="middle" font-size="13">Traubenzucker + Sauerstoff</text>
+      <path d="M290 160 C240 195 220 195 170 160" class="cy-ar2" stroke-width="3" marker-end="url(#ar)"/><text x="230" y="214" text-anchor="middle" font-size="13">Kohlenstoffdioxid + Wasser</text>
+      <text x="95" y="40" text-anchor="middle" font-size="22">☀</text><text x="95" y="60" text-anchor="middle" font-size="12">Lichtenergie</text><text x="365" y="210" text-anchor="middle" font-size="12">→ Energie zum Leben</text>`;
+    $('phTxt').innerHTML=rate<10?'<b>Kaum Fotosynthese.</b> Es fehlt '+(L<Cv?'Licht':'CO₂')+'. Die Zellatmung läuft trotzdem weiter.':`Fotosynthese-Stärke: <b>${rate} %</b>. Der Faktor, der am wenigsten vorhanden ist (${L<=Cv?'Licht':'CO₂'}), bremst. Je dicker der Pfeil, desto mehr Zucker und Sauerstoff entstehen.`; }
+  ['phL','phC'].forEach(i=>$(i).addEventListener('input',cyc)); cyc();
+  // Diffusion / Osmose Animation
+  const css=n=>getComputedStyle(document.documentElement).getPropertyValue(n).trim()||'#888';
+  const reduce=window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches;
+  function anim(cv,stepFn,drawFn){ let run=false, raf=0; const loop=()=>{ stepFn(); drawFn(); if(run) raf=requestAnimationFrame(loop); }; return {start(){ if(!run){ run=true; loop(); } },stop(){ run=false; cancelAnimationFrame(raf); },draw:drawFn}; }
+  { const cv=$('cvDiff'), c=cv.getContext('2d'); let pts=[], wall=true;
+    const reset=()=>{ pts=[]; for(let i=0;i<70;i++) pts.push({x:10+Math.random()*130,y:10+Math.random()*160,r:1}); for(let i=0;i<70;i++) pts.push({x:160+Math.random()*130,y:10+Math.random()*160,r:0}); wall=true; };
+    const step=()=>{ pts.forEach(p=>{ if(!p.r) return; p.x+=(Math.random()-.5)*6; p.y+=(Math.random()-.5)*6; p.x=Math.max(4,Math.min(wall?146:296,p.x)); p.y=Math.max(4,Math.min(176,p.y)); }); };
+    const draw=()=>{ c.fillStyle=css('--card'); c.fillRect(0,0,300,180); c.strokeStyle=css('--line'); c.strokeRect(1,1,298,178); pts.forEach(p=>{ if(!p.r) return; c.fillStyle=css('--red'); c.beginPath(); c.arc(p.x,p.y,3.5,0,7); c.fill(); }); if(wall){ c.fillStyle=css('--ink'); c.fillRect(148,0,4,180); } const l=pts.filter(p=>p.r&&p.x<150).length, r=pts.filter(p=>p.r&&p.x>=150).length; c.fillStyle=css('--ink'); c.font='13px sans-serif'; c.fillText(`links: ${l}`,10,174); c.fillText(`rechts: ${r}`,226,174); };
+    const a=anim(cv,step,draw); reset(); draw(); a.start();
+    $('diffGo').addEventListener('click',()=>{ wall=false; if(reduce){ for(let i=0;i<400;i++) step(); draw(); } });
+    $('diffReset').addEventListener('click',()=>{ reset(); draw(); }); }
+  { const cv=$('cvOsmo'), c=cv.getContext('2d'); let w=[], s=[], go=false;
+    const reset=()=>{ w=[]; s=[]; for(let i=0;i<80;i++) w.push({x:8+Math.random()*134,y:40+Math.random()*130}); for(let i=0;i<40;i++) w.push({x:158+Math.random()*134,y:40+Math.random()*130}); for(let i=0;i<22;i++) s.push({x:160+Math.random()*130,y:40+Math.random()*130}); go=false; };
+    const step=()=>{ if(!go) return; const nl=w.filter(p=>p.x<150).length, nr=w.length-nl; const levL=Math.max(20,40+(80-nl)*0.9), levR=Math.max(20,40+(80-nr)*0.9);
+      w.forEach(p=>{ p.x+=(Math.random()-.5)*6; p.y+=(Math.random()-.5)*6; const left=p.x<150; if(Math.abs(p.x-150)<3){ if(left&&Math.random()<0.55) p.x=154; else if(!left&&Math.random()<0.25) p.x=146; else p.x=left?146:154; } const top=p.x<150?levL:levR; p.x=Math.max(4,Math.min(296,p.x)); p.y=Math.max(top+3,Math.min(176,p.y)); });
+      s.forEach(p=>{ p.x+=(Math.random()-.5)*4; p.y+=(Math.random()-.5)*4; p.x=Math.max(156,Math.min(294,p.x)); p.y=Math.max(levR+5,Math.min(174,p.y)); }); };
+    const draw=()=>{ const nl=w.filter(p=>p.x<150).length, nr=w.length-nl; const levL=Math.max(20,40+(80-nl)*0.9), levR=Math.max(20,40+(80-nr)*0.9);
+      c.fillStyle=css('--card'); c.fillRect(0,0,300,180); c.fillStyle=css('--blue-soft'); c.fillRect(2,levL,146,178-levL); c.fillRect(152,levR,146,178-levR); c.strokeStyle=css('--line'); c.strokeRect(1,1,298,178);
+      c.setLineDash([4,4]); c.strokeStyle=css('--ink'); c.beginPath(); c.moveTo(150,0); c.lineTo(150,180); c.stroke(); c.setLineDash([]);
+      w.forEach(p=>{ c.fillStyle=css('--blue'); c.beginPath(); c.arc(p.x,p.y,2.4,0,7); c.fill(); }); s.forEach(p=>{ c.fillStyle=css('--red'); c.beginPath(); c.arc(p.x,p.y,5.5,0,7); c.fill(); });
+      c.fillStyle=css('--ink'); c.font='12px sans-serif'; c.fillText('reines Wasser',8,14); c.fillText('Zuckerwasser',200,14); };
+    const a=anim(cv,step,draw); reset(); draw(); a.start();
+    $('osmoGo').addEventListener('click',()=>{ go=true; if(reduce){ for(let i=0;i<500;i++) step(); draw(); } }); $('osmoReset').addEventListener('click',()=>{ reset(); draw(); }); }
+  renderMC('mcDO',[
+   {q:'Ein Teebeutel färbt das ganze Wasser in der Tasse.',o:['Diffusion','Osmose'],a:0},
+   {q:'Gurkenscheiben mit Salz werden wässrig.',o:['Diffusion','Osmose'],a:1,w:'Wasser verlässt die Gurkenzellen durch die Membran zum Salz.'},
+   {q:'Das Parfum riecht man bald im ganzen Zimmer.',o:['Diffusion','Osmose'],a:0},
+   {q:'Rosinen in Wasser werden dick und prall.',o:['Diffusion','Osmose'],a:1,w:'Wasser dringt durch die Haut zum Zucker in der Rosine.'},
+   {q:'Kirschen platzen nach starkem Regen.',o:['Diffusion','Osmose'],a:1},
+   {q:'Sauerstoff gelangt aus der Lunge ins Blut.',o:['Diffusion','Osmose'],a:0},
+   {q:'Erdbeeren mit Zucker bilden viel Saft.',o:['Diffusion','Osmose'],a:1}
+  ]);
+  // Quiz
+  const QZ=[
+   {q:'Welches ist KEIN Kennzeichen des Lebendigen?',o:['Wachstum','Fortpflanzung','Farbe','Stoffwechsel'],a:2},
+   {q:'Welche Lebewesen haben keinen Zellkern?',o:['Bakterien','Pilze','Pflanzen','Tiere'],a:0},
+   {q:'Zu welchem Reich gehört die Backhefe?',o:['Bakterien','Protisten','Pilze','Pflanzen'],a:2},
+   {q:'Zu welchem Reich gehört das Pantoffeltierchen?',o:['Tiere','Protisten','Bakterien','Pilze'],a:1},
+   {q:'Woraus besteht die Zellwand der Pflanzen?',o:['Chitin','Zellulose','Stärke','Fett'],a:1},
+   {q:'Welches Reich hat keine Zellwand?',o:['Pflanzen','Pilze','Tiere','Bakterien'],a:2},
+   {q:'Was wächst bei der Keimung zuerst aus dem Samen?',o:['Laubblätter','Keimwurzel','Blüte','Keimstängel'],a:1},
+   {q:'Was braucht ein Samen NICHT unbedingt zum Keimen?',o:['Wasser','Wärme','Sauerstoff','Licht'],a:3},
+   {q:'Okular 10×, Objektiv 40×. Gesamtvergrösserung?',o:['50×','400×','4000×','30×'],a:1},
+   {q:'Mit welchem Teil stellt man bei grosser Vergrösserung scharf?',o:['Grobtrieb','Feintrieb','Revolver','Blende'],a:1},
+   {q:'Womit regelt man die Lichtmenge?',o:['Okular','Blende','Tubus','Klemmen'],a:1},
+   {q:'Wo läuft die Fotosynthese ab?',o:['Mitochondrien','Zellkern','Chloroplasten','Vakuole'],a:2},
+   {q:'Wo läuft die Zellatmung ab?',o:['Mitochondrien','Chloroplasten','Zellwand','Vakuole'],a:0},
+   {q:'Was entsteht bei der Fotosynthese?',o:['CO₂ und Wasser','Traubenzucker und Sauerstoff','Stärke und CO₂','nur Energie'],a:1},
+   {q:'Was braucht die Zellatmung?',o:['Traubenzucker und Sauerstoff','Licht und Wasser','CO₂ und Licht','Stärke und Wasser'],a:0},
+   {q:'Wofür braucht die Pflanze Stärke?',o:['als Speicher für Traubenzucker','für die Farbe','für die Fortpflanzung','gar nicht'],a:0},
+   {q:'Welcher Bestandteil steuert die Zelle?',o:['Zellmembran','Zellkern','Zellplasma','Vakuole'],a:1},
+   {q:'Welcher Bestandteil kommt nur in Pflanzenzellen vor?',o:['Zellkern','Mitochondrium','Chloroplast','Zellmembran'],a:2},
+   {q:'Bei der Osmose wandert …',o:['Zucker durch die Membran','Wasser durch eine halbdurchlässige Membran','gar nichts','Luft'],a:1},
+   {q:'Bei der Diffusion verteilen sich Teilchen von …',o:['niedriger zu hoher Konzentration','hoher zu niedriger Konzentration','oben nach unten','warm zu kalt'],a:1},
+   {q:'Wann läuft die Zellatmung bei Pflanzen?',o:['nur am Tag','nur in der Nacht','Tag und Nacht','nie'],a:2},
+   {q:'Ein fairer Versuch ändert …',o:['alle Bedingungen','genau eine Bedingung','keine Bedingung','zwei Bedingungen'],a:1},
+   {q:'Wie kommunizieren Akazien, wenn Giraffen sie fressen?',o:['mit Geräuschen','mit Duftstoffen','mit Farben','gar nicht'],a:1},
+   {q:'Wie zeichnet man eine mikroskopische Zeichnung?',o:['farbig und klein','mit Bleistift, gross, ohne Ausmalen','mit Kugelschreiber','als Foto'],a:1}
+  ];
+  function nq(){ renderMC('mcLQ',shuffle(QZ).slice(0,10)); $('lqNote').hidden=true; } $('lqNew').addEventListener('click',nq); nq();
+  $('lqCheck').addEventListener('click',()=>setTimeout(()=>{ const ok=document.querySelectorAll('#mcLQ .stmt.ok').length; const note=Math.round((ok/10*5+1)*4)/4; $('lqNote').hidden=false; $('lqNote').innerHTML=`<div class="fact"><span class="big">${ok}/10</span><span>Punkte</span></div><div class="fact"><span class="big">${String(note).replace('.',',')}</span><span>Note (6 = beste)</span></div>`; },0));
+  // Schreiben
+  const WQ=[
+   {q:'Nenne die fünf Kennzeichen des Lebendigen.',g:[['Bewegung',['beweg']],['Stoffwechsel',['stoffwechsel','ernähr','atm']],['Reizbarkeit',['reiz','reagier']],['Wachstum',['wachs','entwickl']],['Fortpflanzung',['fortpflanz','nachkommen','vermehr']]],m:'Bewegung, Stoffwechsel, Reizbarkeit, Wachstum (und Entwicklung) und Fortpflanzung.'},
+   {q:'Begründe, warum ein Pilz ein Lebewesen ist.',g:[['Bewegung (Geflecht wächst, Sporen)',['beweg','wächst durch','sporen verbreit']],['Stoffwechsel (nimmt Nährstoffe auf)',['stoffwechsel','nährstoff','zersetz','ernähr']],['Reizbarkeit',['reiz','reagier','richtung']],['Wachstum',['wachs']],['Fortpflanzung durch Sporen',['spor','fortpflanz']]],need:4,m:'Ein Pilz ist ein Lebewesen, weil er alle Kennzeichen zeigt: Sein Geflecht bewegt sich wachsend durch den Boden, er betreibt Stoffwechsel (nimmt Nährstoffe aus totem Material auf), reagiert auf Reize (wächst zur Nahrung), wächst und pflanzt sich mit Sporen fort.'},
+   {q:'Begründe, warum ein Einzeller wie das Pantoffeltierchen ein Lebewesen ist.',g:[['bewegt sich mit Wimpern',['beweg','wimper','schwimm']],['frisst und scheidet aus',['fress','frisst','nahrung','stoffwechsel','ausscheid']],['reagiert auf Reize',['reiz','reagier']],['wächst',['wächst','wachs']],['teilt sich',['teil','fortpflanz']]],need:4,m:'Das Pantoffeltierchen bewegt sich mit Wimpern, frisst Bakterien und scheidet Reste aus (Stoffwechsel), reagiert auf Hindernisse (Reizbarkeit), wächst und teilt sich (Fortpflanzung). Also zeigt es alle Kennzeichen des Lebendigen.'},
+   {q:'Beschreibe die wichtigsten Unterschiede zwischen Pflanzen- und Tierzelle.',g:[['Zellwand nur bei Pflanzen',['zellwand']],['Chloroplasten nur bei Pflanzen',['chloroplast']],['grosse Vakuole bei Pflanzen',['vakuole']],['Form: Pflanzenzelle eckig, Tierzelle rundlich',['eckig','rund','form']]],need:3,m:'Pflanzenzellen haben eine Zellwand, Chloroplasten und eine grosse Vakuole, Tierzellen nicht. Pflanzenzellen sind darum eher eckig und fest, Tierzellen rundlich. Beide haben Zellkern, Zellmembran, Zellplasma und Mitochondrien.'},
+   {q:'Beschreibe die Fotosynthese und die Bedeutung von Traubenzucker und Stärke.',g:[['CO₂ und Wasser als Ausgangsstoffe',['kohlenstoffdioxid','co2','co₂','wasser']],['Licht, Chloroplasten',['licht','chloroplast','chlorophyll']],['Traubenzucker und Sauerstoff entstehen',['traubenzucker','glukose','sauerstoff']],['Traubenzucker = Energie/Baustoff',['energie','baustoff']],['Stärke = Speicher',['stärke','speicher']]],need:4,m:'Bei der Fotosynthese stellen Pflanzen in den Chloroplasten mit Lichtenergie aus Kohlenstoffdioxid und Wasser Traubenzucker und Sauerstoff her. Traubenzucker liefert Energie und ist Baustoff. Was nicht gebraucht wird, wird in Stärke umgewandelt und gespeichert, z. B. in Kartoffeln.'},
+   {q:'Erkläre den Unterschied zwischen Diffusion und Osmose mit je einem Beispiel.',g:[['Diffusion: Teilchen verteilen sich gleichmässig',['verteil','gleichmässig','hoher','konzentration']],['Osmose: halbdurchlässige Membran',['membran','halbdurchlässig','semipermeabel']],['Osmose: nur Wasser wandert',['wasser']],['Beispiele',['tee','parfum','gurke','rosine','erdbeer','kirsch','salz']]],m:'Bei der Diffusion verteilen sich Teilchen von selbst von hoher zu niedriger Konzentration, z. B. Tee im Wasser. Bei der Osmose wandert nur Wasser durch eine halbdurchlässige Membran zur Seite mit mehr gelösten Stoffen, z. B. Gurken im Salz werden wässrig.'},
+   {q:'Beschreibe die Zellatmung und wie sie mit der Fotosynthese zusammenhängt.',g:[['Traubenzucker + Sauerstoff',['traubenzucker','sauerstoff']],['→ CO₂ + Wasser + Energie',['kohlenstoffdioxid','co2','co₂','energie']],['in den Mitochondrien, alle Zellen',['mitochondri','alle zellen','tier']],['Umkehrung / Kreislauf mit Fotosynthese',['umkehr','gegenteil','kreislauf','umgekehrt']]],m:'Bei der Zellatmung wird in den Mitochondrien Traubenzucker mit Sauerstoff zu Kohlenstoffdioxid und Wasser abgebaut, dabei wird Energie frei. Das passiert in allen Zellen. Sie ist die Umkehrung der Fotosynthese: Die Stoffe, die die eine herstellt, braucht die andere.'},
+   {q:'Beschreibe die Entwicklung vom Samen zur Pflanze mit Fachbegriffen.',g:[['Quellung',['quell']],['Keimung',['keim']],['Keimwurzel',['keimwurzel','wurzel']],['Keimblätter / Keimstängel',['keimblätt','keimstängel','spross']],['Laubblätter / Fotosynthese',['laubblätt','fotosynth','blätter']]],need:4,m:'Der Samen nimmt Wasser auf und quillt (Quellung). Bei der Keimung wächst zuerst die Keimwurzel nach unten, dann der Keimstängel mit den Keimblättern nach oben. Danach bilden sich Laubblätter, und die Pflanze macht Fotosynthese.'}
+  ];
+  let cur=[], pts=0, max=0; const low=s=>String(s).toLowerCase();
+  function wr(){ cur=shuffle(WQ).slice(0,3); pts=0; max=0; $('lwScore').textContent='';
+    $('lwBox').innerHTML=cur.map((it,i)=>`<div class="stmt" data-i="${i}"><div class="top"><span class="letter">${i+1}</span><span class="txt">${esc(it.q)}</span></div><textarea class="rwta" id="lw${i}" rows="4" aria-label="Antwort ${i+1}" placeholder="Schreib deine Antwort in ganzen Sätzen …"></textarea><div class="btns"><button type="button" class="small" data-lw="${i}">Prüfen</button></div><div class="why" hidden></div></div>`).join('');
+    $('lwBox').querySelectorAll('[data-lw]').forEach(b=>b.addEventListener('click',()=>chk(+b.dataset.lw))); }
+  function chk(i){ const it=cur[i], txt=low($('lw'+i).value), box=$('lwBox').children[i], w=box.querySelector('.why');
+    if(txt.trim().length<5){ w.hidden=false; w.innerHTML='<b>Schreib zuerst eine Antwort.</b>'; return; }
+    const hit=it.g.map(g=>g[1].some(k=>txt.includes(low(k)))); const need=it.need||it.g.length, got=Math.min(need,hit.filter(Boolean).length);
+    box.classList.remove('bad'); if(got>=need) box.classList.add('ok'); else box.classList.add('bad'); w.hidden=false;
+    w.innerHTML=`<b>${got} von ${need} Punkten.</b><ul class="rwpts">${it.g.map((g,k)=>`<li class="${hit[k]?'y':'n'}">${hit[k]?'✓':'○'} ${esc(g[0])}</li>`).join('')}</ul><p><b>Musterlösung:</b> ${esc(it.m)}</p><p class="small muted">Die Kontrolle sucht nur nach Stichwörtern.</p>`;
+    if(!box.dataset.done){ box.dataset.done=1; pts+=got; max+=need; $('lwScore').textContent=`Total: ${pts} von ${max} Punkten`; } }
+  $('lwNew').addEventListener('click',wr); wr();
 })();
 
 /* ---------- Sokratischer Lösungsweg ---------- */
