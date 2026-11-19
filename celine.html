@@ -340,6 +340,7 @@ svg .exp-potg{fill:var(--t3);stroke:var(--ink)} svg .exp-g{stroke:var(--green);s
 svg .cy-ph{fill:var(--green-soft);stroke:var(--green);stroke-width:2} svg .cy-za{fill:var(--warn-soft);stroke:var(--warn);stroke-width:2} svg .cy-ar{fill:none;stroke:var(--green)} svg .cy-ar2{fill:none;stroke:var(--warn)} svg .cy-arh{fill:var(--ink)}
 canvas{border-radius:6px}
 .subject.s-lz{border-top-color:var(--green)}
+.smileys{display:flex;gap:8px;flex-wrap:wrap}.smileys .sm{font-size:2rem;background:var(--card);border:2px solid var(--line);padding:6px 12px}.smileys .sm.on{border-color:var(--blue);background:var(--blue-soft)}
 button.okbtn{background:var(--green); border-color:var(--green)}
 button,label,.tile,.fcard,.kt,input,select,a{touch-action:manipulation; -webkit-tap-highlight-color:transparent}
 @media (pointer:coarse){ button{min-height:44px} button.small{min-height:40px} .opts label,.chips label{min-height:40px; padding:6px 14px} input.ans{min-height:42px; font-size:1.05rem} .spk{min-width:40px; min-height:40px} }
@@ -420,6 +421,7 @@ table.mk input.ml-cell{width:4.8em}
       <span class="eyebrow">Fach</span><h2>Englisch</h2>
       <p class="small muted">New World 3 · Vocabulary</p>
       <div class="sublinks">
+        <button type="button" data-view="en" data-goto="e-u8"><b>Unit Test 8</b><span>Sport-Voci · Gefühlsverben + -ing · Present Continuous · Zero Conditional · Personal Pronouns</span></button>
         <button type="button" data-view="en" data-goto="e-past"><b>SOL Test Grammar</b><span>Past Simple · Comparison of Adjectives · Question Tags · Probetest</span></button>
         <button type="button" data-view="en"><b>Passion for sport</b><span>33 Wörter · Karteikarten, Schreiben, Lückentext, Quiz</span></button>
       </div>
@@ -2124,6 +2126,7 @@ table.mk input.ml-cell{width:4.8em}
 <div class="subject-head"><span class="eyebrow">Englisch · New World 3, Unit 5</span><h2 class="subject-title">Passion for sport</h2></div>
 <nav class="toc" aria-label="Kapitel Englisch">
   <a href="#menu" class="menu-chip">← Menü</a>
+  <a href="#e-u8" class="star">Unit Test 8</a>
   <a href="#e-past" class="star">Past Simple</a>
   <a href="#e-comp" class="star">Comparison</a>
   <a href="#e-tags" class="star">Question Tags</a>
@@ -2135,6 +2138,94 @@ table.mk input.ml-cell{width:4.8em}
   <a href="#e-grammatik">Tipps</a>
   <a href="#e-quiz">Quiz</a>
 </nav>
+
+<section class="page" id="e-u8">
+  <header><span class="lz">Unit Test 8 · Überblick</span><h2>Unit Test 8: deine Lernziele</h2></header>
+  <div class="lzlist">
+    <a href="#e-liste"><b>1</b> Voci zu Sport (Passion for sport, 33 Wörter)</a>
+    <a href="#e-feel"><b>2</b> -ing-Form nach Gefühlsverben (Smileys)</a>
+    <a href="#e-pc"><b>3</b> Present Continuous</a>
+    <a href="#e-zero"><b>4</b> Zero Conditional</a>
+    <a href="#e-pron"><b>5</b> Personal Pronouns</a>
+    <a href="#e-u8train"><b>★</b> Training und Probetest mit allem</a>
+  </div>
+</section>
+
+<section class="page" id="e-feel">
+  <header><span class="lz">Unit Test 8 · Lernziel 2</span><h2>Gefühlsverben + -ing</h2></header>
+  <p>Tippe auf einen Smiley.</p>
+  <div class="smileys" id="smBtns"></div>
+  <div class="merk" id="smInfo"></div>
+  <div class="merk"><strong>Regel</strong><ul>
+    <li>Nach Verben, die ein <b>Gefühl</b> ausdrücken, kommt das nächste Verb mit <b>-ing</b>: I love <b>playing</b> football. She hates <b>getting up</b> early.</li>
+    <li><b>Schreibweise:</b> play → playing · write → writ<b>ing</b> (stummes e fällt weg) · swim → swi<b>mm</b>ing, run → ru<b>nn</b>ing (verdoppeln) · lie → l<b>y</b>ing</li>
+    <li><b>he/she/it:</b> s am Gefühlsverb, nicht am -ing-Verb: He lov<b>es</b> swimming. · Verneinung: She <b>doesn't like</b> running.</li>
+  </ul></div>
+  <div class="stack"><h3>Übung: Welches Verb passt zum Smiley?</h3><div class="stmts" id="mcFeel"></div><div class="btns"><button data-mc="mcFeel">Prüfen</button><button class="ghost" id="feelNew">Neue Sätze</button><span class="result" id="mcFeelRes" aria-live="polite"></span></div></div>
+</section>
+
+<section class="page" id="e-pc">
+  <header><span class="lz">Unit Test 8 · Lernziel 3</span><h2>Present Continuous</h2></header>
+  <div class="merk"><strong>Wann?</strong><ul><li>Für Dinge, die <b>genau jetzt</b> passieren. Signalwörter: <b>now, right now, at the moment, Look!, Listen!</b></li><li>Vergleich: <b>Present Simple</b> für Gewohnheiten (every day, always, often): I play tennis every Monday. <b>Present Continuous</b> für jetzt: I am playing tennis now.</li></ul></div>
+  <div class="tbl-wrap"><table class="frtab">
+    <tr><th></th><th>positiv</th><th>verneint</th><th>Frage</th></tr>
+    <tr><th>I</th><td>I <b>am</b> play<b>ing</b></td><td>I'm <b>not</b> playing</td><td><b>Am</b> I playing?</td></tr>
+    <tr><th>he / she / it</th><td>she <b>is</b> play<b>ing</b></td><td>she <b>isn't</b> playing</td><td><b>Is</b> she playing?</td></tr>
+    <tr><th>you / we / they</th><td>they <b>are</b> play<b>ing</b></td><td>they <b>aren't</b> playing</td><td><b>Are</b> they playing?</td></tr>
+  </table></div>
+  <div class="oops"><span class="tag">Typische Fehler</span><p>I playing ✗ → I <b>am</b> playing ✓ (am/is/are nie vergessen) · She is <b>swiming</b> ✗ → swi<b>mm</b>ing ✓ · He is <b>writeing</b> ✗ → writing ✓</p></div>
+</section>
+
+<section class="page" id="e-zero">
+  <header><span class="lz">Unit Test 8 · Lernziel 4</span><h2>Zero Conditional</h2></header>
+  <div class="merk"><strong>Regel</strong><ul>
+    <li>Für Dinge, die <b>immer</b> so sind: Fakten, Naturgesetze, Regeln. <b>Wenn A passiert, passiert immer B.</b></li>
+    <li><b>If + Present Simple, Present Simple.</b> If you heat ice, it melts. If you don't follow the rules, you lose points.</li>
+    <li>Man kann die Teile tauschen. Dann fällt das Komma weg: Ice melts if you heat it.</li>
+    <li>Statt <b>if</b> geht auch <b>when</b>: When it rains, the court is wet.</li>
+    <li>Beide Teile im <b>Present Simple</b>, kein will! If you run fast, your heart <b>beats</b> faster (nicht: will beat).</li>
+  </ul></div>
+  <div class="stack"><h3>Übung: Verbinde die Satzhälften</h3><div class="stmts" id="mcZero"></div><div class="btns"><button data-mc="mcZero">Prüfen</button><span class="result" id="mcZeroRes" aria-live="polite"></span></div></div>
+</section>
+
+<section class="page" id="e-pron">
+  <header><span class="lz">Unit Test 8 · Lernziel 5</span><h2>Personal Pronouns</h2></header>
+  <div class="tbl-wrap"><table class="frtab">
+    <tr><th>Subject (wer tut etwas?)</th><td>I</td><td>you</td><td>he</td><td>she</td><td>it</td><td>we</td><td>you</td><td>they</td></tr>
+    <tr><th>Object (wen, wem?)</th><td><b>me</b></td><td><b>you</b></td><td><b>him</b></td><td><b>her</b></td><td><b>it</b></td><td><b>us</b></td><td><b>you</b></td><td><b>them</b></td></tr>
+    <tr><th>Possessive (wessen?)</th><td>my</td><td>your</td><td>his</td><td>her</td><td>its</td><td>our</td><td>your</td><td>their</td></tr>
+  </table></div>
+  <div class="merk"><strong>Subjekt oder Objekt?</strong><ul>
+    <li><b>Vor dem Verb</b> (wer tut es?) → Subject: <b>She</b> passes the ball.</li>
+    <li><b>Nach dem Verb oder nach einer Präposition</b> (with, to, for …) → Object: Pass the ball to <b>her</b>! Can you help <b>us</b>? I play with <b>them</b>.</li>
+    <li><b>it</b> für Dinge und Tiere, <b>they/them</b> für mehrere.</li>
+  </ul></div>
+</section>
+
+<section class="page" id="e-u8train">
+  <header><span class="lz">Unit Test 8 · alle Lernziele</span><h2>Training und Probetest</h2></header>
+  <p>Schreib die fehlende Form. Kurz- und Langformen (I'm / I am) gehen beide.</p>
+  <div class="trainer">
+    <div class="chips" id="u8Types">
+      <label><input type="checkbox" value="voc" checked> Sport-Voci</label>
+      <label><input type="checkbox" value="ing" checked> Gefühl + -ing</label>
+      <label><input type="checkbox" value="pc" checked> Present Continuous</label>
+      <label><input type="checkbox" value="zc" checked> Zero Conditional</label>
+      <label><input type="checkbox" value="pp" checked> Personal Pronouns</label>
+    </div>
+    <div class="task" id="u8Task" aria-live="polite"></div>
+    <div class="btns"><input class="ans" id="u8In" aria-label="Deine Antwort" style="width:14em" autocomplete="off" autocapitalize="off" spellcheck="false"><button id="u8Check">Prüfen</button><button class="ghost" id="u8Hint">Regel</button><button class="ghost" id="u8Next">Nächste</button></div>
+    <div class="result" id="u8Res" aria-live="polite"></div>
+    <div class="score"><span>Richtig <b id="u8Ok">0</b></span><span>Versucht <b id="u8All">0</b></span><span>Serie <b id="u8Streak">0</b></span></div>
+  </div>
+  <div class="stack" style="margin-top:14px">
+    <h3>Probetest Unit 8 (20 Aufgaben, mit Note)</h3>
+    <div class="btns"><button type="button" id="u8tStart">Neuen Test starten</button></div>
+    <div class="rows" id="u8tRows"></div>
+    <div class="btns" id="u8tBtns" hidden><button type="button" id="u8tSubmit">Abgeben</button></div>
+    <div class="facts" id="u8tResult" hidden></div>
+  </div>
+</section>
 
 <section class="page" id="e-past">
   <header><span class="lz">SOL Test · Lernziel 1</span><h2>Past Simple</h2></header>
@@ -3782,8 +3873,8 @@ enQuizNew();
   const listeners=[]; window.__onProf=f=>listeners.push(f);
   const $=id=>document.getElementById(id);
   const AREAS={'topic-b':'Mathe Brüche','topic-z':'Mathe Zahlen','topic-g':'Mathe Geld & Prozente','topic-q':'Mathe Wurzeln','topic-e':'Mathe Teilbarkeit','topic-k':'Mathe Konstruktionen','view-en':'Englisch','view-rzg':'RZG','view-nt':'NT Wald','view-fr':'Französisch','view-lz':'NT Zellen'};
-  const TRAINER={tOk:'topic-b',zOk:'topic-z',gOk:'topic-g',qOk:'topic-q',xOk:'topic-e',wrOk:'view-en',grOk:'view-en',mapOk:'view-rzg',mkOk:'view-lz',zcOk:'view-lz',frOk:'view-fr'};
-  const TRAINER_IN=['tIn','zIn','gIn','qIn','xIn','wrIn','grIn','frIn'];
+  const TRAINER={tOk:'topic-b',zOk:'topic-z',gOk:'topic-g',qOk:'topic-q',xOk:'topic-e',wrOk:'view-en',grOk:'view-en',u8Ok:'view-en',mapOk:'view-rzg',mkOk:'view-lz',zcOk:'view-lz',frOk:'view-fr'};
+  const TRAINER_IN=['tIn','zIn','gIn','qIn','xIn','wrIn','grIn','frIn','u8In'];
   let prog={}, dbc=null, mem={};
   const lkey=()=>'lt-progress-'+prof;
   function migrate(p){ const o={}; Object.keys(p||{}).forEach(k=>{ const a=TRAINER[k]||k; o[a]=(o[a]||0)+(+p[k]||0); }); return o; }
@@ -4532,6 +4623,59 @@ Genau ${n} Aufgaben, gemischt etwa halb "mc" und halb "text". Bei "text" muss di
     w.innerHTML=`<b>${got} von ${need} Punkten.</b><ul class="rwpts">${it.g.map((g,k)=>`<li class="${hit[k]?'y':'n'}">${hit[k]?'✓':'○'} ${esc(g[0])}</li>`).join('')}</ul><p><b>Musterlösung:</b> ${esc(it.m)}</p><p class="small muted">Die Kontrolle sucht nur nach Stichwörtern.</p>`;
     if(!box.dataset.done){ box.dataset.done=1; pts+=got; max+=need; $('lwScore').textContent=`Total: ${pts} von ${max} Punkten`; } }
   $('lwNew').addEventListener('click',wr); wr();
+})();
+
+/* ---------- Englisch Unit Test 8 ---------- */
+(function(){
+  const $=id=>document.getElementById(id);
+  const SM=[['😍','adore, love','Ich liebe es','I love playing basketball.'],['🙂','like, enjoy','Ich mag es','I enjoy swimming in the lake.'],['😐',"don't mind",'Es macht mir nichts aus',"I don't mind running in the rain."],['🙁',"don't like",'Ich mag es nicht',"I don't like losing."],['😡',"hate, can't stand",'Ich hasse es',"I can't stand waiting for the bus."]];
+  $('smBtns').innerHTML=SM.map((s,i)=>`<button type="button" class="sm" data-i="${i}" aria-label="${s[2]}">${s[0]}</button>`).join('');
+  function sm(i){ const s=SM[i]; $('smBtns').querySelectorAll('button').forEach(b=>b.classList.toggle('on',+b.dataset.i===i)); $('smInfo').innerHTML=`<strong>${s[0]} ${s[1]}</strong><p>${s[2]}. Beispiel: <i>${s[3]}</i></p>`; }
+  $('smBtns').querySelectorAll('button').forEach(b=>b.addEventListener('click',()=>sm(+b.dataset.i))); sm(0);
+  const ACT=[['play football','playing football'],['swim','swimming'],['run','running'],['ride my bike','riding my bike'],['watch sport on TV','watching sport on TV'],['lose a match','losing a match'],['win','winning'],['get up early','getting up early'],['do homework','doing homework'],['climb mountains','climbing mountains'],['dance','dancing'],['go jogging','going jogging']];
+  const OPT=['adore','like',"don't mind","don't like",'hate'];
+  function feel(){ renderMC('mcFeel',shuffle(ACT).slice(0,6).map(a=>{ const k=ri(0,4); return {q:`${SM[k][0]} I ___ ${a[1]}.`,o:OPT,a:k,w:`${SM[k][0]} = ${SM[k][1]}`}; })); }
+  $('feelNew').addEventListener('click',feel); feel();
+  renderMC('mcZero',[
+   {q:'If you heat water to 100 °C, …',o:['it boils.','it will boil.','it boiled.'],a:0},
+   {q:'If you don\'t follow the rules, …',o:['you lose points.','you lost points.','you will losing points.'],a:0},
+   {q:'If it rains, …',o:['the court gets wet.','the court will gets wet.','the court got wet.'],a:0},
+   {q:'Plants die …',o:['if they don\'t get water.','if they won\'t get water.','if they didn\'t get water.'],a:0},
+   {q:'If you train every day, …',o:['you get fitter.','you got fitter.','you getting fitter.'],a:0}
+  ]);
+  const VOC=[['passen','pass'],['schlagen','hit'],['das Netz','net'],['die Spielerin / der Spieler','player'],['alleine','by yourself'],['drinnen','indoors'],['draussen','outdoors'],['der Platz, das Spielfeld','court'],['die Bahn','track'],['rennen','race'],['die Regeln befolgen','follow the rules'],['der Wettbewerb','competition'],['athletisch','athletic'],['die Ausdauer','endurance'],['die Geschwindigkeit','speed'],['die Hürde','obstacle'],['der Nervenkitzel','thrill'],['faszinierend','fascinating'],['die Herausforderung','challenge'],['das Risiko','risk'],['die Verletzung','injury'],['das Abenteuer','adventure'],['die Sicherheit','safety'],['fahren, reiten','ride'],['verletzen','hurt'],['hart, zäh','tough'],['vorsichtig','careful'],['die Zuschauerin / der Zuschauer','spectator'],['liebend gerne tun','adore'],['hassen','hate'],["es macht mir nichts aus","i don't mind"],['interessiert an','keen on'],['sich vorstellen','imagine']];
+  const ING=[['😍 I love ___ (play) tennis.','playing'],['🙂 She enjoys ___ (swim).','swimming'],['😡 He hates ___ (lose).','losing'],["😐 We don't mind ___ (run) in the rain.",'running'],['🙂 They like ___ (ride) their bikes.','riding'],["😡 I can't stand ___ (wait).",'waiting'],['😍 My sister adores ___ (dance).','dancing'],["🙁 I don't like ___ (get) up early.",'getting'],['🙂 Do you enjoy ___ (watch) football?','watching'],['😍 He loves ___ (win).','winning'],['😡 She hates ___ (write) tests.','writing'],["😐 Tom doesn't mind ___ (sit) on the bench.",'sitting']];
+  const PC=[['Look! The players ___ (run) onto the field.',['are running']],['Listen! Somebody ___ (sing).',['is singing']],['I ___ (watch) the match right now.',["am watching","'m watching"]],['She ___ (swim) in the lake at the moment.',['is swimming']],['We ___ (not / play) football now.',["aren't playing",'are not playing']],['He ___ (not / listen) to the coach.',["isn't listening",'is not listening']],['___ you ___ (wait) for the bus? (beide Lücken)',['are you waiting','are waiting']],['___ it ___ (rain) outside? (beide Lücken)',['is it raining','is raining']],['Look! The dog ___ (run) after the ball.',['is running']],['My friends ___ (have) fun at the party.',['are having']],['Right now I ___ (write) a message.',["am writing","'m writing"]],['The spectators ___ (cheer) loudly.',['are cheering']]];
+  const ZC=[['If you heat ice, it ___ (melt).','melts'],['If you ___ (mix) red and blue, you get purple.','mix'],["If you don't eat, you ___ (get) hungry.",'get'],['If the referee ___ (blow) the whistle, the game stops.','blows'],['Water ___ (boil) if you heat it to 100 degrees.','boils'],['If you ___ (touch) fire, you get burnt.','touch'],['If it ___ (snow), the roads are slippery.','snows'],["If plants don't get water, they ___ (die).",'die']];
+  const PP=[['Can you help ___ ? (we)','us'],['Pass the ball to ___! (she)','her'],['I play tennis with ___. (they)','them'],['___ is my best friend. (him/he)','he'],['Do you like ___? (he)','him'],['___ are good players. (them/they)','they'],['The coach is talking to ___. (I)','me'],['This is my bike. ___ is new. (it)','it'],['Give ___ the ball, please! (I)','me'],['Our team won. ___ are very happy. (we/us)','we'],['I know Lisa. I see ___ every day. (she)','her'],['Where are Tom and Ben? I can\'t see ___. (they)','them']];
+  const norm=s=>String(s).toLowerCase().replace(/[’`´]/g,"'").replace(/[?.!,]/g,'').replace(/\s+/g,' ').trim();
+  const exp=s=>norm(s).replace(/'m\b/g,' am').replace(/n't/g,' not').replace(/\s+/g,' ');
+  const ok=(v,a)=>{ const arr=Array.isArray(a)?a:[a]; return arr.some(x=>norm(x)===norm(v)||exp(x)===exp(v)); };
+  const first=a=>Array.isArray(a)?a[0]:a;
+  const pick=a=>a[ri(0,a.length-1)];
+  const gen={
+    voc(){ const v=pick(VOC); return {q:`Was heisst <b>${v[0]}</b> auf Englisch?`,a:v[1]==="i don't mind"?["I don't mind","don't mind"]:(v[1]==='keen on'?['keen on','keen']:v[1]),r:'Sport-Voci aus «Passion for sport»'}; },
+    ing(){ const x=pick(ING); return {q:x[0].replace('___','<span class="gap">___</span>'),a:x[1],r:'Nach Gefühlsverben kommt -ing. Achte auf die Schreibweise (e fällt weg, Konsonant verdoppeln).'}; },
+    pc(){ const x=pick(PC); return {q:x[0].replace('___','<span class="gap">___</span>'),a:x[1],r:'Present Continuous: am/is/are + -ing'}; },
+    zc(){ const x=pick(ZC); return {q:x[0].replace('___','<span class="gap">___</span>'),a:x[1],r:'Zero Conditional: If + Present Simple, Present Simple (he/she/it mit -s, kein will)'}; },
+    pp(){ const x=pick(PP); return {q:x[0].replace('___','<span class="gap">___</span>'),a:x[1],r:'Vor dem Verb Subject (I, he, she, we, they), nach Verb oder Präposition Object (me, him, her, us, them)'}; }
+  };
+  let t=null, done=false; const st={ok:0,all:0,streak:0};
+  function next(){ const ty=[...document.querySelectorAll('#u8Types input:checked')].map(i=>i.value); t=gen[pick(ty.length?ty:Object.keys(gen))](); $('u8Task').innerHTML=`<div class="tq">${t.q}</div>`; $('u8In').value=''; $('u8In').className='ans'; $('u8Res').textContent=''; done=false; }
+  function upd(){ $('u8Ok').textContent=st.ok; $('u8All').textContent=st.all; $('u8Streak').textContent=st.streak; }
+  $('u8Check').addEventListener('click',()=>{ const v=$('u8In').value, r=$('u8Res'); if(!v.trim()){ r.className='result warn'; r.textContent='Schreib zuerst eine Antwort.'; return; }
+    const g=ok(v,t.a); $('u8In').className='ans '+(g?'ok':'bad'); if(!done){ st.all++; if(g){st.ok++;st.streak++;} else st.streak=0; done=true; upd(); }
+    r.className='result '+(g?'ok':'bad'); r.innerHTML=g?'Richtig!':`Richtig ist: <b>${first(t.a)}</b>. ${t.r}`; });
+  $('u8In').addEventListener('keydown',e=>{if(e.key==='Enter'){e.preventDefault();$('u8Check').click();}});
+  $('u8Hint').addEventListener('click',()=>{ $('u8Res').className='result'; $('u8Res').textContent='Regel: '+t.r; });
+  $('u8Next').addEventListener('click',next); document.querySelectorAll('#u8Types input').forEach(i=>i.addEventListener('change',next)); next();
+  let test=[];
+  $('u8tStart').addEventListener('click',()=>{ test=[]; ['voc','voc','voc','voc','ing','ing','ing','ing','pc','pc','pc','pc','zc','zc','zc','pp','pp','pp','pp','pp'].forEach(k=>{ let x; do{ x=gen[k](); }while(test.some(y=>y.q===x.q)); test.push(x); });
+    $('u8tRows').innerHTML=test.map((x,i)=>`<div class="row"><span class="q"><b>${i+1}.</b>&nbsp;${x.q}</span><input class="ans" id="u8t${i}" style="width:11em" autocomplete="off" autocapitalize="off" spellcheck="false" aria-label="Antwort ${i+1}"><span class="fb"></span><span class="sol small" hidden></span></div>`).join('');
+    $('u8tBtns').hidden=false; $('u8tResult').hidden=true; $('u8tSubmit').disabled=false; });
+  $('u8tSubmit').addEventListener('click',()=>{ let n=0; test.forEach((x,i)=>{ const inp=$('u8t'+i), row=inp.closest('.row'), g=ok(inp.value,x.a); if(g) n++;
+      inp.className='ans '+(g?'ok':'bad'); const fb=row.querySelector('.fb'); fb.className='fb '+(g?'ok':'bad'); fb.textContent=g?'✓':'✗'; if(!g){ const s=row.querySelector('.sol'); s.hidden=false; s.innerHTML=`Richtig: <b>${first(x.a)}</b>`; } });
+    const note=Math.round((n/test.length*5+1)*4)/4; $('u8tResult').hidden=false; $('u8tResult').innerHTML=`<div class="fact"><span class="big">${n}/${test.length}</span><span>Punkte</span></div><div class="fact"><span class="big">${String(note).replace('.',',')}</span><span>Note (6 = beste)</span></div>`; $('u8tSubmit').disabled=true; $('u8tResult').scrollIntoView({behavior:'smooth',block:'center'}); });
 })();
 
 /* ---------- Sokratischer Lösungsweg ---------- */
