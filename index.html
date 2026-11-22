@@ -341,6 +341,8 @@ svg .cy-ph{fill:var(--green-soft);stroke:var(--green);stroke-width:2} svg .cy-za
 canvas{border-radius:6px}
 .subject.s-lz{border-top-color:var(--green)}
 .smileys{display:flex;gap:8px;flex-wrap:wrap}.smileys .sm{font-size:2rem;background:var(--card);border:2px solid var(--line);padding:6px 12px}.smileys .sm.on{border-color:var(--blue);background:var(--blue-soft)}
+.subject.s-de{border-top-color:var(--red)}
+.stmt u{text-decoration-thickness:2px;text-decoration-color:var(--red)}
 button.okbtn{background:var(--green); border-color:var(--green)}
 button,label,.tile,.fcard,.kt,input,select,a{touch-action:manipulation; -webkit-tap-highlight-color:transparent}
 @media (pointer:coarse){ button{min-height:44px} button.small{min-height:40px} .opts label,.chips label{min-height:40px; padding:6px 14px} input.ans{min-height:42px; font-size:1.05rem} .spk{min-width:40px; min-height:40px} }
@@ -383,6 +385,7 @@ table.mk input.ml-cell{width:4.8em}
   <button type="button" data-view="en">Englisch</button>
   <button type="button" data-view="nt">NT</button>
   <button type="button" data-view="fr">Französisch</button>
+  <button type="button" data-view="de">Deutsch</button>
 </nav>
 
 <div class="view" id="view-home">
@@ -425,6 +428,11 @@ table.mk input.ml-cell{width:4.8em}
         <button type="button" data-view="en" data-goto="e-past"><b>SOL Test Grammar</b><span>Past Simple · Comparison of Adjectives · Question Tags · Probetest</span></button>
         <button type="button" data-view="en"><b>Passion for sport</b><span>33 Wörter · Karteikarten, Schreiben, Lückentext, Quiz</span></button>
       </div>
+    </div>
+    <div class="subject s-de">
+      <span class="eyebrow">Fach</span><h2>Deutsch</h2>
+      <p class="small muted">LZK SOL</p>
+      <div class="sublinks"><button type="button" data-view="de"><b>Grammatik, Rechtschreibung, Texte</b><span>Wortarten · Fälle · Zeitformen · Satzglieder · Komma · Gross/Klein · das/dass · indirekte Rede · Textsorten · Probetest</span></button></div>
     </div>
     <div class="subject s-fr">
       <span class="eyebrow">Fach</span><h2>Französisch</h2>
@@ -2805,6 +2813,104 @@ table.mk input.ml-cell{width:4.8em}
 </section>
 </div>
 
+<div class="view" id="view-de" hidden>
+<div class="subject-head"><span class="eyebrow">Deutsch · LZK SOL</span><h2 class="subject-title">Grammatik, Rechtschreibung und Texte</h2></div>
+<nav class="toc" aria-label="Kapitel Deutsch">
+  <a href="#menu" class="menu-chip">← Menü</a>
+  <a href="#d-wortarten">Wortarten</a>
+  <a href="#d-faelle">Die vier Fälle</a>
+  <a href="#d-zeiten">Zeitformen</a>
+  <a href="#d-satzglieder">Satzglieder</a>
+  <a href="#d-komma">Kommasetzung</a>
+  <a href="#d-gross">Gross- und Kleinschreibung</a>
+  <a href="#d-dassdas">das oder dass?</a>
+  <a href="#d-rede">Direkte und indirekte Rede</a>
+  <a href="#d-text">Textsorten</a>
+  <a href="#d-test" class="star">Probetest</a>
+</nav>
+<section class="page" id="d-wortarten">
+  <header><span class="lz">Deutsch · SOL</span><h2>Wortarten</h2></header>
+  <div class="merk"><strong>Merksätze</strong><ul><li><b>Nomen</b> (Hund, Freude) · gross, mit Artikel. <b>Verb</b> (laufen, ist) · Tätigkeit, wird konjugiert. <b>Adjektiv</b> (schnell, schön) · wie ist etwas? kann man steigern.</li>
+<li><b>Artikel</b> (der, die, das, ein) · <b>Pronomen</b> (ich, er, mein, dieser) · steht für ein Nomen.</li>
+<li><b>Präposition</b> (auf, mit, wegen) · zeigt Verhältnisse. <b>Konjunktion</b> (und, aber, weil, dass) · verbindet. <b>Adverb</b> (heute, dort, gern) · wann, wo, wie? unveränderlich.</li></ul></div>
+  <div class="stack"><h3>Übung</h3><div class="stmts" id="mcDwortarten"></div><div class="btns"><button data-mc="mcDwortarten">Prüfen</button><button class="ghost" data-dnew="wortarten">Neue Aufgaben</button><span class="result" id="mcDwortartenRes" aria-live="polite"></span></div></div>
+</section>
+<section class="page" id="d-faelle">
+  <header><span class="lz">Deutsch · SOL</span><h2>Die vier Fälle</h2></header>
+  <div class="merk"><strong>Merksätze</strong><ul><li><b>Nominativ</b> · Wer oder was? <i>Der Hund</i> bellt.</li>
+<li><b>Genitiv</b> · Wessen? Das Haus <i>des Lehrers</i>.</li>
+<li><b>Dativ</b> · Wem? Ich helfe <i>dem Kind</i>.</li>
+<li><b>Akkusativ</b> · Wen oder was? Ich sehe <i>den Ball</i>.</li>
+<li><b>Tipp:</b> Stell die Frage mit dem Verb: «<b>Wen</b> sehe ich?» → den Ball → Akkusativ.</li></ul></div>
+  <div class="stack"><h3>Übung</h3><div class="stmts" id="mcDfaelle"></div><div class="btns"><button data-mc="mcDfaelle">Prüfen</button><button class="ghost" data-dnew="faelle">Neue Aufgaben</button><span class="result" id="mcDfaelleRes" aria-live="polite"></span></div></div>
+</section>
+<section class="page" id="d-zeiten">
+  <header><span class="lz">Deutsch · SOL</span><h2>Zeitformen</h2></header>
+  <div class="merk"><strong>Merksätze</strong><ul><li><b>Präsens:</b> ich gehe · <b>Präteritum:</b> ich ging · <b>Perfekt:</b> ich bin gegangen</li>
+<li><b>Plusquamperfekt:</b> ich war gegangen (vor einer Vergangenheit) · <b>Futur I:</b> ich werde gehen</li>
+<li>Perfekt = haben/sein + Partizip II (gespielt, gegangen). Mit <b>sein</b> bei Bewegung und Veränderung (ich bin gerannt, er ist gewachsen).</li>
+<li>Präteritum brauchst du beim Erzählen und im Bericht, Perfekt eher beim Sprechen.</li></ul></div>
+  <div class="stack"><h3>Übung</h3><div class="stmts" id="mcDzeiten"></div><div class="btns"><button data-mc="mcDzeiten">Prüfen</button><button class="ghost" data-dnew="zeiten">Neue Aufgaben</button><span class="result" id="mcDzeitenRes" aria-live="polite"></span></div></div>
+</section>
+<section class="page" id="d-satzglieder">
+  <header><span class="lz">Deutsch · SOL</span><h2>Satzglieder</h2></header>
+  <div class="merk"><strong>Merksätze</strong><ul><li><b>Umstellprobe:</b> Was beim Umstellen zusammenbleibt, ist ein Satzglied. <i>Am Morgen | trinkt | Lea | einen Tee.</i></li>
+<li><b>Prädikat:</b> das Verb (trinkt). <b>Subjekt:</b> Wer oder was? (Lea).</li>
+<li><b>Akkusativobjekt:</b> Wen oder was? (einen Tee). <b>Dativobjekt:</b> Wem? (ihrem Bruder).</li>
+<li><b>Adverbiale:</b> Wann? (Zeit) · Wo? (Ort) · Wie? (Art) · Warum? (Grund)</li></ul></div>
+  <div class="stack"><h3>Übung</h3><div class="stmts" id="mcDsatzglieder"></div><div class="btns"><button data-mc="mcDsatzglieder">Prüfen</button><button class="ghost" data-dnew="satzglieder">Neue Aufgaben</button><span class="result" id="mcDsatzgliederRes" aria-live="polite"></span></div></div>
+</section>
+<section class="page" id="d-komma">
+  <header><span class="lz">Deutsch · SOL</span><h2>Kommasetzung</h2></header>
+  <div class="merk"><strong>Merksätze</strong><ul><li><b>Aufzählung:</b> Äpfel, Birnen und Bananen (kein Komma vor <i>und</i>/<i>oder</i>).</li>
+<li><b>Vor aber, sondern, doch:</b> Ich bin müde, aber ich lerne.</li>
+<li><b>Haupt- und Nebensatz</b> immer trennen: Ich bleibe zu Hause, <b>weil</b> ich krank bin. (weil, dass, wenn, obwohl, als, damit, ob …)</li>
+<li><b>Relativsatz:</b> Der Hund, <b>der</b> bellt, gehört Tom.</li>
+<li><b>Anrede und Ausruf:</b> Lisa, komm her! Ach, das ist schön.</li></ul></div>
+  <div class="stack"><h3>Übung</h3><div class="stmts" id="mcDkomma"></div><div class="btns"><button data-mc="mcDkomma">Prüfen</button><button class="ghost" data-dnew="komma">Neue Aufgaben</button><span class="result" id="mcDkommaRes" aria-live="polite"></span></div></div>
+</section>
+<section class="page" id="d-gross">
+  <header><span class="lz">Deutsch · SOL</span><h2>Gross- und Kleinschreibung</h2></header>
+  <div class="merk"><strong>Merksätze</strong><ul><li><b>Nomen</b> immer gross. Erkennbar an Artikel oder Endung (-ung, -heit, -keit, -nis, -schaft).</li>
+<li><b>Nominalisierung:</b> Verben und Adjektive werden gross, wenn ein Artikel oder eine Präposition davorsteht: <b>das</b> Lesen, <b>beim</b> Spielen, <b>etwas</b> Schönes, <b>nichts</b> Neues, <b>alles</b> Gute.</li>
+<li><b>Satzanfang</b> gross, <b>Höflichkeitsform</b> gross: Können <b>Sie</b> mir helfen?</li>
+<li>Tageszeiten nach heute/gestern/morgen gross: heute <b>Abend</b>. Aber: <b>abends</b> klein.</li></ul></div>
+  <div class="stack"><h3>Übung</h3><div class="stmts" id="mcDgross"></div><div class="btns"><button data-mc="mcDgross">Prüfen</button><button class="ghost" data-dnew="gross">Neue Aufgaben</button><span class="result" id="mcDgrossRes" aria-live="polite"></span></div></div>
+</section>
+<section class="page" id="d-dassdas">
+  <header><span class="lz">Deutsch · SOL</span><h2>das oder dass?</h2></header>
+  <div class="merk"><strong>Merksätze</strong><ul><li><b>das</b> = Artikel (<i>das</i> Buch) oder Pronomen (<i>das</i> stimmt, das Buch, <i>das</i> ich lese).</li>
+<li><b>dass</b> = Konjunktion, leitet einen Nebensatz ein: Ich hoffe, <b>dass</b> du kommst.</li>
+<li><b>Ersatzprobe:</b> Kannst du <b>dieses</b>, <b>jenes</b> oder <b>welches</b> einsetzen? → <b>das</b>. Sonst → <b>dass</b>.</li></ul></div>
+  <div class="stack"><h3>Übung</h3><div class="stmts" id="mcDdassdas"></div><div class="btns"><button data-mc="mcDdassdas">Prüfen</button><button class="ghost" data-dnew="dassdas">Neue Aufgaben</button><span class="result" id="mcDdassdasRes" aria-live="polite"></span></div></div>
+</section>
+<section class="page" id="d-rede">
+  <header><span class="lz">Deutsch · SOL</span><h2>Direkte und indirekte Rede</h2></header>
+  <div class="merk"><strong>Merksätze</strong><ul><li><b>Direkte Rede</b> mit Anführungszeichen: Lisa sagt: «Ich komme morgen.»</li>
+<li><b>Indirekte Rede</b> ohne Anführungszeichen, mit <b>Konjunktiv I</b>: Lisa sagt, sie <b>komme</b> morgen.</li>
+<li>Pronomen anpassen: ich → sie, mein → ihr, hier → dort, heute → an diesem Tag.</li>
+<li>Konjunktiv I: er <b>sei</b>, er <b>habe</b>, er <b>gehe</b>, er <b>könne</b>, er <b>werde</b>. Ist er gleich wie die Normalform (sie haben), nimmt man Konjunktiv II (sie hätten).</li></ul></div>
+  <div class="stack"><h3>Übung</h3><div class="stmts" id="mcDrede"></div><div class="btns"><button data-mc="mcDrede">Prüfen</button><button class="ghost" data-dnew="rede">Neue Aufgaben</button><span class="result" id="mcDredeRes" aria-live="polite"></span></div></div>
+</section>
+<section class="page" id="d-text">
+  <header><span class="lz">Deutsch · SOL</span><h2>Textsorten</h2></header>
+  <div class="merk"><strong>Merksätze</strong><ul><li><b>Bericht:</b> sachlich, <b>Präteritum</b>, beantwortet die <b>W-Fragen</b> (Wer? Was? Wann? Wo? Wie? Warum? Folgen?), keine Gefühle, keine wörtliche Rede.</li>
+<li><b>Erzählung:</b> spannend, Einleitung – Hauptteil mit Höhepunkt – Schluss, wörtliche Rede und Gefühle erlaubt, meist Präteritum.</li>
+<li><b>Inhaltsangabe:</b> <b>Präsens</b>, eigene Worte, kurz, <b>keine wörtliche Rede</b>, keine eigene Meinung. Einleitungssatz mit Titel, Autor, Textsorte und Thema.</li>
+<li><b>Beschreibung:</b> genau und sachlich, Präsens, sinnvolle Reihenfolge (z. B. von oben nach unten).</li>
+<li><b>Erörterung / Argumentation:</b> Behauptung (These) → Begründung (Argument) → Beispiel. Pro und Contra, am Schluss eigene Meinung.</li></ul></div>
+  <div class="stack"><h3>Übung</h3><div class="stmts" id="mcDtext"></div><div class="btns"><button data-mc="mcDtext">Prüfen</button><button class="ghost" data-dnew="text">Neue Aufgaben</button><span class="result" id="mcDtextRes" aria-live="polite"></span></div></div>
+</section>
+<section class="page" id="d-test">
+  <header><span class="lz">Alle Themen</span><h2>Probetest Deutsch</h2></header>
+  <p>20 gemischte Aufgaben aus allen Themen, mit Note. Jedes Mal neue Aufgaben.</p>
+  <div class="btns"><button type="button" id="dtStart">Neuen Test starten</button></div>
+  <div class="stmts" id="mcDT"></div>
+  <div class="btns" id="dtBtns" hidden><button data-mc="mcDT" id="dtCheck">Abgeben</button><span class="result" id="mcDTRes" aria-live="polite"></span></div>
+  <div class="facts" id="dtNote" hidden></div>
+</section>
+</div>
+
 <p class="small muted" style="text-align:center">Viel Erfolg, Dean!</p>
 </div>
 
@@ -3437,7 +3543,7 @@ zNext();
 /* =====================================================================
    HAUPTMENÜ und RZG
    ===================================================================== */
-const views={home:document.getElementById('view-home'),mathe:document.getElementById('view-mathe'),rzg:document.getElementById('view-rzg'),en:document.getElementById('view-en'),foto:document.getElementById('view-foto'),nt:document.getElementById('view-nt'),fr:document.getElementById('view-fr'),lz:document.getElementById('view-lz')};
+const views={home:document.getElementById('view-home'),mathe:document.getElementById('view-mathe'),rzg:document.getElementById('view-rzg'),en:document.getElementById('view-en'),foto:document.getElementById('view-foto'),nt:document.getElementById('view-nt'),fr:document.getElementById('view-fr'),lz:document.getElementById('view-lz'),de:document.getElementById('view-de')};
 function showView(v,target){
   Object.keys(views).forEach(k=>views[k].hidden=k!==v);
   document.querySelectorAll('.mainmenu button').forEach(b=>b.classList.toggle('on',b.dataset.view===v));
@@ -3457,6 +3563,7 @@ document.querySelectorAll('a[href="#menu"]').forEach(a=>a.addEventListener('clic
   else if(h==='nt'||h.indexOf('n-')===0) showView('nt',h);
   else if(h==='fr'||h.indexOf('f-')===0) showView('fr',h);
   else if(h==='lz'||h.indexOf('l-')===0) showView('lz',h);
+  else if(h==='de'||h.indexOf('d-')===0) showView('de',h);
   else if(h==='englisch'||h==='en'||h.indexOf('e-')===0) showView('en',h);
   else if(h.indexOf('k-')===0){ showTopic('k',false); showView('mathe',h); }
   else if(h.indexOf('x-')===0){ showTopic('e',false); showView('mathe',h); }
@@ -3883,7 +3990,7 @@ enQuizNew();
   window.__prof=()=>prof;
   const listeners=[]; window.__onProf=f=>listeners.push(f);
   const $=id=>document.getElementById(id);
-  const AREAS={'topic-b':'Mathe Brüche','topic-z':'Mathe Zahlen','topic-g':'Mathe Geld & Prozente','topic-q':'Mathe Wurzeln','topic-e':'Mathe Teilbarkeit','topic-k':'Mathe Konstruktionen','view-en':'Englisch','view-rzg':'RZG','view-nt':'NT Wald','view-fr':'Französisch','view-lz':'NT Zellen'};
+  const AREAS={'topic-b':'Mathe Brüche','topic-z':'Mathe Zahlen','topic-g':'Mathe Geld & Prozente','topic-q':'Mathe Wurzeln','topic-e':'Mathe Teilbarkeit','topic-k':'Mathe Konstruktionen','view-en':'Englisch','view-rzg':'RZG','view-nt':'NT Wald','view-fr':'Französisch','view-lz':'NT Zellen','view-de':'Deutsch'};
   const TRAINER={tOk:'topic-b',zOk:'topic-z',gOk:'topic-g',qOk:'topic-q',xOk:'topic-e',wrOk:'view-en',grOk:'view-en',u8Ok:'view-en',mapOk:'view-rzg',mkOk:'view-lz',zcOk:'view-lz',frOk:'view-fr'};
   const TRAINER_IN=['tIn','zIn','gIn','qIn','xIn','wrIn','grIn','frIn','u8In'];
   let prog={}, dbc=null, mem={};
@@ -4687,6 +4794,27 @@ Genau ${n} Aufgaben, gemischt etwa halb "mc" und halb "text". Bei "text" muss di
   $('u8tSubmit').addEventListener('click',()=>{ let n=0; test.forEach((x,i)=>{ const inp=$('u8t'+i), row=inp.closest('.row'), g=ok(inp.value,x.a); if(g) n++;
       inp.className='ans '+(g?'ok':'bad'); const fb=row.querySelector('.fb'); fb.className='fb '+(g?'ok':'bad'); fb.textContent=g?'✓':'✗'; if(!g){ const s=row.querySelector('.sol'); s.hidden=false; s.innerHTML=`Richtig: <b>${first(x.a)}</b>`; } });
     const note=Math.round((n/test.length*5+1)*4)/4; $('u8tResult').hidden=false; $('u8tResult').innerHTML=`<div class="fact"><span class="big">${n}/${test.length}</span><span>Punkte</span></div><div class="fact"><span class="big">${String(note).replace('.',',')}</span><span>Note (6 = beste)</span></div>`; $('u8tSubmit').disabled=true; $('u8tResult').scrollIntoView({behavior:'smooth',block:'center'}); });
+})();
+
+/* ---------- Deutsch SOL ---------- */
+(function(){
+  const $=id=>document.getElementById(id);
+  const D={"T": [["wortarten", "Wortarten", "<li><b>Nomen</b> (Hund, Freude) · gross, mit Artikel. <b>Verb</b> (laufen, ist) · Tätigkeit, wird konjugiert. <b>Adjektiv</b> (schnell, schön) · wie ist etwas? kann man steigern.</li>\n<li><b>Artikel</b> (der, die, das, ein) · <b>Pronomen</b> (ich, er, mein, dieser) · steht für ein Nomen.</li>\n<li><b>Präposition</b> (auf, mit, wegen) · zeigt Verhältnisse. <b>Konjunktion</b> (und, aber, weil, dass) · verbindet. <b>Adverb</b> (heute, dort, gern) · wann, wo, wie? unveränderlich.</li>", [["Der <u>schnelle</u> Hund rennt.", "Adjektiv"], ["Der Hund <u>rennt</u> schnell.", "Verb"], ["<u>Der</u> Hund rennt.", "Artikel"], ["Er spielt <u>mit</u> dem Ball.", "Präposition"], ["Ich bleibe, <u>weil</u> es regnet.", "Konjunktion"], ["<u>Sie</u> lacht laut.", "Pronomen"], ["Wir treffen uns <u>morgen</u>.", "Adverb"], ["Die <u>Freude</u> war gross.", "Nomen"], ["Das <u>Laufen</u> macht Spass.", "Nomen"], ["Er ist <u>müde</u>.", "Adjektiv"], ["Wir gehen <u>und</u> lachen.", "Konjunktion"], ["Das Buch liegt <u>dort</u>.", "Adverb"], ["Ich gebe <u>ihm</u> das Heft.", "Pronomen"], ["Sie wartet <u>auf</u> den Bus.", "Präposition"]], ["Nomen", "Verb", "Adjektiv", "Artikel", "Pronomen", "Präposition", "Konjunktion", "Adverb"]], ["faelle", "Die vier Fälle", "<li><b>Nominativ</b> · Wer oder was? <i>Der Hund</i> bellt.</li>\n<li><b>Genitiv</b> · Wessen? Das Haus <i>des Lehrers</i>.</li>\n<li><b>Dativ</b> · Wem? Ich helfe <i>dem Kind</i>.</li>\n<li><b>Akkusativ</b> · Wen oder was? Ich sehe <i>den Ball</i>.</li>\n<li><b>Tipp:</b> Stell die Frage mit dem Verb: «<b>Wen</b> sehe ich?» → den Ball → Akkusativ.</li>", [["<u>Der Junge</u> spielt Fussball.", "Nominativ"], ["Ich sehe <u>den Jungen</u>.", "Akkusativ"], ["Ich gebe <u>dem Jungen</u> den Ball.", "Dativ"], ["Das ist das Velo <u>des Jungen</u>.", "Genitiv"], ["Sie hilft <u>ihrer Freundin</u>.", "Dativ"], ["Wir besuchen <u>unsere Grossmutter</u>.", "Akkusativ"], ["<u>Die Katze</u> schläft.", "Nominativ"], ["Wegen <u>des Regens</u> bleiben wir drinnen.", "Genitiv"], ["Er schreibt <u>einen Brief</u>.", "Akkusativ"], ["Das gehört <u>mir</u>.", "Dativ"], ["Der Ball liegt unter <u>dem Tisch</u>.", "Dativ"], ["Ich lege den Ball unter <u>den Tisch</u>.", "Akkusativ"]], ["Nominativ", "Genitiv", "Dativ", "Akkusativ"]], ["zeiten", "Zeitformen", "<li><b>Präsens:</b> ich gehe · <b>Präteritum:</b> ich ging · <b>Perfekt:</b> ich bin gegangen</li>\n<li><b>Plusquamperfekt:</b> ich war gegangen (vor einer Vergangenheit) · <b>Futur I:</b> ich werde gehen</li>\n<li>Perfekt = haben/sein + Partizip II (gespielt, gegangen). Mit <b>sein</b> bei Bewegung und Veränderung (ich bin gerannt, er ist gewachsen).</li>\n<li>Präteritum brauchst du beim Erzählen und im Bericht, Perfekt eher beim Sprechen.</li>", [["Sie <u>spielte</u> Klavier.", "Präteritum"], ["Wir <u>haben gegessen</u>.", "Perfekt"], ["Er <u>wird kommen</u>.", "Futur I"], ["Ich <u>lese</u> ein Buch.", "Präsens"], ["Sie <u>hatte</u> den Zug <u>verpasst</u>.", "Plusquamperfekt"], ["Du <u>bist gerannt</u>.", "Perfekt"], ["Wir <u>gingen</u> nach Hause.", "Präteritum"], ["Es <u>wird regnen</u>.", "Futur I"], ["Er <u>war</u> schon <u>gegangen</u>.", "Plusquamperfekt"], ["Ihr <u>schreibt</u> einen Test.", "Präsens"]], ["Präsens", "Präteritum", "Perfekt", "Plusquamperfekt", "Futur I"]], ["satzglieder", "Satzglieder", "<li><b>Umstellprobe:</b> Was beim Umstellen zusammenbleibt, ist ein Satzglied. <i>Am Morgen | trinkt | Lea | einen Tee.</i></li>\n<li><b>Prädikat:</b> das Verb (trinkt). <b>Subjekt:</b> Wer oder was? (Lea).</li>\n<li><b>Akkusativobjekt:</b> Wen oder was? (einen Tee). <b>Dativobjekt:</b> Wem? (ihrem Bruder).</li>\n<li><b>Adverbiale:</b> Wann? (Zeit) · Wo? (Ort) · Wie? (Art) · Warum? (Grund)</li>", [["<u>Lea</u> trinkt einen Tee.", "Subjekt"], ["Lea <u>trinkt</u> einen Tee.", "Prädikat"], ["Lea trinkt <u>einen Tee</u>.", "Akkusativobjekt"], ["Tom schenkt <u>seiner Mutter</u> Blumen.", "Dativobjekt"], ["<u>Am Abend</u> lesen wir.", "Adverbiale der Zeit"], ["Wir spielen <u>im Park</u>.", "Adverbiale des Ortes"], ["Sie singt <u>sehr laut</u>.", "Adverbiale der Art"], ["<u>Wegen des Regens</u> bleiben wir zu Hause.", "Adverbiale des Grundes"], ["<u>Die Kinder</u> lachen.", "Subjekt"], ["Der Lehrer erklärt <u>den Schülern</u> die Aufgabe.", "Dativobjekt"]], ["Subjekt", "Prädikat", "Akkusativobjekt", "Dativobjekt", "Adverbiale der Zeit", "Adverbiale des Ortes", "Adverbiale der Art", "Adverbiale des Grundes"]], ["komma", "Kommasetzung", "<li><b>Aufzählung:</b> Äpfel, Birnen und Bananen (kein Komma vor <i>und</i>/<i>oder</i>).</li>\n<li><b>Vor aber, sondern, doch:</b> Ich bin müde, aber ich lerne.</li>\n<li><b>Haupt- und Nebensatz</b> immer trennen: Ich bleibe zu Hause, <b>weil</b> ich krank bin. (weil, dass, wenn, obwohl, als, damit, ob …)</li>\n<li><b>Relativsatz:</b> Der Hund, <b>der</b> bellt, gehört Tom.</li>\n<li><b>Anrede und Ausruf:</b> Lisa, komm her! Ach, das ist schön.</li>", [["Welcher Satz ist richtig?", null]], null], ["gross", "Gross- und Kleinschreibung", "<li><b>Nomen</b> immer gross. Erkennbar an Artikel oder Endung (-ung, -heit, -keit, -nis, -schaft).</li>\n<li><b>Nominalisierung:</b> Verben und Adjektive werden gross, wenn ein Artikel oder eine Präposition davorsteht: <b>das</b> Lesen, <b>beim</b> Spielen, <b>etwas</b> Schönes, <b>nichts</b> Neues, <b>alles</b> Gute.</li>\n<li><b>Satzanfang</b> gross, <b>Höflichkeitsform</b> gross: Können <b>Sie</b> mir helfen?</li>\n<li>Tageszeiten nach heute/gestern/morgen gross: heute <b>Abend</b>. Aber: <b>abends</b> klein.</li>", [["Welcher Satz ist richtig geschrieben?", null]], null], ["dassdas", "das oder dass?", "<li><b>das</b> = Artikel (<i>das</i> Buch) oder Pronomen (<i>das</i> stimmt, das Buch, <i>das</i> ich lese).</li>\n<li><b>dass</b> = Konjunktion, leitet einen Nebensatz ein: Ich hoffe, <b>dass</b> du kommst.</li>\n<li><b>Ersatzprobe:</b> Kannst du <b>dieses</b>, <b>jenes</b> oder <b>welches</b> einsetzen? → <b>das</b>. Sonst → <b>dass</b>.</li>", [["Ich glaube, ___ es morgen regnet.", "dass"], ["___ Buch ist spannend.", "das"], ["Das Velo, ___ dort steht, ist neu.", "das"], ["Sie sagt, ___ sie müde ist.", "dass"], ["___ weiss ich nicht.", "das"], ["Es ist wichtig, ___ du lernst.", "dass"], ["Ich hoffe, ___ ___ Spiel gewinnt. (zwei Lücken, mit Leerzeichen)", "dass das"], ["Das Haus, ___ wir gekauft haben, ist alt.", "das"], ["Weisst du, ___ heute Schule ist?", "dass"], ["Hast du ___ gesehen?", "das"]], ["das", "dass"]], ["rede", "Direkte und indirekte Rede", "<li><b>Direkte Rede</b> mit Anführungszeichen: Lisa sagt: «Ich komme morgen.»</li>\n<li><b>Indirekte Rede</b> ohne Anführungszeichen, mit <b>Konjunktiv I</b>: Lisa sagt, sie <b>komme</b> morgen.</li>\n<li>Pronomen anpassen: ich → sie, mein → ihr, hier → dort, heute → an diesem Tag.</li>\n<li>Konjunktiv I: er <b>sei</b>, er <b>habe</b>, er <b>gehe</b>, er <b>könne</b>, er <b>werde</b>. Ist er gleich wie die Normalform (sie haben), nimmt man Konjunktiv II (sie hätten).</li>", [["Tom sagt: «Ich bin krank.» → Tom sagt, er ___ krank.", "sei"], ["Lea sagt: «Ich habe Hunger.» → Lea sagt, sie ___ Hunger.", "habe"], ["Er sagt: «Ich komme später.» → Er sagt, er ___ später.", "komme"], ["Sie sagt: «Ich kann schwimmen.» → Sie sagt, sie ___ schwimmen.", "könne"], ["Der Lehrer sagt: «Der Test wird schwierig.» → Der Lehrer sagt, der Test ___ schwierig.", "werde"], ["Mia sagt: «Ich gehe nach Hause.» → Mia sagt, sie ___ nach Hause.", "gehe"], ["Die Kinder sagen: «Wir haben Spass.» → Die Kinder sagen, sie ___ Spass.", "hätten"]], null], ["text", "Textsorten", "<li><b>Bericht:</b> sachlich, <b>Präteritum</b>, beantwortet die <b>W-Fragen</b> (Wer? Was? Wann? Wo? Wie? Warum? Folgen?), keine Gefühle, keine wörtliche Rede.</li>\n<li><b>Erzählung:</b> spannend, Einleitung – Hauptteil mit Höhepunkt – Schluss, wörtliche Rede und Gefühle erlaubt, meist Präteritum.</li>\n<li><b>Inhaltsangabe:</b> <b>Präsens</b>, eigene Worte, kurz, <b>keine wörtliche Rede</b>, keine eigene Meinung. Einleitungssatz mit Titel, Autor, Textsorte und Thema.</li>\n<li><b>Beschreibung:</b> genau und sachlich, Präsens, sinnvolle Reihenfolge (z. B. von oben nach unten).</li>\n<li><b>Erörterung / Argumentation:</b> Behauptung (These) → Begründung (Argument) → Beispiel. Pro und Contra, am Schluss eigene Meinung.</li>", [["Welche Zeitform braucht eine Inhaltsangabe?", ["Präsens", "Präteritum", "Perfekt", "Futur"], 0], ["Welche Zeitform braucht ein Bericht?", ["Präsens", "Präteritum", "Futur", "Plusquamperfekt"], 1], ["Wo ist wörtliche Rede erlaubt?", ["Bericht", "Inhaltsangabe", "Erzählung", "Beschreibung"], 2], ["Was gehört NICHT in einen Bericht?", ["Wann es passiert ist", "Wo es passiert ist", "Meine Gefühle", "Die Folgen"], 2], ["Was steht im Einleitungssatz einer Inhaltsangabe?", ["Titel, Autor, Textsorte, Thema", "Die Pointe", "Meine Meinung", "Ein Zitat"], 0], ["Wie ist ein Argument aufgebaut?", ["These – Begründung – Beispiel", "Einleitung – Höhepunkt – Schluss", "Wer – Was – Wann", "Titel – Autor"], 0], ["Welcher Text soll spannend sein?", ["Bericht", "Erzählung", "Beschreibung", "Inhaltsangabe"], 1], ["Eine Personenbeschreibung ist …", ["spannend und mit Gefühlen", "sachlich, genau, im Präsens", "im Futur", "voller wörtlicher Rede"], 1]], null]], "KOMMA": [["Ich bleibe zu Hause, weil ich krank bin.", "Ich bleibe zu Hause weil ich krank bin.", "Ich bleibe, zu Hause weil ich krank bin."], ["Wir kaufen Äpfel, Birnen und Bananen.", "Wir kaufen Äpfel, Birnen, und Bananen.", "Wir kaufen Äpfel Birnen und Bananen."], ["Ich bin müde, aber ich lerne noch.", "Ich bin müde aber ich lerne noch.", "Ich bin, müde aber ich lerne noch."], ["Der Hund, der bellt, gehört Tom.", "Der Hund der bellt gehört Tom.", "Der Hund, der bellt gehört Tom."], ["Lisa, komm bitte her!", "Lisa komm bitte her!", "Lisa komm, bitte her!"], ["Ich hoffe, dass du kommst.", "Ich hoffe dass du kommst.", "Ich hoffe, dass, du kommst."], ["Wenn es regnet, bleiben wir drinnen.", "Wenn es regnet bleiben wir drinnen.", "Wenn, es regnet bleiben wir drinnen."], ["Er kommt nicht heute, sondern morgen.", "Er kommt nicht heute sondern morgen.", "Er kommt, nicht heute sondern morgen."], ["Obwohl er müde war, spielte er weiter.", "Obwohl er müde war spielte er weiter.", "Obwohl er müde, war spielte er weiter."], ["Ach, das ist aber schön!", "Ach das ist aber schön!", "Ach das ist, aber schön!"]], "GROSS": [["Beim Lesen vergesse ich die Zeit.", "Beim lesen vergesse ich die Zeit."], ["Ich wünsche dir alles Gute.", "Ich wünsche dir alles gute."], ["Heute Abend gehen wir ins Kino.", "Heute abend gehen wir ins Kino."], ["Können Sie mir bitte helfen?", "Können sie mir bitte helfen? (Höflichkeitsform)"], ["Er erzählt nichts Neues.", "Er erzählt nichts neues."], ["Das Schwimmen macht mir Spass.", "Das schwimmen macht mir Spass."], ["Wir trainieren abends.", "Wir trainieren Abends."], ["Die Freiheit ist wichtig.", "Die freiheit ist wichtig."], ["Sie hat etwas Schönes gemalt.", "Sie hat etwas schönes gemalt."], ["Ich gehe gern schwimmen.", "Ich gehe gern Schwimmen."]]};
+  function items(t){ const [k,name,merk,pool,opts]=t;
+    if(k==='komma') return D.KOMMA.map(s=>{ const o=shuffle(s.slice()); return {q:'Welcher Satz hat die Kommas richtig?',o,a:o.indexOf(s[0])}; });
+    if(k==='gross') return D.GROSS.map(s=>{ const o=shuffle(s.slice()); return {q:'Welcher Satz ist richtig geschrieben?',o,a:o.indexOf(s[0])}; });
+    if(k==='dassdas') return pool.map(p=>{ const o=p[1]==='dass das'?['das das','dass das','das dass','dass dass']:['das','dass']; return {q:p[0].replace(/___/g,'<span class="gap">___</span>'),o,a:o.indexOf(p[1]),w:p[1].indexOf('dass')===0&&p[1]!=='das'?'Ersatzprobe: «dieses» passt nicht → dass':'Ersatzprobe: «dieses / welches» passt → das'}; });
+    if(k==='rede') return pool.map(p=>{ const all=['sei','habe','komme','könne','werde','gehe','hätten','ist','hat','kommt','kann','wird','geht','haben']; let o=[p[1]]; while(o.length<4){ const x=all[ri(0,all.length-1)]; if(o.indexOf(x)<0) o.push(x); } o=shuffle(o); return {q:p[0].replace('___','<span class="gap">___</span>'),o,a:o.indexOf(p[1]),w:'Indirekte Rede: Konjunktiv I'}; });
+    if(k==='text') return pool.map(p=>({q:p[0],o:p[1],a:p[2]}));
+    return pool.map(p=>({q:p[0],o:opts,a:opts.indexOf(p[1])}));
+  }
+  const ALL={}; D.T.forEach(t=>{ ALL[t[0]]=items(t); });
+  function fresh(k){ const t=D.T.find(x=>x[0]===k); ALL[k]=items(t); renderMC('mcD'+k,shuffle(ALL[k]).slice(0,6)); }
+  D.T.forEach(t=>fresh(t[0]));
+  document.querySelectorAll('[data-dnew]').forEach(b=>b.addEventListener('click',()=>fresh(b.dataset.dnew)));
+  $('dtStart').addEventListener('click',()=>{ let qs=[]; D.T.forEach(t=>{ const it=items(t); qs=qs.concat(shuffle(it).slice(0,t[0]==='text'||t[0]==='rede'?2:t[0]==='wortarten'||t[0]==='dassdas'||t[0]==='komma'?3:2)); }); qs=shuffle(qs).slice(0,20);
+    renderMC('mcDT',qs); $('dtBtns').hidden=false; $('dtNote').hidden=true; });
+  $('dtCheck').addEventListener('click',()=>setTimeout(()=>{ const n=document.querySelectorAll('#mcDT .stmt').length, ok=document.querySelectorAll('#mcDT .stmt.ok').length; const note=Math.round((ok/n*5+1)*4)/4; $('dtNote').hidden=false; $('dtNote').innerHTML=`<div class="fact"><span class="big">${ok}/${n}</span><span>Punkte</span></div><div class="fact"><span class="big">${String(note).replace('.',',')}</span><span>Note (6 = beste)</span></div>`; $('dtNote').scrollIntoView({behavior:'smooth',block:'center'}); },0));
 })();
 
 /* ---------- Sokratischer Lösungsweg ---------- */
