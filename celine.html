@@ -343,6 +343,11 @@ canvas{border-radius:6px}
 .smileys{display:flex;gap:8px;flex-wrap:wrap}.smileys .sm{font-size:2rem;background:var(--card);border:2px solid var(--line);padding:6px 12px}.smileys .sm.on{border-color:var(--blue);background:var(--blue-soft)}
 .subject.s-de{border-top-color:var(--red)}
 .stmt u{text-decoration-thickness:2px;text-decoration-color:var(--red)}
+#ckSvg,#abSvg{width:100%;max-width:360px;height:auto;background:var(--card);border:1px solid var(--line);border-radius:6px}
+#ckSvg{cursor:crosshair}
+svg .c-g{stroke:var(--grid);stroke-width:1} svg .c-ax{stroke:var(--ink);stroke-width:1.6} svg .c-p{fill:var(--blue)} svg .c-ok{fill:var(--green)} svg .c-bad{fill:var(--red)}
+svg .c-tri{fill:var(--blue-soft);stroke:var(--blue);stroke-width:2} svg .c-img{fill:var(--red-soft);stroke:var(--red);stroke-width:2} svg .c-imgt{fill:var(--red)}
+svg .c-link{stroke:var(--muted);stroke-width:1;stroke-dasharray:3 3} svg .c-axis{stroke:var(--green);stroke-width:3} svg .c-axisp{fill:var(--green)}
 button.okbtn{background:var(--green); border-color:var(--green)}
 button,label,.tile,.fcard,.kt,input,select,a{touch-action:manipulation; -webkit-tap-highlight-color:transparent}
 @media (pointer:coarse){ button{min-height:44px} button.small{min-height:40px} .opts label,.chips label{min-height:40px; padding:6px 14px} input.ans{min-height:42px; font-size:1.05rem} .spk{min-width:40px; min-height:40px} }
@@ -411,6 +416,7 @@ table.mk input.ml-cell{width:4.8em}
         <button type="button" data-view="mathe" data-topic="q"><b>Quadratzahlen und Wurzeln</b><span>Level 2 · mit Probetest und Note</span></button>
         <button type="button" data-view="mathe" data-topic="e"><b>Mit Dezimalzahlen rechnen</b><span>Mathplan E · Level 3 · Stellen, Teilbarkeitsregeln, Ziffernsummen</span></button>
         <button type="button" data-view="mathe" data-topic="k"><b>Skizzen und Konstruktionen</b><span>Test Math 8c · Grundkonstruktionen, Dreiecke, besondere Linien, Vierecke</span></button>
+        <button type="button" data-view="mathe" data-topic="c"><b>Koordinaten und Abbildungen</b><span>Test Math 8c · Punkte, Verschiebung, Spiegelung, Drehung, Symmetrie</span></button>
       </div>
     </div>
     <div class="subject s-rzg">
@@ -458,6 +464,7 @@ table.mk input.ml-cell{width:4.8em}
   <button type="button" role="tab" data-topic="q" aria-selected="false"><span class="tnum">Thema 4</span>Quadratzahlen und Wurzeln</button>
   <button type="button" role="tab" data-topic="e" aria-selected="false"><span class="tnum">Thema 5</span>Dezimalzahlen und Teilbarkeit</button>
   <button type="button" role="tab" data-topic="k" aria-selected="false"><span class="tnum">Thema 6</span>Skizzen und Konstruktionen</button>
+  <button type="button" role="tab" data-topic="c" aria-selected="false"><span class="tnum">Thema 7</span>Koordinaten und Abbildungen</button>
 </div>
 
 <div class="topic" id="topic-b">
@@ -1772,6 +1779,89 @@ table.mk input.ml-cell{width:4.8em}
   <div class="stmts" id="mcKQ"></div>
   <div class="btns"><button data-mc="mcKQ" id="kqCheck">Prüfen</button><button class="ghost" id="kqNew">Neue Fragen</button><span class="result" id="mcKQRes" aria-live="polite"></span></div>
   <div class="facts" id="kqNote" hidden></div>
+</section>
+</div>
+
+<div class="topic" id="topic-c" hidden>
+<nav class="toc" aria-label="Kapitel Koordinaten und Abbildungen">
+  <a href="#menu" class="menu-chip">← Menü</a>
+  <a href="#c-koord">1 Koordinatensystem</a>
+  <a href="#c-abb">2 Abbildungen</a>
+  <a href="#c-sym">3 Symmetrie</a>
+  <a href="#c-train" class="star">Training & Probetest</a>
+</nav>
+
+<section class="page" id="c-koord">
+  <header><span class="lz">Kapitel 1</span><h2>Das Koordinatensystem</h2></header>
+  <div class="merk"><strong>Merksätze</strong><ul>
+    <li>Ein Punkt hat zwei Koordinaten: <b>P(x | y)</b>. Zuerst <b>x</b> (nach rechts oder links), dann <b>y</b> (nach oben oder unten). Merkhilfe: «Zuerst durch den Gang, dann die Treppe hoch.»</li>
+    <li>Der <b>Ursprung</b> ist O(0 | 0). Negative x-Werte liegen links, negative y-Werte unten.</li>
+    <li>Die Achsen teilen die Ebene in vier <b>Quadranten</b>, im Gegenuhrzeigersinn: I (+|+), II (−|+), III (−|−), IV (+|−).</li>
+    <li>Punkte auf der x-Achse haben y = 0, Punkte auf der y-Achse haben x = 0.</li>
+  </ul></div>
+  <div class="btns"><div class="seg" role="group" aria-label="Modus"><button type="button" id="ckRead" class="on">Punkt ablesen</button><button type="button" id="ckSet">Punkt eintragen</button></div></div>
+  <div class="figwrap">
+    <svg id="ckSvg" viewBox="0 0 340 340" role="img" aria-label="Koordinatensystem zum Antippen"></svg>
+    <div class="side">
+      <div class="task" id="ckTask"></div>
+      <div class="btns" id="ckInBox"><input class="ans" id="ckIn" style="width:8em" placeholder="z.B. 3|-2" aria-label="Koordinaten"><button id="ckCheck">Prüfen</button></div>
+      <div class="result" id="ckRes" aria-live="polite"></div>
+      <div class="btns"><button type="button" class="ghost" id="ckNext">Nächster Punkt</button></div>
+      <div class="score"><span>Richtig <b id="ckOk">0</b></span><span>Versucht <b id="ckAll">0</b></span></div>
+    </div>
+  </div>
+</section>
+
+<section class="page" id="c-abb">
+  <header><span class="lz">Kapitel 2</span><h2>Abbildungen</h2></header>
+  <div class="tbl-wrap"><table class="cmp">
+    <tr><th>Abbildung</th><th>Regel für P(x | y)</th><th>Beispiel P(3 | 2)</th></tr>
+    <tr><th>Verschiebung um (a | b)</th><td>P'(x + a | y + b)</td><td>um (−4 | 1): P'(−1 | 3)</td></tr>
+    <tr><th>Spiegelung an der x-Achse</th><td>P'(x | −y)</td><td>P'(3 | −2)</td></tr>
+    <tr><th>Spiegelung an der y-Achse</th><td>P'(−x | y)</td><td>P'(−3 | 2)</td></tr>
+    <tr><th>Punktspiegelung am Ursprung (= Drehung um 180°)</th><td>P'(−x | −y)</td><td>P'(−3 | −2)</td></tr>
+    <tr><th>Drehung um 90° im Gegenuhrzeigersinn um O</th><td>P'(−y | x)</td><td>P'(−2 | 3)</td></tr>
+    <tr><th>Drehung um 90° im Uhrzeigersinn um O</th><td>P'(y | −x)</td><td>P'(2 | −3)</td></tr>
+  </table></div>
+  <div class="merk"><strong>Merksätze</strong><ul>
+    <li>Das <b>Bild</b> eines Punktes heisst P' («P Strich»). Bei allen diesen Abbildungen bleiben <b>Form und Grösse</b> gleich (kongruent).</li>
+    <li><b>Spiegelung:</b> Der Bildpunkt ist gleich weit von der Spiegelachse entfernt, auf der anderen Seite. Die Verbindung PP' steht <b>senkrecht</b> zur Achse.</li>
+    <li>Bei der Spiegelung ändert sich der <b>Umlaufsinn</b> (ABC im Gegenuhrzeigersinn wird zu A'B'C' im Uhrzeigersinn). Bei Verschiebung und Drehung bleibt er gleich.</li>
+  </ul></div>
+  <div class="lab">
+    <span class="eyebrow">Abbildungs-Labor</span>
+    <div class="btns" id="abSel"></div>
+    <div class="vars" id="abShift"><label for="abA">a (nach rechts)<input type="number" id="abA" value="-4"></label><label for="abB">b (nach oben)<input type="number" id="abB" value="1"></label></div>
+    <div class="figwrap"><svg id="abSvg" viewBox="0 0 340 340" role="img" aria-label="Dreieck und Bild"></svg><div class="side"><div class="merk" id="abTxt"></div></div></div>
+  </div>
+</section>
+
+<section class="page" id="c-sym">
+  <header><span class="lz">Kapitel 3</span><h2>Achsen- und Punktsymmetrie</h2></header>
+  <div class="cards3">
+    <div class="card"><h3>Achsensymmetrisch</h3><p class="small">Eine Figur hat eine Spiegelachse: Faltet man sie dort, liegen beide Hälften genau aufeinander. Beispiele: Herz, Rechteck (2 Achsen), Quadrat (4 Achsen), Kreis (unendlich viele).</p></div>
+    <div class="card"><h3>Punktsymmetrisch</h3><p class="small">Dreht man die Figur um 180° um ihren Mittelpunkt, sieht sie gleich aus. Beispiele: Parallelogramm, Rechteck, Quadrat, die Buchstaben S, N, Z.</p></div>
+    <div class="card"><h3>Drehsymmetrisch</h3><p class="small">Die Figur sieht nach einer Drehung um weniger als 360° gleich aus. Ein gleichseitiges Dreieck schon nach 120°, ein Quadrat nach 90°.</p></div>
+  </div>
+  <div class="stack"><h3>Übung</h3><div class="stmts" id="mcCS"></div><div class="btns"><button data-mc="mcCS">Prüfen</button><span class="result" id="mcCSRes" aria-live="polite"></span></div></div>
+</section>
+
+<section class="page" id="c-train">
+  <header><span class="lz">Alle Kapitel</span><h2>Training und Probetest</h2></header>
+  <p>Gib Koordinaten so ein: <b>3|-2</b> (oder 3;-2). Die Klammern darfst du weglassen.</p>
+  <div class="trainer">
+    <div class="task" id="ctTask" aria-live="polite"></div>
+    <div class="btns"><input class="ans" id="ctIn" aria-label="Deine Antwort" style="width:9em"><button id="ctCheck">Prüfen</button><button class="ghost" id="ctHint">Regel</button><button class="ghost" id="ctNext">Nächste</button></div>
+    <div class="result" id="ctRes" aria-live="polite"></div>
+    <div class="score"><span>Richtig <b id="ctOk">0</b></span><span>Versucht <b id="ctAll">0</b></span><span>Serie <b id="ctStreak">0</b></span></div>
+  </div>
+  <div class="stack" style="margin-top:14px">
+    <h3>Probetest (12 Aufgaben, mit Note)</h3>
+    <div class="btns"><button type="button" id="ctStart">Neuen Test starten</button></div>
+    <div class="rows" id="ctRows"></div>
+    <div class="btns" id="ctBtns" hidden><button type="button" id="ctSubmit">Abgeben</button></div>
+    <div class="facts" id="ctResult" hidden></div>
+  </div>
 </section>
 </div>
 
@@ -3270,6 +3360,7 @@ function showTopic(t,scroll){
   document.getElementById('topic-q').hidden = t!=='q';
   document.getElementById('topic-e').hidden = t!=='e';
   document.getElementById('topic-k').hidden = t!=='k';
+  document.getElementById('topic-c').hidden = t!=='c';
   topicBtns.forEach(b=>{b.classList.toggle('on',b.dataset.topic===t); b.setAttribute('aria-selected',b.dataset.topic===t);});
   if(scroll) document.querySelector('.topics').scrollIntoView({block:'start'});
 }
@@ -3553,6 +3644,7 @@ document.querySelectorAll('a[href="#menu"]').forEach(a=>a.addEventListener('clic
   else if(h==='lz'||h.indexOf('l-')===0) showView('lz',h);
   else if(h==='de'||h.indexOf('d-')===0) showView('de',h);
   else if(h==='englisch'||h==='en'||h.indexOf('e-')===0) showView('en',h);
+  else if(h.indexOf('c-')===0){ showTopic('c',false); showView('mathe',h); }
   else if(h.indexOf('k-')===0){ showTopic('k',false); showView('mathe',h); }
   else if(h.indexOf('x-')===0){ showTopic('e',false); showView('mathe',h); }
   else if(h.indexOf('q-')===0){ showTopic('q',false); showView('mathe',h); }
@@ -3979,9 +4071,9 @@ enQuizNew();
   window.__prof=()=>prof;
   const listeners=[]; window.__onProf=f=>listeners.push(f);
   const $=id=>document.getElementById(id);
-  const AREAS={'topic-b':'Mathe Brüche','topic-z':'Mathe Zahlen','topic-g':'Mathe Geld & Prozente','topic-q':'Mathe Wurzeln','topic-e':'Mathe Teilbarkeit','topic-k':'Mathe Konstruktionen','view-en':'Englisch','view-rzg':'RZG','view-nt':'NT Wald','view-fr':'Französisch','view-lz':'NT Zellen','view-de':'Deutsch'};
-  const TRAINER={tOk:'topic-b',zOk:'topic-z',gOk:'topic-g',qOk:'topic-q',xOk:'topic-e',wrOk:'view-en',grOk:'view-en',u8Ok:'view-en',mapOk:'view-rzg',mkOk:'view-lz',zcOk:'view-lz',frOk:'view-fr'};
-  const TRAINER_IN=['tIn','zIn','gIn','qIn','xIn','wrIn','grIn','frIn','u8In'];
+  const AREAS={'topic-b':'Mathe Brüche','topic-z':'Mathe Zahlen','topic-g':'Mathe Geld & Prozente','topic-q':'Mathe Wurzeln','topic-e':'Mathe Teilbarkeit','topic-k':'Mathe Konstruktionen','topic-c':'Mathe Koordinaten','view-en':'Englisch','view-rzg':'RZG','view-nt':'NT Wald','view-fr':'Französisch','view-lz':'NT Zellen','view-de':'Deutsch'};
+  const TRAINER={tOk:'topic-b',zOk:'topic-z',gOk:'topic-g',qOk:'topic-q',xOk:'topic-e',wrOk:'view-en',grOk:'view-en',u8Ok:'view-en',mapOk:'view-rzg',ckOk:'topic-c',ctOk:'topic-c',mkOk:'view-lz',zcOk:'view-lz',frOk:'view-fr'};
+  const TRAINER_IN=['tIn','zIn','gIn','qIn','xIn','wrIn','grIn','frIn','u8In','ctIn','ckIn'];
   let prog={}, dbc=null, mem={};
   const lkey=()=>'lt-progress-'+prof;
   function migrate(p){ const o={}; Object.keys(p||{}).forEach(k=>{ const a=TRAINER[k]||k; o[a]=(o[a]||0)+(+p[k]||0); }); return o; }
@@ -4804,6 +4896,89 @@ Genau ${n} Aufgaben, gemischt etwa halb "mc" und halb "text". Bei "text" muss di
   $('dtStart').addEventListener('click',()=>{ let qs=[]; D.T.forEach(t=>{ const it=items(t); qs=qs.concat(shuffle(it).slice(0,t[0]==='text'||t[0]==='rede'?2:t[0]==='wortarten'||t[0]==='dassdas'||t[0]==='komma'?3:2)); }); qs=shuffle(qs).slice(0,20);
     renderMC('mcDT',qs); $('dtBtns').hidden=false; $('dtNote').hidden=true; });
   $('dtCheck').addEventListener('click',()=>setTimeout(()=>{ const n=document.querySelectorAll('#mcDT .stmt').length, ok=document.querySelectorAll('#mcDT .stmt.ok').length; const note=Math.round((ok/n*5+1)*4)/4; $('dtNote').hidden=false; $('dtNote').innerHTML=`<div class="fact"><span class="big">${ok}/${n}</span><span>Punkte</span></div><div class="fact"><span class="big">${String(note).replace('.',',')}</span><span>Note (6 = beste)</span></div>`; $('dtNote').scrollIntoView({behavior:'smooth',block:'center'}); },0));
+})();
+
+/* ---------- Koordinaten und Abbildungen ---------- */
+(function(){
+  const $=id=>document.getElementById(id);
+  const G=20, O=170, X=x=>O+x*G, Y=y=>O-y*G, R=7;
+  const S=n=>n<0?'−'+(-n):String(n);
+  const pt=(x,y)=>`(${S(x)} | ${S(y)})`;
+  function grid(){ let s=''; for(let i=-R;i<=R;i++){ s+=`<line x1="${X(i)}" y1="${Y(-R)}" x2="${X(i)}" y2="${Y(R)}" class="c-g"/><line x1="${X(-R)}" y1="${Y(i)}" x2="${X(R)}" y2="${Y(i)}" class="c-g"/>`; if(i&&i%2===0) s+=`<text x="${X(i)}" y="${O+14}" text-anchor="middle" font-size="10">${S(i)}</text><text x="${O-6}" y="${Y(i)+4}" text-anchor="end" font-size="10">${S(i)}</text>`; }
+    return s+`<line x1="${X(-R)}" y1="${O}" x2="${X(R)+8}" y2="${O}" class="c-ax"/><line x1="${O}" y1="${Y(-R)}" x2="${O}" y2="${Y(R)-8}" class="c-ax"/><text x="${X(R)+4}" y="${O-6}" font-size="12">x</text><text x="${O+6}" y="${Y(R)-2}" font-size="12">y</text><text x="${O-6}" y="${O+14}" text-anchor="end" font-size="10">0</text>`; }
+  const parse=v=>{ const m=String(v).replace(/[()\s]/g,'').replace(/[−–]/g,'-').match(/^(-?\d+)[|;,/](-?\d+)$/); return m?[+m[1],+m[2]]:null; };
+  // Koordinaten ablesen / eintragen
+  let mode='read', P=null, done=false, st={ok:0,all:0};
+  function ckNew(){ P=[ri(-6,6),ri(-6,6)]; done=false; $('ckRes').textContent=''; $('ckIn').value=''; $('ckIn').className='ans';
+    if(mode==='read'){ $('ckTask').innerHTML='Welche Koordinaten hat der Punkt <b>P</b>?'; $('ckInBox').hidden=false; $('ckSvg').innerHTML=grid()+`<circle cx="${X(P[0])}" cy="${Y(P[1])}" r="5" class="c-p"/><text x="${X(P[0])+7}" y="${Y(P[1])-7}" font-size="13">P</text>`; }
+    else { $('ckTask').innerHTML=`Tippe auf den Punkt <b>Q${pt(P[0],P[1])}</b>.`; $('ckInBox').hidden=true; $('ckSvg').innerHTML=grid(); } }
+  function count(g){ if(done) return; done=true; st.all++; if(g) st.ok++; $('ckOk').textContent=st.ok; $('ckAll').textContent=st.all; }
+  $('ckCheck').addEventListener('click',()=>{ const p=parse($('ckIn').value), r=$('ckRes'); if(!p){ r.className='result warn'; r.textContent='Schreib die Koordinaten so: 3|-2'; return; }
+    const g=p[0]===P[0]&&p[1]===P[1]; count(g); $('ckIn').className='ans '+(g?'ok':'bad'); r.className='result '+(g?'ok':'bad');
+    r.innerHTML=g?'Richtig!':(p[0]===P[1]&&p[1]===P[0]?`Vertauscht! Zuerst x (rechts/links), dann y. Richtig: P${pt(P[0],P[1])}`:`Richtig ist P${pt(P[0],P[1])}.`); });
+  $('ckIn').addEventListener('keydown',e=>{if(e.key==='Enter'){e.preventDefault();$('ckCheck').click();}});
+  $('ckSvg').addEventListener('click',e=>{ if(mode!=='set'||done) return; const sv=$('ckSvg'), b=sv.getBoundingClientRect(); const x=Math.round(((e.clientX-b.left)*340/b.width-O)/G), y=Math.round((O-(e.clientY-b.top)*340/b.height)/G);
+    const g=x===P[0]&&y===P[1]; count(g); sv.innerHTML+=`<circle cx="${X(x)}" cy="${Y(y)}" r="5" class="${g?'c-ok':'c-bad'}"/>`+(g?'':`<circle cx="${X(P[0])}" cy="${Y(P[1])}" r="6" class="c-ok"/>`);
+    const r=$('ckRes'); r.className='result '+(g?'ok':'bad'); r.innerHTML=g?'Richtig!':`Du hast ${pt(x,y)} getippt. Der grüne Punkt ist Q${pt(P[0],P[1])}.`; });
+  $('ckRead').addEventListener('click',()=>{ mode='read'; $('ckRead').classList.add('on'); $('ckSet').classList.remove('on'); ckNew(); });
+  $('ckSet').addEventListener('click',()=>{ mode='set'; $('ckSet').classList.add('on'); $('ckRead').classList.remove('on'); ckNew(); });
+  $('ckNext').addEventListener('click',ckNew); ckNew();
+  // Abbildungen
+  const AB={
+    'Verschiebung':{f:(x,y,a,b)=>[x+a,y+b],r:'P\'(x + a | y + b)'},
+    'Spiegelung an x-Achse':{f:(x,y)=>[x,-y],r:'P\'(x | −y)',ax:'x'},
+    'Spiegelung an y-Achse':{f:(x,y)=>[-x,y],r:'P\'(−x | y)',ax:'y'},
+    'Punktspiegelung an O':{f:(x,y)=>[-x,-y],r:'P\'(−x | −y)',o:1},
+    'Drehung 90° Gegenuhrzeiger':{f:(x,y)=>[-y,x],r:'P\'(−y | x)',o:1},
+    'Drehung 90° Uhrzeiger':{f:(x,y)=>[y,-x],r:'P\'(y | −x)',o:1}
+  };
+  const TRI=[[2,1],[5,2],[3,5]]; let cur='Verschiebung';
+  $('abSel').innerHTML=Object.keys(AB).map(k=>`<button type="button" class="ghost small" data-k="${k}">${k}</button>`).join('');
+  $('abSel').querySelectorAll('button').forEach(b=>b.addEventListener('click',()=>{cur=b.dataset.k;ab();}));
+  function ab(){ const t=AB[cur], a=+$('abA').value||0, b=+$('abB').value||0; $('abSel').querySelectorAll('button').forEach(x=>x.classList.toggle('on',x.dataset.k===cur)); $('abShift').hidden=cur!=='Verschiebung';
+    const img=TRI.map(p=>t.f(p[0],p[1],a,b)); const poly=(ps,c)=>`<polygon points="${ps.map(p=>X(p[0])+','+Y(p[1])).join(' ')}" class="${c}"/>`;
+    let s=grid(); if(t.ax==='x') s+=`<line x1="${X(-R)}" y1="${O}" x2="${X(R)}" y2="${O}" class="c-axis"/>`; if(t.ax==='y') s+=`<line x1="${O}" y1="${Y(-R)}" x2="${O}" y2="${Y(R)}" class="c-axis"/>`; if(t.o) s+=`<circle cx="${O}" cy="${O}" r="5" class="c-axisp"/>`;
+    s+=poly(TRI,'c-tri')+poly(img,'c-img'); TRI.forEach((p,i)=>{ const q=img[i]; s+=`<line x1="${X(p[0])}" y1="${Y(p[1])}" x2="${X(q[0])}" y2="${Y(q[1])}" class="c-link"/><text x="${X(p[0])+5}" y="${Y(p[1])-5}" font-size="12">${'ABC'[i]}</text><text x="${X(q[0])+5}" y="${Y(q[1])-5}" font-size="12" class="c-imgt">${'ABC'[i]}'</text>`; });
+    $('abSvg').innerHTML=s;
+    $('abTxt').innerHTML=`<strong>${cur}</strong><p>Regel: <b>${t.r}</b></p><ul>${TRI.map((p,i)=>`<li>${'ABC'[i]}${pt(p[0],p[1])} → ${'ABC'[i]}'${pt(img[i][0],img[i][1])}</li>`).join('')}</ul>`; }
+  ['abA','abB'].forEach(i=>$(i).addEventListener('input',ab)); ab();
+  renderMC('mcCS',[
+   {q:'Wie viele Symmetrieachsen hat ein Quadrat?',o:['1','2','4','unendlich viele'],a:2},
+   {q:'Wie viele Symmetrieachsen hat ein Rechteck (kein Quadrat)?',o:['0','1','2','4'],a:2},
+   {q:'Ist ein Parallelogramm (kein Rechteck) achsensymmetrisch?',o:['ja','nein'],a:1,w:'Es ist aber punktsymmetrisch.'},
+   {q:'Ist der Buchstabe S punktsymmetrisch?',o:['ja','nein'],a:0},
+   {q:'Ist der Buchstabe A punktsymmetrisch?',o:['ja','nein'],a:1,w:'A ist achsensymmetrisch (senkrechte Achse), aber nicht punktsymmetrisch.'},
+   {q:'Wie viele Symmetrieachsen hat ein Kreis?',o:['1','4','unendlich viele','keine'],a:2},
+   {q:'Bei welcher Abbildung ändert sich der Umlaufsinn?',o:['Verschiebung','Drehung','Spiegelung'],a:2}
+  ]);
+  // Training
+  const pick=a=>a[ri(0,a.length-1)];
+  const KS=Object.keys(AB);
+  const gen=()=>{ const k=ri(0,9);
+    if(k<6){ const n=KS[k], x=ri(-6,6), y=ri(-6,6); let a=0,b=0, extra=''; if(n==='Verschiebung'){ a=ri(-5,5)||2; b=ri(-5,5)||-3; extra=` um (${S(a)} | ${S(b)})`; } const q=AB[n].f(x,y,a,b);
+      return {q:`${n}${extra}: P${pt(x,y)} → P' = ?`,a:q,kind:'pt',r:AB[n].r}; }
+    if(k===6){ const x=ri(-6,6)||3, y=ri(-6,6)||-2; const qd=x>0&&y>0?1:x<0&&y>0?2:x<0&&y<0?3:4; return {q:`In welchem Quadranten liegt P${pt(x,y)}? (1, 2, 3 oder 4)`,a:qd,kind:'n',r:'I (+|+), II (−|+), III (−|−), IV (+|−)'}; }
+    if(k===7){ const x=ri(-6,6), y=ri(-6,6), x2=ri(-6,6), y2=ri(-6,6); return {q:`P${pt(x,y)} wurde verschoben nach P'${pt(x2,y2)}. Um welchen Vektor? (a|b)`,a:[x2-x,y2-y],kind:'pt',r:'a = x\' − x, b = y\' − y'}; }
+    if(k===8){ const x=ri(-6,6), y=ri(-6,6); return {q:`P' = (${S(x)} | ${S(y)}) ist das Bild bei der Spiegelung an der x-Achse. Wo lag P?`,a:[x,-y],kind:'pt',r:'Spiegeln ist umkehrbar: nochmals an der x-Achse spiegeln.'}; }
+    const x=ri(1,6), y=ri(1,6); return {q:`Ein Rechteck hat die Ecken A(0|0), B(${x}|0), C(${x}|${y}). Wo liegt D?`,a:[0,y],kind:'pt',r:'Gegenüberliegende Seiten sind parallel und gleich lang.'}; };
+  const okT=(t,v)=>{ if(t.kind==='n') return +String(v).trim()===t.a; const p=parse(v); return !!p&&p[0]===t.a[0]&&p[1]===t.a[1]; };
+  const ans=t=>t.kind==='n'?String(t.a):pt(t.a[0],t.a[1]);
+  let t=null, dn=false; const s2={ok:0,all:0,streak:0};
+  function next(){ t=gen(); $('ctTask').innerHTML=`<div class="tq">${t.q}</div>`; $('ctIn').value=''; $('ctIn').className='ans'; $('ctRes').textContent=''; dn=false; }
+  function upd(){ $('ctOk').textContent=s2.ok; $('ctAll').textContent=s2.all; $('ctStreak').textContent=s2.streak; }
+  $('ctCheck').addEventListener('click',()=>{ const v=$('ctIn').value, r=$('ctRes'); if(!v.trim()){ r.className='result warn'; r.textContent='Gib zuerst eine Antwort ein.'; return; }
+    const g=okT(t,v); $('ctIn').className='ans '+(g?'ok':'bad'); if(!dn){ s2.all++; if(g){s2.ok++;s2.streak++;} else s2.streak=0; dn=true; upd(); }
+    r.className='result '+(g?'ok':'bad'); r.innerHTML=g?'Richtig!':`Richtig ist <b>${ans(t)}</b>. Regel: ${t.r}`; });
+  $('ctIn').addEventListener('keydown',e=>{if(e.key==='Enter'){e.preventDefault();$('ctCheck').click();}});
+  $('ctHint').addEventListener('click',()=>{ $('ctRes').className='result'; $('ctRes').textContent='Regel: '+t.r; });
+  $('ctNext').addEventListener('click',next); next();
+  let test=[];
+  $('ctStart').addEventListener('click',()=>{ test=[]; for(let i=0;i<12;i++) test.push(gen());
+    $('ctRows').innerHTML=test.map((x,i)=>`<div class="row"><span class="q"><b>${i+1}.</b>&nbsp;${x.q}</span><input class="ans" id="ctq${i}" style="width:8em" aria-label="Antwort ${i+1}"><span class="fb"></span><span class="sol small" hidden></span></div>`).join('');
+    $('ctBtns').hidden=false; $('ctResult').hidden=true; $('ctSubmit').disabled=false; });
+  $('ctSubmit').addEventListener('click',()=>{ let n=0; test.forEach((x,i)=>{ const inp=$('ctq'+i), row=inp.closest('.row'), g=okT(x,inp.value); if(g) n++;
+      inp.className='ans '+(g?'ok':'bad'); const fb=row.querySelector('.fb'); fb.className='fb '+(g?'ok':'bad'); fb.textContent=g?'✓':'✗'; if(!g){ const s=row.querySelector('.sol'); s.hidden=false; s.innerHTML=`Richtig: <b>${ans(x)}</b> (${x.r})`; } });
+    const note=Math.round((n/test.length*5+1)*4)/4; $('ctResult').hidden=false; $('ctResult').innerHTML=`<div class="fact"><span class="big">${n}/${test.length}</span><span>Punkte</span></div><div class="fact"><span class="big">${String(note).replace('.',',')}</span><span>Note (6 = beste)</span></div>`; $('ctSubmit').disabled=true; $('ctResult').scrollIntoView({behavior:'smooth',block:'center'}); });
 })();
 
 /* ---------- Sokratischer Lösungsweg ---------- */
